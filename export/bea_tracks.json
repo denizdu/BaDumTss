@@ -4,230 +4,329 @@
         "artist": "Büyük Ev Ablukada",
         "album": "Defansif Dizayn",
         "duration_ms": 236631,
-        "track_id": "4U0mwukUqiKG9ucB4f2Ex8"
+        "track_id": "4U0mwukUqiKG9ucB4f2Ex8",
+        "tempo": 60.61792769642895,
+        "energy": 0.572001296285694,
+        "danceability": 0.5845817112051238
     },
     {
         "name": "HOŞÇAKAL KADAR",
         "artist": "Büyük Ev Ablukada",
         "album": "FIRTINAYT",
         "duration_ms": 386679,
-        "track_id": "2pD1BR7vPz8GiygzRKmg5n"
+        "track_id": "2pD1BR7vPz8GiygzRKmg5n",
+        "tempo": 101.48118981589569,
+        "energy": 0.09407146025270163,
+        "danceability": 0.7570433460890766
     },
     {
         "name": "Takıl Yani Takmıyo Belli",
         "artist": "Büyük Ev Ablukada",
         "album": "Full Faça",
         "duration_ms": 106813,
-        "track_id": "4pQWinj0mYdTHzg92RYdmL"
+        "track_id": "4pQWinj0mYdTHzg92RYdmL",
+        "tempo": 121.13909200396313,
+        "energy": 0.4250489301789363,
+        "danceability": 0.11539097471044146
     },
     {
         "name": "Hayaletler (Canlı Şekli - DasDas 2019)",
         "artist": "Büyük Ev Ablukada",
         "album": "Mutsuz Parti",
         "duration_ms": 532904,
-        "track_id": "3ZrL3CMYVJXUomrjTxUNzk"
+        "track_id": "3ZrL3CMYVJXUomrjTxUNzk",
+        "tempo": 141.9586578039081,
+        "energy": 0.41311969674100846,
+        "danceability": 0.4729780786584157
     },
     {
         "name": "75 Lira - Çıplak Ayaklar Stüdyosu 2013",
         "artist": "Büyük Ev Ablukada",
         "album": "Ay Şuram Hâlâ Ağrıyo",
         "duration_ms": 184064,
-        "track_id": "5aWXPUmLS7fPLNU0JGHI6w"
+        "track_id": "5aWXPUmLS7fPLNU0JGHI6w",
+        "tempo": 141.48514294371944,
+        "energy": 0.2758836660759548,
+        "danceability": 0.7435944143503002
     },
     {
         "name": "Kopuk Uçurtma",
         "artist": "Büyük Ev Ablukada",
         "album": "Defansif Dizayn",
         "duration_ms": 235892,
-        "track_id": "6ATOBWupiEKWVqNXUMTHqo"
+        "track_id": "6ATOBWupiEKWVqNXUMTHqo",
+        "tempo": 96.16924308801026,
+        "energy": 0.9034293651408313,
+        "danceability": 0.44986737314681124
     },
     {
         "name": "BOŞLUK",
         "artist": "Büyük Ev Ablukada",
         "album": "FIRTINAYT",
         "duration_ms": 180147,
-        "track_id": "7nnW9qKcLQi98ghW42lsAX"
+        "track_id": "7nnW9qKcLQi98ghW42lsAX",
+        "tempo": 114.1563200518234,
+        "energy": 0.3660669986404458,
+        "danceability": 0.05850946132775725
     },
     {
         "name": "Teker Teker",
         "artist": "Gülinler",
         "album": "Teker Teker",
         "duration_ms": 243632,
-        "track_id": "04x2DO5e8XDhjYvenuFRHp"
+        "track_id": "04x2DO5e8XDhjYvenuFRHp",
+        "tempo": 66.50834743630136,
+        "energy": 0.3395509452408383,
+        "danceability": 0.5811002636409314
     },
     {
         "name": "Çıldırmicam",
         "artist": "Büyük Ev Ablukada",
         "album": "Full Faça",
         "duration_ms": 116800,
-        "track_id": "3qiM4ZBtOrqyPu196ZTlIX"
+        "track_id": "3qiM4ZBtOrqyPu196ZTlIX",
+        "tempo": 118.27998081525223,
+        "energy": 0.37236694408266036,
+        "danceability": 0.755027502984703
     },
     {
         "name": "Boşluk (Canlı Şekli - DasDas 2019)",
         "artist": "Büyük Ev Ablukada",
         "album": "Mutsuz Parti",
         "duration_ms": 185394,
-        "track_id": "588ZVSmWtGnClLgUaDJ4MZ"
+        "track_id": "588ZVSmWtGnClLgUaDJ4MZ",
+        "tempo": 101.6013714729028,
+        "energy": 0.36191392753523344,
+        "danceability": 0.036035757296062676
     },
     {
         "name": "Pazartesi",
         "artist": "Büyük Ev Ablukada",
         "album": "Defansif Dizayn",
         "duration_ms": 176291,
-        "track_id": "1gcIWBa8P3xPBcpFGn8rrx"
+        "track_id": "1gcIWBa8P3xPBcpFGn8rrx",
+        "tempo": 88.01437572846909,
+        "energy": 0.628268599280904,
+        "danceability": 0.8476253141578648
     },
     {
         "name": "ARAYAN BULUR",
         "artist": "Büyük Ev Ablukada",
         "album": "FIRTINAYT",
         "duration_ms": 351260,
-        "track_id": "5gGvmMgnq66xLSEoDx9iJQ"
+        "track_id": "5gGvmMgnq66xLSEoDx9iJQ",
+        "tempo": 131.45348477075103,
+        "energy": 0.5189879277765963,
+        "danceability": 0.4896483776858933
     },
     {
         "name": "Boşluk - Kitapçı Canlı",
         "artist": "Gülinler",
         "album": "Kitapçı Kayıtları",
         "duration_ms": 188546,
-        "track_id": "2X5qNPdiw1enI3Fb8sUM7j"
+        "track_id": "2X5qNPdiw1enI3Fb8sUM7j",
+        "tempo": 77.55658732447621,
+        "energy": 0.056189595141844295,
+        "danceability": 0.3834531393853582
     },
     {
         "name": "Olanla Olunmaz",
         "artist": "Büyük Ev Ablukada",
         "album": "Full Faça",
         "duration_ms": 223880,
-        "track_id": "6FUNAJ4d32MI4f494FZ3mZ"
+        "track_id": "6FUNAJ4d32MI4f494FZ3mZ",
+        "tempo": 107.12573274493786,
+        "energy": 0.1535285294379103,
+        "danceability": 0.7343815756241266
     },
     {
         "name": "Şirâze",
         "artist": "Büyük Ev Ablukada",
         "album": "Defansif Dizayn",
         "duration_ms": 326000,
-        "track_id": "3M1NpZbvOCLqNTgtjEN6DJ"
+        "track_id": "3M1NpZbvOCLqNTgtjEN6DJ",
+        "tempo": 69.64033163468032,
+        "energy": 0.2792157537097847,
+        "danceability": 0.6017277861810721
     },
     {
         "name": "İHTİMALLERİN HEYECANINA ÜZÜLÜYORUM",
         "artist": "Büyük Ev Ablukada",
         "album": "FIRTINAYT",
         "duration_ms": 205434,
-        "track_id": "1XhFmIIYWjHuovs2F4IpWj"
+        "track_id": "1XhFmIIYWjHuovs2F4IpWj",
+        "tempo": 62.08905742684459,
+        "energy": 0.2508181290412991,
+        "danceability": 0.18914376827890378
     },
     {
         "name": "En Güzel Yerinde Evin",
         "artist": "Büyük Ev Ablukada",
         "album": "Full Faça",
         "duration_ms": 241013,
-        "track_id": "53YCEHCI1hV6cp4Qn0OlaZ"
+        "track_id": "53YCEHCI1hV6cp4Qn0OlaZ",
+        "tempo": 74.404639990497,
+        "energy": 0.23844499222044646,
+        "danceability": 0.10250088863447648
     },
     {
         "name": "Oh Be!",
         "artist": "Büyük Ev Ablukada",
         "album": "Defansif Dizayn",
         "duration_ms": 240727,
-        "track_id": "1h86lUTu030nhtqKISoSPS"
+        "track_id": "1h86lUTu030nhtqKISoSPS",
+        "tempo": 108.432320514099,
+        "energy": 0.13127572417426858,
+        "danceability": 0.08900740714479805
     },
     {
         "name": "HEPSİNE NE FENA",
         "artist": "Büyük Ev Ablukada",
         "album": "FIRTINAYT",
         "duration_ms": 312229,
-        "track_id": "72UMOAfc73lO9ci7Fzl66X"
+        "track_id": "72UMOAfc73lO9ci7Fzl66X",
+        "tempo": 84.14099208580684,
+        "energy": 0.9173229310866089,
+        "danceability": 0.2176453475128659
     },
     {
         "name": "Bi Hıçkırık Gibi",
         "artist": "Büyük Ev Ablukada",
         "album": "Full Faça",
         "duration_ms": 178120,
-        "track_id": "35Opvq3NPmxPjfjNPdg4cD"
+        "track_id": "35Opvq3NPmxPjfjNPdg4cD",
+        "tempo": 163.24422384350055,
+        "energy": 0.0013593410678752749,
+        "danceability": 0.566753735060722
     },
     {
         "name": "Karargâh",
         "artist": "Büyük Ev Ablukada",
         "album": "Defansif Dizayn",
         "duration_ms": 307161,
-        "track_id": "6ht6rphUHp2popV5uKDHDg"
+        "track_id": "6ht6rphUHp2popV5uKDHDg",
+        "tempo": 133.56027848905538,
+        "energy": 0.1630272132560594,
+        "danceability": 0.35047491783678153
     },
     {
         "name": "HAYALETLER",
         "artist": "Büyük Ev Ablukada",
         "album": "FIRTINAYT",
         "duration_ms": 429294,
-        "track_id": "72b3Ws3byP6yidFilsOoyz"
+        "track_id": "72b3Ws3byP6yidFilsOoyz",
+        "tempo": 88.04910848900688,
+        "energy": 0.0886563937948972,
+        "danceability": 0.5132481357945335
     },
     {
         "name": "Ne Var Ne Yok",
         "artist": "Büyük Ev Ablukada",
         "album": "Full Faça",
         "duration_ms": 304120,
-        "track_id": "5sJPbINI7Hk4SrvDzEUexc"
+        "track_id": "5sJPbINI7Hk4SrvDzEUexc",
+        "tempo": 87.3105497537146,
+        "energy": 0.6439916240523844,
+        "danceability": 0.2504694829259482
     },
     {
         "name": "Arayan Bulur - Tekli Şekli",
         "artist": "Büyük Ev Ablukada",
         "album": "Arayan Bulur",
         "duration_ms": 474319,
-        "track_id": "4AWJHpJzo0pelT7cVCbWMA"
+        "track_id": "4AWJHpJzo0pelT7cVCbWMA",
+        "tempo": 101.85408329220965,
+        "energy": 0.44846911367819686,
+        "danceability": 0.10682173159499664
     },
     {
         "name": "ne deve ne kush",
         "artist": "Büyük Ev Ablukada",
         "album": "ne deve ne kush",
         "duration_ms": 159180,
-        "track_id": "3O4ZBGHzCAOeH9wavrhK23"
+        "track_id": "3O4ZBGHzCAOeH9wavrhK23",
+        "tempo": 173.09137453689607,
+        "energy": 0.4264795508310685,
+        "danceability": 0.22392056474307176
     },
     {
         "name": "FeeL",
         "artist": "Büyük Ev Ablukada",
         "album": "Defansif Dizayn",
         "duration_ms": 262117,
-        "track_id": "3SVDKRBlEGL36F19rIFUEt"
+        "track_id": "3SVDKRBlEGL36F19rIFUEt",
+        "tempo": 63.90480329754563,
+        "energy": 0.9595944509856785,
+        "danceability": 0.8021989906489465
     },
     {
         "name": "BENİM KAFAM SİKTİRMİŞ GİTMİŞ",
         "artist": "Büyük Ev Ablukada",
         "album": "FIRTINAYT",
         "duration_ms": 117460,
-        "track_id": "5i9YJPhJo1RrWHKjkbkgmk"
+        "track_id": "5i9YJPhJo1RrWHKjkbkgmk",
+        "tempo": 132.33045182671515,
+        "energy": 0.4303856066933105,
+        "danceability": 0.6832551205872514
     },
     {
         "name": "Hayaletler - Tekli Şekli",
         "artist": "Büyük Ev Ablukada",
         "album": "Hayaletler",
         "duration_ms": 410597,
-        "track_id": "6HQuzGNsnsIWDvvTXahFZ4"
+        "track_id": "6HQuzGNsnsIWDvvTXahFZ4",
+        "tempo": 77.84976030835126,
+        "energy": 0.7100765132918389,
+        "danceability": 0.9250161497414671
     },
     {
         "name": "Yangın Akvaryum - Tekli Şekli",
         "artist": "Büyük Ev Ablukada",
         "album": "Yangın Akvaryum - Tekli Şekli",
         "duration_ms": 441513,
-        "track_id": "4JzjmZe4VjbpKLjoAkMuKH"
+        "track_id": "4JzjmZe4VjbpKLjoAkMuKH",
+        "tempo": 172.28229754654402,
+        "energy": 0.5786939434449752,
+        "danceability": 0.5968566104520644
     },
     {
         "name": "@defne.kalbim96",
         "artist": "Büyük Ev Ablukada",
         "album": "Defansif Dizayn",
         "duration_ms": 250254,
-        "track_id": "6ksKcxmzawIYwdi6CfjUgz"
+        "track_id": "6ksKcxmzawIYwdi6CfjUgz",
+        "tempo": 60.6436611025083,
+        "energy": 0.9841764056724286,
+        "danceability": 0.7215564761812678
     },
     {
         "name": "GÜNEŞ YERİNDE",
         "artist": "Büyük Ev Ablukada",
         "album": "FIRTINAYT",
         "duration_ms": 571894,
-        "track_id": "4DcJxTf3hXEaJIN06xKFb8"
+        "track_id": "4DcJxTf3hXEaJIN06xKFb8",
+        "tempo": 114.72329334452274,
+        "energy": 0.07627323380376672,
+        "danceability": 0.08645816257300476
     },
     {
         "name": "Çamur (Canlı Şekli - DasDas 2019)",
         "artist": "Büyük Ev Ablukada",
         "album": "Mutsuz Parti",
         "duration_ms": 231749,
-        "track_id": "5kBqOuf22NcIgxwbSAeyHR"
+        "track_id": "5kBqOuf22NcIgxwbSAeyHR",
+        "tempo": 120.10023986205425,
+        "energy": 0.5288352489701593,
+        "danceability": 0.0639173125701209
     },
     {
         "name": "Yangın Akvaryum",
         "artist": "Büyük Ev Ablukada",
         "album": "Defansif Dizayn",
         "duration_ms": 506545,
-        "track_id": "6zUFizCfVTnxktHqUNOJCo"
+        "track_id": "6zUFizCfVTnxktHqUNOJCo",
+        "tempo": 152.15637134040065,
+        "energy": 0.5261313583871088,
+        "danceability": 0.43957815333130046
     }
 ]

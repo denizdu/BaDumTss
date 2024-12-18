@@ -4,342 +4,489 @@
         "artist": "Deniz Arcak",
         "album": "Kıpır Kıpır",
         "duration_ms": 190813,
-        "track_id": "4JOyPN3xpNrgYRqksUYWKc"
+        "track_id": "4JOyPN3xpNrgYRqksUYWKc",
+        "tempo": 122.27538264137118,
+        "energy": 0.37337835449183987,
+        "danceability": 0.4703725953090111
     },
     {
         "name": "Bırakın Beni",
         "artist": "Deniz Arcak",
         "album": "Kıpır Kıpır",
         "duration_ms": 249653,
-        "track_id": "6WOt70Eoh8xlovQo5ZvqSx"
+        "track_id": "6WOt70Eoh8xlovQo5ZvqSx",
+        "tempo": 158.2761760732511,
+        "energy": 0.1311851238041235,
+        "danceability": 0.6233536040099567
     },
     {
         "name": "Korku",
         "artist": "Deniz Arcak",
         "album": "Kıpır Kıpır",
         "duration_ms": 256946,
-        "track_id": "0Uas63tklLlKR9tp8T92m0"
+        "track_id": "0Uas63tklLlKR9tp8T92m0",
+        "tempo": 147.70538495399342,
+        "energy": 0.6911395235238325,
+        "danceability": 0.6562423255110443
     },
     {
         "name": "Tutkuların Peşinde",
         "artist": "Ece Dorsay",
         "album": "Alternative Rock",
         "duration_ms": 209136,
-        "track_id": "3b2qlIEikC6YNRx4ZdT1hk"
+        "track_id": "3b2qlIEikC6YNRx4ZdT1hk",
+        "tempo": 164.92817596966944,
+        "energy": 0.9283191648528157,
+        "danceability": 0.27687528031626374
     },
     {
         "name": "Manşet",
         "artist": "Ercan Saatci",
         "album": "Manşet",
         "duration_ms": 249226,
-        "track_id": "5zImO7kwl3pLKzL9RVWkT4"
+        "track_id": "5zImO7kwl3pLKzL9RVWkT4",
+        "tempo": 165.75637044762829,
+        "energy": 0.39618241491754036,
+        "danceability": 0.3115967984340331
     },
     {
         "name": "Ne Çare",
         "artist": "Ercan Saatci",
         "album": "Manşet",
         "duration_ms": 266440,
-        "track_id": "2AIXdWcopAPZxToYOF9Rx8"
+        "track_id": "2AIXdWcopAPZxToYOF9Rx8",
+        "tempo": 77.33176644053817,
+        "energy": 0.8423139526206317,
+        "danceability": 0.5247959972843721
     },
     {
         "name": "Beni Islak Öp",
         "artist": "Fethi Taner",
         "album": "Karışık Kaset: Türkçe Rock, Vol. 1",
         "duration_ms": 198266,
-        "track_id": "6C1IXdXf0qr8fsX3fsdh4D"
+        "track_id": "6C1IXdXf0qr8fsX3fsdh4D",
+        "tempo": 131.39792657372854,
+        "energy": 0.3521619461585477,
+        "danceability": 0.7068509035220181
     },
     {
         "name": "Hüzün",
         "artist": "Toplama Adamlar",
         "album": "İş Dönüşü İstanbul Kentinde",
         "duration_ms": 310602,
-        "track_id": "6QffZhxaKX4sARpBHvJ3JV"
+        "track_id": "6QffZhxaKX4sARpBHvJ3JV",
+        "tempo": 68.66426754736749,
+        "energy": 0.2847492566989419,
+        "danceability": 0.7948907879198379
     },
     {
         "name": "Sabır",
         "artist": "Göksel",
         "album": "Yollar",
         "duration_ms": 252253,
-        "track_id": "2DDQ8klL5WDbmCPSPmZxzo"
+        "track_id": "2DDQ8klL5WDbmCPSPmZxzo",
+        "tempo": 114.20970545723401,
+        "energy": 0.5439752331230948,
+        "danceability": 0.874814971693194
     },
     {
         "name": "Yakışıklı",
         "artist": "Göksel",
         "album": "Yollar",
         "duration_ms": 219773,
-        "track_id": "2oAPOSIAEYtSuWr9IoNkRE"
+        "track_id": "2oAPOSIAEYtSuWr9IoNkRE",
+        "tempo": 107.31014705601895,
+        "energy": 0.4283223316203417,
+        "danceability": 0.2319605520760185
     },
     {
         "name": "Ben Yolumu Bulurum",
         "artist": "Kıraç",
         "album": "Deli Düş",
         "duration_ms": 332509,
-        "track_id": "5RfQdV2wO9UHhp6nCY6oXO"
+        "track_id": "5RfQdV2wO9UHhp6nCY6oXO",
+        "tempo": 127.96431382762852,
+        "energy": 0.26252547559200123,
+        "danceability": 0.21979148861941888
     },
     {
         "name": "Bir Garip Aşk Bestesi",
         "artist": "Kıraç",
         "album": "Bir Garip Aşk Bestesi",
         "duration_ms": 327819,
-        "track_id": "708wpAVwEcFrGif1ITd6zZ"
+        "track_id": "708wpAVwEcFrGif1ITd6zZ",
+        "tempo": 119.8854825365299,
+        "energy": 0.9017289407172685,
+        "danceability": 0.3271328139658328
     },
     {
         "name": "Derdimi Söylesem",
         "artist": "Kıraç",
         "album": "Zaman",
         "duration_ms": 283794,
-        "track_id": "0nv4c8lM3IcOxvptVV5h50"
+        "track_id": "0nv4c8lM3IcOxvptVV5h50",
+        "tempo": 131.554969393857,
+        "energy": 0.8217844643384122,
+        "danceability": 0.9253637577918956
     },
     {
         "name": "Mahkeme",
         "artist": "Kıraç",
         "album": "Bir Garip Aşk Bestesi",
         "duration_ms": 186967,
-        "track_id": "3x3pEf1LcjjJkasHONXl8B"
+        "track_id": "3x3pEf1LcjjJkasHONXl8B",
+        "tempo": 95.90724842016385,
+        "energy": 0.4246070021043178,
+        "danceability": 0.6698508361617668
     },
     {
         "name": "Makaram Sarı Bağlar",
         "artist": "Kıraç",
         "album": "Deli Düş",
         "duration_ms": 157709,
-        "track_id": "38hPz8W3yclFCKdTCm5oe2"
+        "track_id": "38hPz8W3yclFCKdTCm5oe2",
+        "tempo": 85.61330906112633,
+        "energy": 0.6070116043763503,
+        "danceability": 0.39592987983736183
     },
     {
         "name": "Sevme",
         "artist": "Kıraç",
         "album": "Deli Düş",
         "duration_ms": 289506,
-        "track_id": "4hgIplN5mQVebSfbSeWscP"
+        "track_id": "4hgIplN5mQVebSfbSeWscP",
+        "tempo": 153.0022360138975,
+        "energy": 0.3425661488935149,
+        "danceability": 0.43586108140469726
     },
     {
         "name": "Talihim Yok Bahtım Kara",
         "artist": "Kıraç",
         "album": "Deli Düş",
         "duration_ms": 261781,
-        "track_id": "2p7jz6mv9kLMWCBDADvl7o"
+        "track_id": "2p7jz6mv9kLMWCBDADvl7o",
+        "tempo": 87.92261329799717,
+        "energy": 0.4184001839479725,
+        "danceability": 0.6369308585998431
     },
     {
         "name": "Sevgiliye",
         "artist": "Kıraç",
         "album": "Sevgiliye",
         "duration_ms": 321426,
-        "track_id": "6B1m5K2mIDAFQ3DgWRCNzD"
+        "track_id": "6B1m5K2mIDAFQ3DgWRCNzD",
+        "tempo": 151.30690231402946,
+        "energy": 0.9088681124343775,
+        "danceability": 0.36953691985236425
     },
     {
         "name": "Geri Donmenin Bir Anlami Yok",
         "artist": "Seruven",
         "album": "Seruven",
         "duration_ms": 193253,
-        "track_id": "32IO85pDL60BCAOcRucRWi"
+        "track_id": "32IO85pDL60BCAOcRucRWi",
+        "tempo": 106.18100018692763,
+        "energy": 0.9406933557339229,
+        "danceability": 0.44671342061541286
     },
     {
         "name": "Yagmurlu Istanbul Gunleri",
         "artist": "Seruven",
         "album": "Seruven",
         "duration_ms": 200280,
-        "track_id": "3PHg7NO5CTfh0uTCkoY13k"
+        "track_id": "3PHg7NO5CTfh0uTCkoY13k",
+        "tempo": 138.69639783490004,
+        "energy": 0.9186437226083667,
+        "danceability": 0.7795208727225118
     },
     {
         "name": "Mutfak",
         "artist": "Sibel Tüzün",
         "album": "Yine Yalnızım",
         "duration_ms": 339533,
-        "track_id": "0YeBLcfNDcuobdpGTeA8gv"
+        "track_id": "0YeBLcfNDcuobdpGTeA8gv",
+        "tempo": 74.264602859231,
+        "energy": 0.7467171141672508,
+        "danceability": 0.11508303589148494
     },
     {
         "name": "Sabret",
         "artist": "Sibel Tüzün",
         "album": "Yine Yalnızım",
         "duration_ms": 257266,
-        "track_id": "427AyyuCfp0aBjHpE0PYUV"
+        "track_id": "427AyyuCfp0aBjHpE0PYUV",
+        "tempo": 67.52507015597135,
+        "energy": 0.6701584079413606,
+        "danceability": 0.18682992123062014
     },
     {
         "name": "Sen Olmayınca",
         "artist": "Sibel Tüzün",
         "album": "Yine Yalnızım",
         "duration_ms": 195893,
-        "track_id": "4WZ6zNyO7mT3fkwp0T9k1B"
+        "track_id": "4WZ6zNyO7mT3fkwp0T9k1B",
+        "tempo": 115.64588124693327,
+        "energy": 0.5275208253280119,
+        "danceability": 0.8581368798268705
     },
     {
         "name": "Tut Beni",
         "artist": "Sibel Tüzün",
         "album": "Hayat Buysa Ben Yokum Bu Yolda",
         "duration_ms": 229133,
-        "track_id": "5PEKVUWJAAD3EzwflBVGAd"
+        "track_id": "5PEKVUWJAAD3EzwflBVGAd",
+        "tempo": 103.78241549540914,
+        "energy": 0.8417429202533794,
+        "danceability": 0.3565276549526425
     },
     {
         "name": "Ayrılık",
         "artist": "Soner Arıca",
         "album": "En İyiler 2000",
         "duration_ms": 325840,
-        "track_id": "0wQwDy7UJ403fZCFwOLkbz"
+        "track_id": "0wQwDy7UJ403fZCFwOLkbz",
+        "tempo": 98.32145028786803,
+        "energy": 0.49528956265953317,
+        "danceability": 0.2975204514643369
     },
     {
         "name": "Yarın Olmaz",
         "artist": "Teoman",
         "album": "Teoman",
         "duration_ms": 233000,
-        "track_id": "7r0P8SNYCKLzeFWoVS1Usl"
+        "track_id": "7r0P8SNYCKLzeFWoVS1Usl",
+        "tempo": 136.27279623883325,
+        "energy": 0.4052339891146862,
+        "danceability": 0.9293251766689867
     },
     {
         "name": "Cherokee",
         "artist": "Yavuz Çetin",
         "album": "Satılık",
         "duration_ms": 218546,
-        "track_id": "6xAMKg2cbvSh6x1x2dMw0U"
+        "track_id": "6xAMKg2cbvSh6x1x2dMw0U",
+        "tempo": 108.0864920090514,
+        "energy": 0.5605663377062704,
+        "danceability": 0.2887168027114785
     },
     {
         "name": "Oyuncak Dünya",
         "artist": "Yavuz Çetin",
         "album": "Satılık",
         "duration_ms": 308175,
-        "track_id": "1NoZ8Ie4XxRaEueGit5lzF"
+        "track_id": "1NoZ8Ie4XxRaEueGit5lzF",
+        "tempo": 61.796644951635656,
+        "energy": 0.6915014561033722,
+        "danceability": 0.7344316250696532
     },
     {
         "name": "Benimle Uçmak İster Misin?",
         "artist": "Yavuz Çetin",
         "album": "Satılık",
         "duration_ms": 379599,
-        "track_id": "4PpgAPWCG008EBfxO0TSGH"
+        "track_id": "4PpgAPWCG008EBfxO0TSGH",
+        "tempo": 88.3870070853838,
+        "energy": 0.7703173367251676,
+        "danceability": 0.12954921198777136
     },
     {
         "name": "Bul Beni",
         "artist": "Yavuz Çetin",
         "album": "Satılık",
         "duration_ms": 250403,
-        "track_id": "7CvRTmR8q6rCm0QMwNm1ft"
+        "track_id": "7CvRTmR8q6rCm0QMwNm1ft",
+        "tempo": 139.17312952998378,
+        "energy": 0.014856393687904812,
+        "danceability": 0.9578857751789418
     },
     {
         "name": "Sadece Senin Olmak",
         "artist": "Yavuz Çetin",
         "album": "Satılık",
         "duration_ms": 274506,
-        "track_id": "6kIDpP4xHxSaig61VWNebl"
+        "track_id": "6kIDpP4xHxSaig61VWNebl",
+        "tempo": 155.18532379092184,
+        "energy": 0.33709578912084137,
+        "danceability": 0.4329594497445616
     },
     {
         "name": "Yaşamak İstemem",
         "artist": "Yavuz Çetin",
         "album": "Satılık",
         "duration_ms": 352432,
-        "track_id": "2ICO3Y4j85zZmCBTf8EG5l"
+        "track_id": "2ICO3Y4j85zZmCBTf8EG5l",
+        "tempo": 109.81078377290605,
+        "energy": 0.7342943332972435,
+        "danceability": 0.706211724809914
     },
     {
         "name": "Kurtar Beni",
         "artist": "Yavuz Çetin",
         "album": "Satılık",
         "duration_ms": 309196,
-        "track_id": "6FcuHinV5zKAuJVzUbluOU"
+        "track_id": "6FcuHinV5zKAuJVzUbluOU",
+        "tempo": 70.18679404257355,
+        "energy": 0.03573457210688613,
+        "danceability": 0.7374916630704811
     },
     {
         "name": "Köle",
         "artist": "Yavuz Çetin",
         "album": "Satılık",
         "duration_ms": 286302,
-        "track_id": "1f7TtPm9WBppybO4kOTDf6"
+        "track_id": "1f7TtPm9WBppybO4kOTDf6",
+        "tempo": 135.85326096398143,
+        "energy": 0.42362172587339386,
+        "danceability": 0.24736011470042618
     },
     {
         "name": "İstanbul'a Ait",
         "artist": "Yavuz Çetin",
         "album": "Satılık",
         "duration_ms": 172895,
-        "track_id": "4RMeaAkUX1KIDvISRG9dfY"
+        "track_id": "4RMeaAkUX1KIDvISRG9dfY",
+        "tempo": 96.26168148922882,
+        "energy": 0.16953997369223628,
+        "danceability": 0.18950255414774075
     },
     {
         "name": "Herşey Biter",
         "artist": "Yavuz Çetin",
         "album": "Satılık",
         "duration_ms": 301395,
-        "track_id": "21L273dHLm763M5Pp786Sx"
+        "track_id": "21L273dHLm763M5Pp786Sx",
+        "tempo": 136.35553670007542,
+        "energy": 0.24799891761841886,
+        "danceability": 0.9566726884860565
     },
     {
         "name": "Sahil",
         "artist": "Yavuz Çetin",
         "album": "İlk",
         "duration_ms": 196293,
-        "track_id": "3k9igwx7kqzMsmXHHMwqP3"
+        "track_id": "3k9igwx7kqzMsmXHHMwqP3",
+        "tempo": 139.03146710078275,
+        "energy": 0.1037753799050144,
+        "danceability": 0.11698878275792968
     },
     {
         "name": "Onun Şarkısı",
         "artist": "Yavuz Çetin",
         "album": "İlk",
         "duration_ms": 273893,
-        "track_id": "0E6tqUYiKf1UYEx71nKU4K"
+        "track_id": "0E6tqUYiKf1UYEx71nKU4K",
+        "tempo": 77.99523793678387,
+        "energy": 0.20577739744089218,
+        "danceability": 0.12810797185829892
     },
     {
         "name": "Bilmem Neden İnat Ettin",
         "artist": "Yavuz Çetin",
         "album": "İlk",
         "duration_ms": 248520,
-        "track_id": "6Ly6mMQUipPSGpE5Na2x1N"
+        "track_id": "6Ly6mMQUipPSGpE5Na2x1N",
+        "tempo": 157.2568450079516,
+        "energy": 0.7793502308220726,
+        "danceability": 0.4216573237477086
     },
     {
         "name": "Kimse Bilemez",
         "artist": "Yavuz Çetin",
         "album": "İlk",
         "duration_ms": 247533,
-        "track_id": "6p10uRYb1zlOFv2AVHSAEw"
+        "track_id": "6p10uRYb1zlOFv2AVHSAEw",
+        "tempo": 160.60928656564238,
+        "energy": 0.4642425384878406,
+        "danceability": 0.12479577118809981
     },
     {
         "name": "Bodrum Gecesi Yüzünden",
         "artist": "Yavuz Çetin",
         "album": "İlk",
         "duration_ms": 205360,
-        "track_id": "10qnDaegPgD3pBHRvqxWrY"
+        "track_id": "10qnDaegPgD3pBHRvqxWrY",
+        "tempo": 134.45336248070907,
+        "energy": 0.3556312187051883,
+        "danceability": 0.388691407590543
     },
     {
         "name": "Ağlamayı Sevmem",
         "artist": "Yavuz Çetin",
         "album": "İlk",
         "duration_ms": 305440,
-        "track_id": "66JqbkU43F1uvVS0Hgb2Yq"
+        "track_id": "66JqbkU43F1uvVS0Hgb2Yq",
+        "tempo": 120.46696314833152,
+        "energy": 0.3131372636231068,
+        "danceability": 0.8313531263473155
     },
     {
         "name": "Erkeğin Olmak İstiyorum",
         "artist": "Yavuz Çetin",
         "album": "İlk",
         "duration_ms": 234293,
-        "track_id": "7fSFMdrQSPDOumPWaA8Rfy"
+        "track_id": "7fSFMdrQSPDOumPWaA8Rfy",
+        "tempo": 65.81459805087782,
+        "energy": 0.27689325300803347,
+        "danceability": 0.8829343745413041
     },
     {
         "name": "Birkaç Saat",
         "artist": "Yavuz Çetin",
         "album": "İlk",
         "duration_ms": 171146,
-        "track_id": "15XwrGX3Y0nOIMjKDiYmk8"
+        "track_id": "15XwrGX3Y0nOIMjKDiYmk8",
+        "tempo": 107.43924705006768,
+        "energy": 0.9437112082658962,
+        "danceability": 0.7375497447155662
     },
     {
         "name": "Hisset Beni",
         "artist": "Yavuz Çetin",
         "album": "İlk",
         "duration_ms": 250720,
-        "track_id": "2y2xA2CJGIcU6pwBzwiQ1d"
+        "track_id": "2y2xA2CJGIcU6pwBzwiQ1d",
+        "tempo": 108.75045344684662,
+        "energy": 0.8164285800924088,
+        "danceability": 0.3863234729708158
     },
     {
         "name": "Gecenin Rengi",
         "artist": "Yavuz Çetin",
         "album": "İlk",
         "duration_ms": 232080,
-        "track_id": "6fxqTVsvpkd4VD4yHK1U7Z"
+        "track_id": "6fxqTVsvpkd4VD4yHK1U7Z",
+        "tempo": 124.0403417360126,
+        "energy": 0.87254477509209,
+        "danceability": 0.17547884058888807
     },
     {
         "name": "Fanki Tonki Zonki",
         "artist": "Yavuz Çetin",
         "album": "İlk",
         "duration_ms": 268946,
-        "track_id": "3ayphsih1ByobWfQSX2RoS"
+        "track_id": "3ayphsih1ByobWfQSX2RoS",
+        "tempo": 80.52941182704424,
+        "energy": 0.1516749003246446,
+        "danceability": 0.26294592107282133
     },
     {
         "name": "Dünya",
         "artist": "Yavuz Çetin",
         "album": "İlk",
         "duration_ms": 299760,
-        "track_id": "0Jz0Qr8O11reDVtaBbMFnr"
+        "track_id": "0Jz0Qr8O11reDVtaBbMFnr",
+        "tempo": 140.42057579157904,
+        "energy": 0.9682797078949041,
+        "danceability": 0.5311372814785198
     },
     {
         "name": "Umut Ve Korku Yolu (Yavuz Çetin on Guitar Version 2000)",
         "artist": "Ece Dorsay",
         "album": "Unpublished Demos 99 - 2004",
         "duration_ms": 221360,
-        "track_id": "5lsoL7NFLhhUxMPsemcQY5"
+        "track_id": "5lsoL7NFLhhUxMPsemcQY5",
+        "tempo": 100.30098644212637,
+        "energy": 0.6953278676897237,
+        "danceability": 0.5937622882219148
     }
 ]
