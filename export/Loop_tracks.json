@@ -1,0 +1,597 @@
+[
+    {
+        "name": "Kurşun Gibi",
+        "artist": "Tepki",
+        "album": "Şehir Efsanesi",
+        "duration_ms": 193916,
+        "track_id": "4ezPHegUne6wJrXlkoth23"
+    },
+    {
+        "name": "Denedim",
+        "artist": "Tepki",
+        "album": "Output Nr.1",
+        "duration_ms": 169400,
+        "track_id": "50yavBoDEOtZ9VFgvEUoiZ"
+    },
+    {
+        "name": "Lambalar Ve Kelebek",
+        "artist": "Tepki",
+        "album": "Şehir Efsanesi",
+        "duration_ms": 179483,
+        "track_id": "2kTwN4aDpAmCLVbVWAdb6j"
+    },
+    {
+        "name": "Rüyalar",
+        "artist": "Tepki",
+        "album": "9",
+        "duration_ms": 196166,
+        "track_id": "2w7PIxakNkNbPIT3IhPiD9"
+    },
+    {
+        "name": "7. Gün",
+        "artist": "Tepki",
+        "album": "7. Gün",
+        "duration_ms": 236800,
+        "track_id": "1w8DcdIihF1gkU7x3TBavn"
+    },
+    {
+        "name": "Yorgunum Ben",
+        "artist": "Sokrat St",
+        "album": "Yorgunum Ben",
+        "duration_ms": 244074,
+        "track_id": "1bcjIzBo3xO9bq8PZQFHA6"
+    },
+    {
+        "name": "Bunu Sen Seçtin",
+        "artist": "Sokrat St",
+        "album": "Hayal",
+        "duration_ms": 273902,
+        "track_id": "0Cwa20eVcKKHJBtsdHhx7E"
+    },
+    {
+        "name": "Korkularıma Dair",
+        "artist": "Sokrat St",
+        "album": "Kahve Kağıt ve Kalem",
+        "duration_ms": 182088,
+        "track_id": "3gWMiIrFDH3Gjl2MSQiwEi"
+    },
+    {
+        "name": "Kasımpatı",
+        "artist": "Pit10",
+        "album": "Organize Oluyoruz, Vol. 2",
+        "duration_ms": 203917,
+        "track_id": "2EbxeHi1idR4DRPL3Qf36m"
+    },
+    {
+        "name": "Hezeyan",
+        "artist": "Sansar Salvo",
+        "album": "Z Planı Mixtape, Vol. 1",
+        "duration_ms": 322428,
+        "track_id": "4QCiABwM9bzGNGEXdVNAp7"
+    },
+    {
+        "name": "Varsın",
+        "artist": "Anıl Piyancı",
+        "album": "Varsın",
+        "duration_ms": 221779,
+        "track_id": "0jb37fxf5zgkbq0Qj3uZNZ"
+    },
+    {
+        "name": "Koptu Kayış",
+        "artist": "Sansar Salvo",
+        "album": "Koptu Kayış",
+        "duration_ms": 181536,
+        "track_id": "0EXfBkE3nbVvFXItrBTZBK"
+    },
+    {
+        "name": "Ne",
+        "artist": "Sansar Salvo",
+        "album": "Ne",
+        "duration_ms": 167053,
+        "track_id": "2UGtM5MB4yzrmGrqfvmTru"
+    },
+    {
+        "name": "Ağır Roman",
+        "artist": "Sansar Salvo",
+        "album": "Adrenalin",
+        "duration_ms": 198813,
+        "track_id": "4Q6TWuCGjt9qdZfXQyDOqd"
+    },
+    {
+        "name": "Gözlerimin İçinde",
+        "artist": "Sansar Salvo",
+        "album": "Gözlerimin İçinde",
+        "duration_ms": 215040,
+        "track_id": "37SjVdAHP3opxQvcGATEQi"
+    },
+    {
+        "name": "Gökyüzü",
+        "artist": "Fugo",
+        "album": "Sansar Salvo Noname Albüm",
+        "duration_ms": 142338,
+        "track_id": "4DdsTHn1F7oNjKprsAGV5S"
+    },
+    {
+        "name": "Sigara Yanınca",
+        "artist": "Sansar Salvo",
+        "album": "Sigara Yanınca",
+        "duration_ms": 186038,
+        "track_id": "222dKmEQpyzdd3tYFrgHrC"
+    },
+    {
+        "name": "Korkak Çocuk",
+        "artist": "Sansar Salvo",
+        "album": "Seremoni Efendisi",
+        "duration_ms": 153253,
+        "track_id": "5aQPJRw6glq9ZiWR25V03O"
+    },
+    {
+        "name": "Gerçek Sandım",
+        "artist": "Ezhel",
+        "album": "Gerçek Sandım",
+        "duration_ms": 204303,
+        "track_id": "1SbgCVsKA78Jd9S8YrdhES"
+    },
+    {
+        "name": "Margiela",
+        "artist": "Ezhel",
+        "album": "Margiela",
+        "duration_ms": 201611,
+        "track_id": "0Tzw3ueRxXUzdFUm1yMACX"
+    },
+    {
+        "name": "Kafanda Kur",
+        "artist": "Tutsak",
+        "album": "Milano",
+        "duration_ms": 266422,
+        "track_id": "0rRDDh5NBwDVrf3F5NVDjj"
+    },
+    {
+        "name": "Ihtan (feat. Şehinşah & Ezhel)",
+        "artist": "Artz",
+        "album": "Ihtan (feat. Şehinşah & Ezhel)",
+        "duration_ms": 217730,
+        "track_id": "3eIJdmONfki926A2ITon1E"
+    },
+    {
+        "name": "Plüton (feat. DJ Artz)",
+        "artist": "Şehinşah",
+        "album": "DEEV (Deluxe Edition)",
+        "duration_ms": 263239,
+        "track_id": "4O63KQiapr34KezOXfJlth"
+    },
+    {
+        "name": "4 Duvar",
+        "artist": "Grogi",
+        "album": "Kafamızı Yap",
+        "duration_ms": 186893,
+        "track_id": "6V2orhQWklHbEp7MHZDKCj"
+    },
+    {
+        "name": "Yaranamam",
+        "artist": "Grogi",
+        "album": "Bir Cevabım Var",
+        "duration_ms": 241443,
+        "track_id": "4B9MVOT9HOxjT6fvD9Ct4d"
+    },
+    {
+        "name": "Yalnızlık Son Ses",
+        "artist": "Grogi",
+        "album": "Yalnızlık Son Ses",
+        "duration_ms": 199849,
+        "track_id": "57pM5UdqtfUEqNcmNsvjmZ"
+    },
+    {
+        "name": "Yemin Ederim",
+        "artist": "Heja",
+        "album": "Yemin Ederim",
+        "duration_ms": 180722,
+        "track_id": "2XftvYDcftFHQkQqlWOOvr"
+    },
+    {
+        "name": "Artık",
+        "artist": "Şam",
+        "album": "P.O.P Mixtape pt.2",
+        "duration_ms": 189397,
+        "track_id": "4IRitV0vz4K7lCgwPilLPO"
+    },
+    {
+        "name": "Zamansız",
+        "artist": "Şam",
+        "album": "P.O.P Mixtape pt.2",
+        "duration_ms": 146804,
+        "track_id": "1j3Fkwmz0A7pTRu1XHfT2x"
+    },
+    {
+        "name": "Efsane",
+        "artist": "Şam",
+        "album": "P.O.P Mixtape pt.1",
+        "duration_ms": 143949,
+        "track_id": "6wdT1ioy3SlobYfXJRUG1y"
+    },
+    {
+        "name": "Kader Ve Oyunlar",
+        "artist": "Şam",
+        "album": "P.O.P Mixtape pt.1",
+        "duration_ms": 245845,
+        "track_id": "3d8cIl7ZZbMvjIIohFsV7q"
+    },
+    {
+        "name": "Paranoya",
+        "artist": "Şam",
+        "album": "P.O.P Mixtape pt.1",
+        "duration_ms": 202285,
+        "track_id": "5o5ROFYS86OenKWEHEY3CE"
+    },
+    {
+        "name": "Korkusuz",
+        "artist": "Istanbul Trip",
+        "album": "110",
+        "duration_ms": 241237,
+        "track_id": "29QJEp74ugIJocvAXqTGjk"
+    },
+    {
+        "name": "B.A.D.D",
+        "artist": "Şam",
+        "album": "SIRRUS",
+        "duration_ms": 203999,
+        "track_id": "0aM6odUiPvBlWLt1YJc1OL"
+    },
+    {
+        "name": "RÜZGAR",
+        "artist": "Şam",
+        "album": "RÜZGAR",
+        "duration_ms": 236978,
+        "track_id": "3akhZBvj8ZOOnhDIj24jvV"
+    },
+    {
+        "name": "Acıtır Gerçek",
+        "artist": "Alba",
+        "album": "Parçalar",
+        "duration_ms": 144480,
+        "track_id": "4zS5SKVKsC2pvuNLroWwJw"
+    },
+    {
+        "name": "DALAVERE",
+        "artist": "EVA",
+        "album": "DALAVERE",
+        "duration_ms": 132384,
+        "track_id": "6gWHuUiZLUfRK7XGaa399h"
+    },
+    {
+        "name": "İyi Ki Yoksun",
+        "artist": "Da Poet",
+        "album": "Kendini Bul",
+        "duration_ms": 199811,
+        "track_id": "15MDK0KVjxIjKKzXw9wm0J"
+    },
+    {
+        "name": "Hiç Sevmedim Seni",
+        "artist": "Hayki",
+        "album": "2005 - 2015 Compilation",
+        "duration_ms": 282723,
+        "track_id": "6Ydk01HgyFkkZ92UtwmdJu"
+    },
+    {
+        "name": "Sonbahar",
+        "artist": "Da Poet",
+        "album": "Sonbahar",
+        "duration_ms": 224000,
+        "track_id": "5XS0I9pJA1ei8gE2cuQixt"
+    },
+    {
+        "name": "Hayale Daldım",
+        "artist": "Kamufle",
+        "album": "Hayale Daldım",
+        "duration_ms": 250496,
+        "track_id": "3yoFKhjpEs3XuOU176cZJq"
+    },
+    {
+        "name": "Teneke Trampet",
+        "artist": "Ağaçkakan",
+        "album": "FERNWEH",
+        "duration_ms": 193620,
+        "track_id": "27qpZGSdwHiIpO6uryYrah"
+    },
+    {
+        "name": "Öteki - Depo - Live Sessions",
+        "artist": "Çağrı Sinci",
+        "album": "Çağrı Sinci & Yeraltı Sakinleri (Depo - Live Sessions)",
+        "duration_ms": 169769,
+        "track_id": "3KV3Uh4IpNwRJaJGGATVTc"
+    },
+    {
+        "name": "Tuhaf Hikaye",
+        "artist": "Çağrı Sinci",
+        "album": "Zaman Sinekleri",
+        "duration_ms": 176000,
+        "track_id": "6rSMXeNizDkCTFokMe96FS"
+    },
+    {
+        "name": "Fesupanallah",
+        "artist": "Çağrı Sinci",
+        "album": "Fesupanallah",
+        "duration_ms": 154588,
+        "track_id": "3T8nTKlw785zTqhQ0HCfyt"
+    },
+    {
+        "name": "Çamur",
+        "artist": "Çağrı Sinci",
+        "album": "Çamur",
+        "duration_ms": 221163,
+        "track_id": "0VztoWKHAVvBEHTAXn32D1"
+    },
+    {
+        "name": "Merhaba",
+        "artist": "Çağrı Sinci",
+        "album": "Karanlık",
+        "duration_ms": 177272,
+        "track_id": "3yxOR5tiZeUaLkYxyAyBoE"
+    },
+    {
+        "name": "Yanlışın Var",
+        "artist": "Çağrı Sinci",
+        "album": "Modern Zamanlar",
+        "duration_ms": 181115,
+        "track_id": "5jXYoMF3eKsat2xpjzc3fw"
+    },
+    {
+        "name": "Lobotomi",
+        "artist": "Çağrı Sinci",
+        "album": "Lobotomi",
+        "duration_ms": 164165,
+        "track_id": "1M7I8688W5ll3A3NFYFJIW"
+    },
+    {
+        "name": "Parıltı",
+        "artist": "Çağrı Sinci",
+        "album": "Parıltı",
+        "duration_ms": 152925,
+        "track_id": "46P5jvHTaSiLhLQ15t3V9B"
+    },
+    {
+        "name": "Devran",
+        "artist": "İmpala",
+        "album": "PERIPETEIA",
+        "duration_ms": 164000,
+        "track_id": "5jqKe2Q9UBC5CKo4sDOoeG"
+    },
+    {
+        "name": "Kaçamadım",
+        "artist": "Çağrı Sinci",
+        "album": "Modern Zamanlar",
+        "duration_ms": 158894,
+        "track_id": "3LySeEB89ILe0D39Xzn20N"
+    },
+    {
+        "name": "Göğe bakmak için",
+        "artist": "Saian",
+        "album": "Berhava",
+        "duration_ms": 190000,
+        "track_id": "5khUsMbZN67DTBj35YMNxp"
+    },
+    {
+        "name": "Daha Neler",
+        "artist": "Çağrı Sinci",
+        "album": "Kayıp Şarkılar",
+        "duration_ms": 193465,
+        "track_id": "4QoDhiNPfY9jqT7eX67lbw"
+    },
+    {
+        "name": "Bak İşine",
+        "artist": "Çağrı Sinci",
+        "album": "Kayıp Şarkılar",
+        "duration_ms": 245162,
+        "track_id": "2aXjdy8bbjVlq68KzIQgIg"
+    },
+    {
+        "name": "Yanlış Zaman Yanlış Yer",
+        "artist": "Çağrı Sinci",
+        "album": "Yeraltı Sakinleri",
+        "duration_ms": 216874,
+        "track_id": "5uBH9viC50RPKL6lr5bTSP"
+    },
+    {
+        "name": "Korkçak Bişey Yok",
+        "artist": "Çağrı Sinci",
+        "album": "Modern Zamanlar",
+        "duration_ms": 208178,
+        "track_id": "5RfodosXF2xsgnL6ziHTKz"
+    },
+    {
+        "name": "Yol",
+        "artist": "Gazapizm",
+        "album": "HİZA",
+        "duration_ms": 255914,
+        "track_id": "264Jd7JzmNOb4mYeGIQrrZ"
+    },
+    {
+        "name": "Oyunun Kuralı",
+        "artist": "Allame",
+        "album": "Anakronik",
+        "duration_ms": 161610,
+        "track_id": "3P9gDWh7yPBU3F9IVhFEDG"
+    },
+    {
+        "name": "Fil İnadı",
+        "artist": "Allame",
+        "album": "Fil İnadı",
+        "duration_ms": 148000,
+        "track_id": "66PR48Jr5kMUlFQblYK3r9"
+    },
+    {
+        "name": "Büyüdüm",
+        "artist": "Şiir!",
+        "album": "Büyüdüm",
+        "duration_ms": 163650,
+        "track_id": "6atCvarKS8XISxyxrt2OPc"
+    },
+    {
+        "name": "Dijital Yalnızlık ve Mavi Saçların",
+        "artist": "Şiir!",
+        "album": "Yalnız İkilemler",
+        "duration_ms": 145632,
+        "track_id": "2KPjw3spdxXVuYrtIzg10e"
+    },
+    {
+        "name": "Unutmak İstedim",
+        "artist": "Şiir!",
+        "album": "Yağmurlu Şarkılar",
+        "duration_ms": 113767,
+        "track_id": "4HMBIz45atgOaVY4vdhYVd"
+    },
+    {
+        "name": "Naptın Olm ?",
+        "artist": "Kozmos",
+        "album": "Naptın Olm ?",
+        "duration_ms": 176052,
+        "track_id": "152p0bR3nmngPtJurMbgTq"
+    },
+    {
+        "name": "Keşke Benim Olsan",
+        "artist": "Kozmos",
+        "album": "Keşke Benim Olsan",
+        "duration_ms": 154000,
+        "track_id": "71JJwk000lqBMKSQ6pHzMP"
+    },
+    {
+        "name": "GEÇMİŞİ SİL",
+        "artist": "Kozmos",
+        "album": "K.I.N.G",
+        "duration_ms": 188312,
+        "track_id": "6pVJE3r0YISuES96sHcebK"
+    },
+    {
+        "name": "KISIL KAPANA",
+        "artist": "Kozmos",
+        "album": "K.I.N.G",
+        "duration_ms": 128500,
+        "track_id": "4fy3jzPUS8I5JTm02zK6jm"
+    },
+    {
+        "name": "Yarım Kalan Sigara",
+        "artist": "No.1",
+        "album": "Kron1k",
+        "duration_ms": 183612,
+        "track_id": "0HbKbkAMK7Wnps5vpZW4j2"
+    },
+    {
+        "name": "Sagopa Yaşlı Planet",
+        "artist": "Sagopa Kajmer",
+        "album": "Romantizma",
+        "duration_ms": 196803,
+        "track_id": "5vLGqpRIfC2LUhcI7S0FPQ"
+    },
+    {
+        "name": "Bir İmam ve Bir Fahişe",
+        "artist": "Siirbaz",
+        "album": "Kulaklık Müziği",
+        "duration_ms": 192692,
+        "track_id": "0DJvGpHyIhZnvpRGfZqMCf"
+    },
+    {
+        "name": "Anlatmak İstemedim",
+        "artist": "ceas",
+        "album": "Anlatmak İstemedim",
+        "duration_ms": 210999,
+        "track_id": "4j4QMCjtgLtG2y2zpAurPr"
+    },
+    {
+        "name": "İstemem",
+        "artist": "Ahiyan",
+        "album": "SAKLAYANLARDANIM",
+        "duration_ms": 198181,
+        "track_id": "3lic57ZmqP8F7yrtPCk02G"
+    },
+    {
+        "name": "L.O",
+        "artist": "Anıl Piyancı",
+        "album": "L.O",
+        "duration_ms": 185600,
+        "track_id": "7prEgBLcWxMXSfwPs4IJwR"
+    },
+    {
+        "name": "YENİ KASET",
+        "artist": "Ben Fero",
+        "album": "YABANİ",
+        "duration_ms": 122307,
+        "track_id": "4RFi5wM5m1J3pfqx5OnU3T"
+    },
+    {
+        "name": "24",
+        "artist": "Sagopa Kajmer",
+        "album": "Bir Pesimistin Gözyaşları",
+        "duration_ms": 292586,
+        "track_id": "1VNHyFYkNXY1mhOqrpEvYT"
+    },
+    {
+        "name": "Peygamber Sabrı",
+        "artist": "Lil Zey",
+        "album": "Kara Tiyatro",
+        "duration_ms": 191624,
+        "track_id": "3GFRJgMAPKeYJ717UeB0zp"
+    },
+    {
+        "name": "Yolu Yok",
+        "artist": "Ati242",
+        "album": "Yolu Yok",
+        "duration_ms": 204512,
+        "track_id": "5hxfGCnFX0ruGMVsPKZ9eU"
+    },
+    {
+        "name": "Kara Maskeli İstanbul",
+        "artist": "Dr. Fuchs",
+        "album": "Huzur N Darem",
+        "duration_ms": 221933,
+        "track_id": "5S00kW4QrHi4zUSrYmpgSs"
+    },
+    {
+        "name": "Hissizleşmiş",
+        "artist": "Kamufle",
+        "album": "Denge",
+        "duration_ms": 227719,
+        "track_id": "1FvYoB3T19Ce1ruRFMFrEl"
+    },
+    {
+        "name": "Bu Kaçıncı İsyan",
+        "artist": "Kayra",
+        "album": "Ömrümün Son Güzel Günleri",
+        "duration_ms": 207000,
+        "track_id": "5v8KMYJJWg1Fm17QrZpZFX"
+    },
+    {
+        "name": "Müneccim",
+        "artist": "İkra",
+        "album": "Herkes Kadar Kimse",
+        "duration_ms": 198048,
+        "track_id": "3FeF2ztiZjlE37EMKi4QZH"
+    },
+    {
+        "name": "Hüznü Hecem",
+        "artist": "Yener Çevik",
+        "album": "Sokak Dili ve Edebiyatı",
+        "duration_ms": 158257,
+        "track_id": "6pZ31N4gd3Yk9277ptUHjb"
+    },
+    {
+        "name": "Eskimiş Senelere",
+        "artist": "Aspova",
+        "album": "Hell",
+        "duration_ms": 195789,
+        "track_id": "2yjtOzf6oHNmLPUDIwq5PQ"
+    },
+    {
+        "name": "Neden Olmasın?",
+        "artist": "Skapova",
+        "album": "Neden Olmasın?",
+        "duration_ms": 234000,
+        "track_id": "7bQs0QDP7Su8mI35XPBUVW"
+    },
+    {
+        "name": "Fırtına",
+        "artist": "Farazi",
+        "album": "Ölmek İçin Doğanlar",
+        "duration_ms": 240284,
+        "track_id": "6b7h1VxpnIjKoY0LQZexgn"
+    }
+]

@@ -1,0 +1,674 @@
+[
+    {
+        "name": "Pazartesi",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Defansif Dizayn",
+        "duration_ms": 176291,
+        "track_id": "1gcIWBa8P3xPBcpFGn8rrx"
+    },
+    {
+        "name": "Şirâze",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Defansif Dizayn",
+        "duration_ms": 326000,
+        "track_id": "3M1NpZbvOCLqNTgtjEN6DJ"
+    },
+    {
+        "name": "Beklediğim Gibiyim",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Defansif Dizayn",
+        "duration_ms": 236631,
+        "track_id": "4U0mwukUqiKG9ucB4f2Ex8"
+    },
+    {
+        "name": "Oh Be!",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Defansif Dizayn",
+        "duration_ms": 240727,
+        "track_id": "1h86lUTu030nhtqKISoSPS"
+    },
+    {
+        "name": "Kopuk Uçurtma",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Defansif Dizayn",
+        "duration_ms": 235892,
+        "track_id": "6ATOBWupiEKWVqNXUMTHqo"
+    },
+    {
+        "name": "Karargâh",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Defansif Dizayn",
+        "duration_ms": 307161,
+        "track_id": "6ht6rphUHp2popV5uKDHDg"
+    },
+    {
+        "name": "FeeL",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Defansif Dizayn",
+        "duration_ms": 262117,
+        "track_id": "3SVDKRBlEGL36F19rIFUEt"
+    },
+    {
+        "name": "@defne.kalbim96",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Defansif Dizayn",
+        "duration_ms": 250254,
+        "track_id": "6ksKcxmzawIYwdi6CfjUgz"
+    },
+    {
+        "name": "Yangın Akvaryum",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Defansif Dizayn",
+        "duration_ms": 506545,
+        "track_id": "6zUFizCfVTnxktHqUNOJCo"
+    },
+    {
+        "name": "Güneş Yerinde (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 814690,
+        "track_id": "50OugA9oOGfqwfTBRlrshs"
+    },
+    {
+        "name": "Çamur (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 231749,
+        "track_id": "5kBqOuf22NcIgxwbSAeyHR"
+    },
+    {
+        "name": "Hayaletler (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 532904,
+        "track_id": "3ZrL3CMYVJXUomrjTxUNzk"
+    },
+    {
+        "name": "Ne var ne yok (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 508483,
+        "track_id": "5IkQxGySQo3H0Yjdiz4xeu"
+    },
+    {
+        "name": "Olanla Olunmaz (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 188564,
+        "track_id": "2lUQPkwNGVypCTwtEODk14"
+    },
+    {
+        "name": "Evren Bozması (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 348686,
+        "track_id": "7nKyfr7zvRuv3QmJ1sVHlZ"
+    },
+    {
+        "name": "İhtimallerin Heyecanına Üzülüyorum (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 236727,
+        "track_id": "2QIUNilfYM4G8REpEV04s0"
+    },
+    {
+        "name": "Boşluk (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 185394,
+        "track_id": "588ZVSmWtGnClLgUaDJ4MZ"
+    },
+    {
+        "name": "Arayan Bulur (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 630484,
+        "track_id": "4HWtkSePvgSyM0a2eD6eb8"
+    },
+    {
+        "name": "Hoşçakal Kadar (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 774535,
+        "track_id": "44DJGhgqSBADMQgmxMVN11"
+    },
+    {
+        "name": "En Güzel Yerinde Evin (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 310901,
+        "track_id": "2UFaRuYXjAdhN92FKgVzHE"
+    },
+    {
+        "name": "Dinozorlar (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 178487,
+        "track_id": "5nK3KWygO5XWzpHvDvYtea"
+    },
+    {
+        "name": "Çıldırmicam (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 153856,
+        "track_id": "6z7cT7HAqavxYsfA3ROYPF"
+    },
+    {
+        "name": "Ne deve ne Kush (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 180800,
+        "track_id": "6Qg1z00S0cTm8dOqcTongw"
+    },
+    {
+        "name": "Benim Kafam Siktirmiş Gitmiş (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 166853,
+        "track_id": "6N7UA62pE1kB65U74ldy7F"
+    },
+    {
+        "name": "Hepsine Ne Fena (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 425929,
+        "track_id": "05aBIAMeVCEdvjQUNxyV4z"
+    },
+    {
+        "name": "ah güzel kafam",
+        "artist": "Korhan Futacı",
+        "album": "ah güzel kafam",
+        "duration_ms": 223060,
+        "track_id": "2QNgeWnRumgkwpRNTo6j4w"
+    },
+    {
+        "name": "HOŞÇAKAL KADAR (Canlı Şekli)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "HOŞÇAKAL KADAR (Canlı Şekli)",
+        "duration_ms": 835090,
+        "track_id": "090nLEZDgrQbSWWO2fcEw5"
+    },
+    {
+        "name": "ne deve ne kush",
+        "artist": "Büyük Ev Ablukada",
+        "album": "ne deve ne kush",
+        "duration_ms": 159180,
+        "track_id": "3O4ZBGHzCAOeH9wavrhK23"
+    },
+    {
+        "name": "GÜNEŞ YERİNDE",
+        "artist": "Büyük Ev Ablukada",
+        "album": "FIRTINAYT",
+        "duration_ms": 571894,
+        "track_id": "4DcJxTf3hXEaJIN06xKFb8"
+    },
+    {
+        "name": "EVREN BOZMASI",
+        "artist": "Büyük Ev Ablukada",
+        "album": "FIRTINAYT",
+        "duration_ms": 288566,
+        "track_id": "0mDDfA4yNuyw32ETB38jBj"
+    },
+    {
+        "name": "BOŞLUK",
+        "artist": "Büyük Ev Ablukada",
+        "album": "FIRTINAYT",
+        "duration_ms": 180147,
+        "track_id": "7nnW9qKcLQi98ghW42lsAX"
+    },
+    {
+        "name": "ARAYAN BULUR",
+        "artist": "Büyük Ev Ablukada",
+        "album": "FIRTINAYT",
+        "duration_ms": 351260,
+        "track_id": "5gGvmMgnq66xLSEoDx9iJQ"
+    },
+    {
+        "name": "HOŞÇAKAL KADAR",
+        "artist": "Büyük Ev Ablukada",
+        "album": "FIRTINAYT",
+        "duration_ms": 386679,
+        "track_id": "2pD1BR7vPz8GiygzRKmg5n"
+    },
+    {
+        "name": "HAYALETLER",
+        "artist": "Büyük Ev Ablukada",
+        "album": "FIRTINAYT",
+        "duration_ms": 429294,
+        "track_id": "72b3Ws3byP6yidFilsOoyz"
+    },
+    {
+        "name": "HEPSİNE NE FENA",
+        "artist": "Büyük Ev Ablukada",
+        "album": "FIRTINAYT",
+        "duration_ms": 312229,
+        "track_id": "72UMOAfc73lO9ci7Fzl66X"
+    },
+    {
+        "name": "BENİM KAFAM SİKTİRMİŞ GİTMİŞ",
+        "artist": "Büyük Ev Ablukada",
+        "album": "FIRTINAYT",
+        "duration_ms": 117460,
+        "track_id": "5i9YJPhJo1RrWHKjkbkgmk"
+    },
+    {
+        "name": "İHTİMALLERİN HEYECANINA ÜZÜLÜYORUM",
+        "artist": "Büyük Ev Ablukada",
+        "album": "FIRTINAYT",
+        "duration_ms": 205434,
+        "track_id": "1XhFmIIYWjHuovs2F4IpWj"
+    },
+    {
+        "name": "Ben Oradaydım Zaten",
+        "artist": "Can Güngör",
+        "album": "Ben Oradaydım Zaten / Silik Düşler",
+        "duration_ms": 284862,
+        "track_id": "0JltHMBPb1xbKcVTzGIrH2"
+    },
+    {
+        "name": "Silik Düşler",
+        "artist": "Can Güngör",
+        "album": "Ben Oradaydım Zaten / Silik Düşler",
+        "duration_ms": 255059,
+        "track_id": "3Pd0ea7hJWyELz633EKtsy"
+    },
+    {
+        "name": "Ben Oradaydım Zaten",
+        "artist": "Can Güngör",
+        "album": "Silik Düşler",
+        "duration_ms": 285884,
+        "track_id": "480BiJJFsvNsr3sjitoy79"
+    },
+    {
+        "name": "Silik Düşler",
+        "artist": "Can Güngör",
+        "album": "Silik Düşler",
+        "duration_ms": 254717,
+        "track_id": "4p1CS4Fi2XlC332YXZGpk3"
+    },
+    {
+        "name": "Sadece",
+        "artist": "Can Güngör",
+        "album": "Silik Düşler",
+        "duration_ms": 226806,
+        "track_id": "7fA70hoAUFZVKYujYMlwr5"
+    },
+    {
+        "name": "Güneş Orhan",
+        "artist": "Can Güngör",
+        "album": "Silik Düşler",
+        "duration_ms": 280311,
+        "track_id": "57ruNplcidUfqoL3412i85"
+    },
+    {
+        "name": "Hiçbir Sebep Yok",
+        "artist": "Can Güngör",
+        "album": "Silik Düşler",
+        "duration_ms": 185840,
+        "track_id": "5cDx9SWdbFfBJYUwg8wIYt"
+    },
+    {
+        "name": "Geriye Dönme",
+        "artist": "Can Güngör",
+        "album": "Silik Düşler",
+        "duration_ms": 258530,
+        "track_id": "1OaG8G7qlGraHIcxnL9Rpp"
+    },
+    {
+        "name": "Bekliyorum Seni",
+        "artist": "Can Güngör",
+        "album": "Silik Düşler",
+        "duration_ms": 298167,
+        "track_id": "5mqWAZulKkcXkVk48VTBoG"
+    },
+    {
+        "name": "9.00",
+        "artist": "Can Güngör",
+        "album": "Silik Düşler",
+        "duration_ms": 274790,
+        "track_id": "4m3Dkqrn2073kSdER2XEoD"
+    },
+    {
+        "name": "Belki de Sensin",
+        "artist": "Can Güngör",
+        "album": "Silik Düşler",
+        "duration_ms": 198727,
+        "track_id": "5KfOumniS1OtdZwJggwHWa"
+    },
+    {
+        "name": "Uçurumlardan",
+        "artist": "Can Güngör",
+        "album": "Silik Düşler",
+        "duration_ms": 306782,
+        "track_id": "5VEqdC0J9tgvgLnt8JcQP8"
+    },
+    {
+        "name": "Değişmem",
+        "artist": "Can Güngör",
+        "album": "Silik Düşler",
+        "duration_ms": 180326,
+        "track_id": "1NPybSndHo8ElqOoWTbu5j"
+    },
+    {
+        "name": "Majör",
+        "artist": "Can Güngör",
+        "album": "Silik Düşler",
+        "duration_ms": 279173,
+        "track_id": "0rfJuzUo4KRttLCTPgMVX7"
+    },
+    {
+        "name": "İkimizin Oralar - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 214639,
+        "track_id": "15KwRCX1WCRglvXe01oOxp"
+    },
+    {
+        "name": "Ne var Ne yok - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 343647,
+        "track_id": "0n3LVcavogfRZrZVGfx8Rs"
+    },
+    {
+        "name": "Evren Bozması - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 277210,
+        "track_id": "3SpWYt15hbgTyNKav1lZni"
+    },
+    {
+        "name": "Bi Hıçkırık Gibi - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 227214,
+        "track_id": "7IhnqSIq2GiXLI0Ao4aW08"
+    },
+    {
+        "name": "Havadar - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 237674,
+        "track_id": "7eWaQsxQWJiBW1Z8Vw8FkE"
+    },
+    {
+        "name": "En Çirkini Güzellerin - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 178133,
+        "track_id": "1lq4r9Lk0QY8f3xMZ1AJD3"
+    },
+    {
+        "name": "En Güzel Yerinde Evin - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 247447,
+        "track_id": "3aWCSYuaOg38LcmTOUvZlo"
+    },
+    {
+        "name": "Çamur - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 338646,
+        "track_id": "3h6MBagEJ2B8dOdOuvGX4Z"
+    },
+    {
+        "name": "75 Lira - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 184064,
+        "track_id": "5aWXPUmLS7fPLNU0JGHI6w"
+    },
+    {
+        "name": "Lilililerle - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 323239,
+        "track_id": "4hvyFjbdlzXaatX4wSr8Ln"
+    },
+    {
+        "name": "Olanla Olunmaz - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 229141,
+        "track_id": "1J1i1pigQvqBHSkIe2162j"
+    },
+    {
+        "name": "Çıldırmicam - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 116726,
+        "track_id": "6AXpilBcaSGeVVPpWVjJEr"
+    },
+    {
+        "name": "Bil - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 219825,
+        "track_id": "7dSAXnR97LkLhrj8xlIPRs"
+    },
+    {
+        "name": "Nasıl istediysen öyle işte - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 322781,
+        "track_id": "6pOWS0XVw1EeFsAGyDIMkB"
+    },
+    {
+        "name": "Takıl yani Takmıyo belli - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 146381,
+        "track_id": "79x1vClTQyFTDr2PwX3bru"
+    },
+    {
+        "name": "Cam Parçası - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 228836,
+        "track_id": "3AgC3ptwaWNcDeovhEJfxo"
+    },
+    {
+        "name": "Tayyar Ahmet'in Sonsuz Sayılı Günleri - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 410848,
+        "track_id": "64Qh0dnrx3e2VzDUKjbCSg"
+    },
+    {
+        "name": "Arayan Bulur - Tekli Şekli",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Arayan Bulur",
+        "duration_ms": 474319,
+        "track_id": "4AWJHpJzo0pelT7cVCbWMA"
+    },
+    {
+        "name": "Hayaletler - Tekli Şekli",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Hayaletler",
+        "duration_ms": 410597,
+        "track_id": "6HQuzGNsnsIWDvvTXahFZ4"
+    },
+    {
+        "name": "Havadar",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Full Faça",
+        "duration_ms": 256000,
+        "track_id": "4n9Rsg9VDEY04tjoWaCPth"
+    },
+    {
+        "name": "Nasıl İstediysen Öyle İşte",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Full Faça",
+        "duration_ms": 233293,
+        "track_id": "1WgZLXUHIH2RgwrMtn7Bmb"
+    },
+    {
+        "name": "Takıl Yani Takmıyo Belli",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Full Faça",
+        "duration_ms": 106813,
+        "track_id": "4pQWinj0mYdTHzg92RYdmL"
+    },
+    {
+        "name": "Çıldırmicam",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Full Faça",
+        "duration_ms": 116800,
+        "track_id": "3qiM4ZBtOrqyPu196ZTlIX"
+    },
+    {
+        "name": "Olanla Olunmaz",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Full Faça",
+        "duration_ms": 223880,
+        "track_id": "6FUNAJ4d32MI4f494FZ3mZ"
+    },
+    {
+        "name": "İkimizin Oralar",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Full Faça",
+        "duration_ms": 236253,
+        "track_id": "3NX518Ss0K09Sx7MmQzpII"
+    },
+    {
+        "name": "Ne Var Ne Yok",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Full Faça",
+        "duration_ms": 304120,
+        "track_id": "5sJPbINI7Hk4SrvDzEUexc"
+    },
+    {
+        "name": "Bi Hıçkırık Gibi",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Full Faça",
+        "duration_ms": 178120,
+        "track_id": "35Opvq3NPmxPjfjNPdg4cD"
+    },
+    {
+        "name": "En Güzel Yerinde Evin",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Full Faça",
+        "duration_ms": 241013,
+        "track_id": "53YCEHCI1hV6cp4Qn0OlaZ"
+    },
+    {
+        "name": "Bil",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Full Faça",
+        "duration_ms": 231186,
+        "track_id": "19d5l4oqCYNtu8Yzbflqph"
+    },
+    {
+        "name": "Tayyar Ahmet'in Sonsuz Sayılı Günleri",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Full Faça",
+        "duration_ms": 377280,
+        "track_id": "6dnLlf9gVrE8RVYoPGDrSX"
+    },
+    {
+        "name": "Abbas",
+        "artist": "Gaye Su Akyol",
+        "album": "Develerle Yaşıyorum",
+        "duration_ms": 285480,
+        "track_id": "7rj3An16vKqwEevpBqFjXr"
+    },
+    {
+        "name": "Develerle Yaşıyorum",
+        "artist": "Gaye Su Akyol",
+        "album": "Develerle Yaşıyorum",
+        "duration_ms": 289386,
+        "track_id": "3QckuEoTCTQ6oK2BclLIln"
+    },
+    {
+        "name": "Biliyorum",
+        "artist": "Gaye Su Akyol",
+        "album": "Develerle Yaşıyorum",
+        "duration_ms": 259480,
+        "track_id": "6d0W87XWXgPpBmYKpvah2g"
+    },
+    {
+        "name": "Yıllar Yılan",
+        "artist": "Gaye Su Akyol",
+        "album": "Develerle Yaşıyorum",
+        "duration_ms": 255720,
+        "track_id": "4E3sRBOjCjxsotCLduEJcN"
+    },
+    {
+        "name": "Zaman Asla Affetmez",
+        "artist": "Gaye Su Akyol",
+        "album": "Develerle Yaşıyorum",
+        "duration_ms": 159160,
+        "track_id": "091yJPDYlswxyHYaLdQrAh"
+    },
+    {
+        "name": "Çok Mutlusun",
+        "artist": "Gaye Su Akyol",
+        "album": "Develerle Yaşıyorum",
+        "duration_ms": 184120,
+        "track_id": "0qkLkWkSXXgYEj64phjPYi"
+    },
+    {
+        "name": "Ölü Bir Adama",
+        "artist": "Gaye Su Akyol",
+        "album": "Develerle Yaşıyorum",
+        "duration_ms": 138186,
+        "track_id": "5TVAFtfl7tySULZup3GIV6"
+    },
+    {
+        "name": "Cehennem Meyhanesi",
+        "artist": "Gaye Su Akyol",
+        "album": "Develerle Yaşıyorum",
+        "duration_ms": 290813,
+        "track_id": "3jmLvipR1S4KkRRhLKKHAz"
+    },
+    {
+        "name": "Ruhun Ölmüş Senin",
+        "artist": "Gaye Su Akyol",
+        "album": "Develerle Yaşıyorum",
+        "duration_ms": 222600,
+        "track_id": "4cHco1ZzTXBwIB7KKD9rWK"
+    },
+    {
+        "name": "Boşluk / Aslan Şekli",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Efsanelere Dadanmak",
+        "duration_ms": 176727,
+        "track_id": "4xRLAoLEohg1wVOxEDzlz7"
+    },
+    {
+        "name": "Ne var ne yok / Kuytu Köşe Şekli",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Efsanelere Dadanmak",
+        "duration_ms": 275478,
+        "track_id": "4W2gM2y159wfK0tzOeckPD"
+    },
+    {
+        "name": "Bi hıçkırık gibi / Meteor Firari Şekli",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Efsanelere Dadanmak",
+        "duration_ms": 186000,
+        "track_id": "4MpoAMvjAPQd2a4DZEU3hi"
+    },
+    {
+        "name": "Hoşçakal kadar / Afordisman Salihins Şekli",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Efsanelere Dadanmak",
+        "duration_ms": 169000,
+        "track_id": "3nxeAzKYp7OouoUbRFfX8Y"
+    },
+    {
+        "name": "Yangın Akvaryum - Tekli Şekli",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Yangın Akvaryum - Tekli Şekli",
+        "duration_ms": 441513,
+        "track_id": "4JzjmZe4VjbpKLjoAkMuKH"
+    },
+    {
+        "name": "Vesaire",
+        "artist": "Balıklar",
+        "album": "Vesaire",
+        "duration_ms": 179638,
+        "track_id": "3WeHBXVELHJ5bKHeT0yEoj"
+    }
+]
