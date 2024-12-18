@@ -4,594 +4,849 @@
         "artist": "Tepki",
         "album": "Şehir Efsanesi",
         "duration_ms": 193916,
-        "track_id": "4ezPHegUne6wJrXlkoth23"
+        "track_id": "4ezPHegUne6wJrXlkoth23",
+        "tempo": 65.67266569208809,
+        "energy": 0.9529238874725662,
+        "danceability": 0.07968965538181827
     },
     {
         "name": "Denedim",
         "artist": "Tepki",
         "album": "Output Nr.1",
         "duration_ms": 169400,
-        "track_id": "50yavBoDEOtZ9VFgvEUoiZ"
+        "track_id": "50yavBoDEOtZ9VFgvEUoiZ",
+        "tempo": 100.33193597909177,
+        "energy": 0.08805516941501734,
+        "danceability": 0.6703100662323019
     },
     {
         "name": "Lambalar Ve Kelebek",
         "artist": "Tepki",
         "album": "Şehir Efsanesi",
         "duration_ms": 179483,
-        "track_id": "2kTwN4aDpAmCLVbVWAdb6j"
+        "track_id": "2kTwN4aDpAmCLVbVWAdb6j",
+        "tempo": 131.57561351762024,
+        "energy": 0.9710943639591938,
+        "danceability": 0.4135781161812928
     },
     {
         "name": "Rüyalar",
         "artist": "Tepki",
         "album": "9",
         "duration_ms": 196166,
-        "track_id": "2w7PIxakNkNbPIT3IhPiD9"
+        "track_id": "2w7PIxakNkNbPIT3IhPiD9",
+        "tempo": 113.37975696400562,
+        "energy": 0.08703111066351799,
+        "danceability": 0.5256015750767079
     },
     {
         "name": "7. Gün",
         "artist": "Tepki",
         "album": "7. Gün",
         "duration_ms": 236800,
-        "track_id": "1w8DcdIihF1gkU7x3TBavn"
+        "track_id": "1w8DcdIihF1gkU7x3TBavn",
+        "tempo": 119.39147233274349,
+        "energy": 0.11368820138196889,
+        "danceability": 0.11547467276748768
     },
     {
         "name": "Yorgunum Ben",
         "artist": "Sokrat St",
         "album": "Yorgunum Ben",
         "duration_ms": 244074,
-        "track_id": "1bcjIzBo3xO9bq8PZQFHA6"
+        "track_id": "1bcjIzBo3xO9bq8PZQFHA6",
+        "tempo": 150.92101322070812,
+        "energy": 0.9853289596478848,
+        "danceability": 0.5884372122144996
     },
     {
         "name": "Bunu Sen Seçtin",
         "artist": "Sokrat St",
         "album": "Hayal",
         "duration_ms": 273902,
-        "track_id": "0Cwa20eVcKKHJBtsdHhx7E"
+        "track_id": "0Cwa20eVcKKHJBtsdHhx7E",
+        "tempo": 90.80373511068323,
+        "energy": 0.17283254129914383,
+        "danceability": 0.05079997304019157
     },
     {
         "name": "Korkularıma Dair",
         "artist": "Sokrat St",
         "album": "Kahve Kağıt ve Kalem",
         "duration_ms": 182088,
-        "track_id": "3gWMiIrFDH3Gjl2MSQiwEi"
+        "track_id": "3gWMiIrFDH3Gjl2MSQiwEi",
+        "tempo": 161.9164529572823,
+        "energy": 0.6449891211253956,
+        "danceability": 0.9578013709492907
     },
     {
         "name": "Kasımpatı",
         "artist": "Pit10",
         "album": "Organize Oluyoruz, Vol. 2",
         "duration_ms": 203917,
-        "track_id": "2EbxeHi1idR4DRPL3Qf36m"
+        "track_id": "2EbxeHi1idR4DRPL3Qf36m",
+        "tempo": 177.73544142884427,
+        "energy": 0.510207180809594,
+        "danceability": 0.9622259121408421
     },
     {
         "name": "Hezeyan",
         "artist": "Sansar Salvo",
         "album": "Z Planı Mixtape, Vol. 1",
         "duration_ms": 322428,
-        "track_id": "4QCiABwM9bzGNGEXdVNAp7"
+        "track_id": "4QCiABwM9bzGNGEXdVNAp7",
+        "tempo": 147.62805716912442,
+        "energy": 0.14373145355638306,
+        "danceability": 0.6014239131778151
     },
     {
         "name": "Varsın",
         "artist": "Anıl Piyancı",
         "album": "Varsın",
         "duration_ms": 221779,
-        "track_id": "0jb37fxf5zgkbq0Qj3uZNZ"
+        "track_id": "0jb37fxf5zgkbq0Qj3uZNZ",
+        "tempo": 88.87741012372983,
+        "energy": 0.4607363662348739,
+        "danceability": 0.407732668246263
     },
     {
         "name": "Koptu Kayış",
         "artist": "Sansar Salvo",
         "album": "Koptu Kayış",
         "duration_ms": 181536,
-        "track_id": "0EXfBkE3nbVvFXItrBTZBK"
+        "track_id": "0EXfBkE3nbVvFXItrBTZBK",
+        "tempo": 163.77636415117456,
+        "energy": 0.2768959775525851,
+        "danceability": 0.22727718274487763
     },
     {
         "name": "Ne",
         "artist": "Sansar Salvo",
         "album": "Ne",
         "duration_ms": 167053,
-        "track_id": "2UGtM5MB4yzrmGrqfvmTru"
+        "track_id": "2UGtM5MB4yzrmGrqfvmTru",
+        "tempo": 160.98664479545047,
+        "energy": 0.941331957682379,
+        "danceability": 0.0908393614501638
     },
     {
         "name": "Ağır Roman",
         "artist": "Sansar Salvo",
         "album": "Adrenalin",
         "duration_ms": 198813,
-        "track_id": "4Q6TWuCGjt9qdZfXQyDOqd"
+        "track_id": "4Q6TWuCGjt9qdZfXQyDOqd",
+        "tempo": 146.98645927261327,
+        "energy": 0.9043220257283291,
+        "danceability": 0.31052811528809465
     },
     {
         "name": "Gözlerimin İçinde",
         "artist": "Sansar Salvo",
         "album": "Gözlerimin İçinde",
         "duration_ms": 215040,
-        "track_id": "37SjVdAHP3opxQvcGATEQi"
+        "track_id": "37SjVdAHP3opxQvcGATEQi",
+        "tempo": 68.57454662259721,
+        "energy": 0.03106834052423657,
+        "danceability": 0.5685075596866308
     },
     {
         "name": "Gökyüzü",
         "artist": "Fugo",
         "album": "Sansar Salvo Noname Albüm",
         "duration_ms": 142338,
-        "track_id": "4DdsTHn1F7oNjKprsAGV5S"
+        "track_id": "4DdsTHn1F7oNjKprsAGV5S",
+        "tempo": 109.69412005202894,
+        "energy": 0.23207768137430407,
+        "danceability": 0.06395927764543097
     },
     {
         "name": "Sigara Yanınca",
         "artist": "Sansar Salvo",
         "album": "Sigara Yanınca",
         "duration_ms": 186038,
-        "track_id": "222dKmEQpyzdd3tYFrgHrC"
+        "track_id": "222dKmEQpyzdd3tYFrgHrC",
+        "tempo": 93.42054176194148,
+        "energy": 0.11059512934045657,
+        "danceability": 0.13833929764552044
     },
     {
         "name": "Korkak Çocuk",
         "artist": "Sansar Salvo",
         "album": "Seremoni Efendisi",
         "duration_ms": 153253,
-        "track_id": "5aQPJRw6glq9ZiWR25V03O"
+        "track_id": "5aQPJRw6glq9ZiWR25V03O",
+        "tempo": 135.60345758105356,
+        "energy": 0.5386743684215736,
+        "danceability": 0.9274232068513381
     },
     {
         "name": "Gerçek Sandım",
         "artist": "Ezhel",
         "album": "Gerçek Sandım",
         "duration_ms": 204303,
-        "track_id": "1SbgCVsKA78Jd9S8YrdhES"
+        "track_id": "1SbgCVsKA78Jd9S8YrdhES",
+        "tempo": 144.52828685808413,
+        "energy": 0.5445979377903722,
+        "danceability": 0.5398538019860311
     },
     {
         "name": "Margiela",
         "artist": "Ezhel",
         "album": "Margiela",
         "duration_ms": 201611,
-        "track_id": "0Tzw3ueRxXUzdFUm1yMACX"
+        "track_id": "0Tzw3ueRxXUzdFUm1yMACX",
+        "tempo": 137.0985463360527,
+        "energy": 0.006283926688757879,
+        "danceability": 0.8875908567476752
     },
     {
         "name": "Kafanda Kur",
         "artist": "Tutsak",
         "album": "Milano",
         "duration_ms": 266422,
-        "track_id": "0rRDDh5NBwDVrf3F5NVDjj"
+        "track_id": "0rRDDh5NBwDVrf3F5NVDjj",
+        "tempo": 174.21831468165465,
+        "energy": 0.5199136034538623,
+        "danceability": 0.5187825381601222
     },
     {
         "name": "Ihtan (feat. Şehinşah & Ezhel)",
         "artist": "Artz",
         "album": "Ihtan (feat. Şehinşah & Ezhel)",
         "duration_ms": 217730,
-        "track_id": "3eIJdmONfki926A2ITon1E"
+        "track_id": "3eIJdmONfki926A2ITon1E",
+        "tempo": 62.48615500843439,
+        "energy": 0.8530896595239595,
+        "danceability": 0.7948198918592722
     },
     {
         "name": "Plüton (feat. DJ Artz)",
         "artist": "Şehinşah",
         "album": "DEEV (Deluxe Edition)",
         "duration_ms": 263239,
-        "track_id": "4O63KQiapr34KezOXfJlth"
+        "track_id": "4O63KQiapr34KezOXfJlth",
+        "tempo": 117.24872605537041,
+        "energy": 0.6550114632636185,
+        "danceability": 0.28468657527721364
     },
     {
         "name": "4 Duvar",
         "artist": "Grogi",
         "album": "Kafamızı Yap",
         "duration_ms": 186893,
-        "track_id": "6V2orhQWklHbEp7MHZDKCj"
+        "track_id": "6V2orhQWklHbEp7MHZDKCj",
+        "tempo": 129.55143088182498,
+        "energy": 0.3968895382049773,
+        "danceability": 0.8098667422930843
     },
     {
         "name": "Yaranamam",
         "artist": "Grogi",
         "album": "Bir Cevabım Var",
         "duration_ms": 241443,
-        "track_id": "4B9MVOT9HOxjT6fvD9Ct4d"
+        "track_id": "4B9MVOT9HOxjT6fvD9Ct4d",
+        "tempo": 100.53696276465982,
+        "energy": 0.38109375765275255,
+        "danceability": 0.6761693479208828
     },
     {
         "name": "Yalnızlık Son Ses",
         "artist": "Grogi",
         "album": "Yalnızlık Son Ses",
         "duration_ms": 199849,
-        "track_id": "57pM5UdqtfUEqNcmNsvjmZ"
+        "track_id": "57pM5UdqtfUEqNcmNsvjmZ",
+        "tempo": 154.63237477839044,
+        "energy": 0.4381421141074717,
+        "danceability": 0.24109016711392806
     },
     {
         "name": "Yemin Ederim",
         "artist": "Heja",
         "album": "Yemin Ederim",
         "duration_ms": 180722,
-        "track_id": "2XftvYDcftFHQkQqlWOOvr"
+        "track_id": "2XftvYDcftFHQkQqlWOOvr",
+        "tempo": 150.6429906010019,
+        "energy": 0.16153149874925243,
+        "danceability": 0.041903854507151506
     },
     {
         "name": "Artık",
         "artist": "Şam",
         "album": "P.O.P Mixtape pt.2",
         "duration_ms": 189397,
-        "track_id": "4IRitV0vz4K7lCgwPilLPO"
+        "track_id": "4IRitV0vz4K7lCgwPilLPO",
+        "tempo": 108.76265249285588,
+        "energy": 0.5810758888052708,
+        "danceability": 0.48265000559801763
     },
     {
         "name": "Zamansız",
         "artist": "Şam",
         "album": "P.O.P Mixtape pt.2",
         "duration_ms": 146804,
-        "track_id": "1j3Fkwmz0A7pTRu1XHfT2x"
+        "track_id": "1j3Fkwmz0A7pTRu1XHfT2x",
+        "tempo": 84.58233915181034,
+        "energy": 0.5201475588474278,
+        "danceability": 0.242016058492025
     },
     {
         "name": "Efsane",
         "artist": "Şam",
         "album": "P.O.P Mixtape pt.1",
         "duration_ms": 143949,
-        "track_id": "6wdT1ioy3SlobYfXJRUG1y"
+        "track_id": "6wdT1ioy3SlobYfXJRUG1y",
+        "tempo": 66.27888934586525,
+        "energy": 0.44015226277940755,
+        "danceability": 0.511749581201885
     },
     {
         "name": "Kader Ve Oyunlar",
         "artist": "Şam",
         "album": "P.O.P Mixtape pt.1",
         "duration_ms": 245845,
-        "track_id": "3d8cIl7ZZbMvjIIohFsV7q"
+        "track_id": "3d8cIl7ZZbMvjIIohFsV7q",
+        "tempo": 170.42550960460147,
+        "energy": 0.7702970601165647,
+        "danceability": 0.7786184262046175
     },
     {
         "name": "Paranoya",
         "artist": "Şam",
         "album": "P.O.P Mixtape pt.1",
         "duration_ms": 202285,
-        "track_id": "5o5ROFYS86OenKWEHEY3CE"
+        "track_id": "5o5ROFYS86OenKWEHEY3CE",
+        "tempo": 132.38299794289512,
+        "energy": 0.058518188065654675,
+        "danceability": 0.8343681748643553
     },
     {
         "name": "Korkusuz",
         "artist": "Istanbul Trip",
         "album": "110",
         "duration_ms": 241237,
-        "track_id": "29QJEp74ugIJocvAXqTGjk"
+        "track_id": "29QJEp74ugIJocvAXqTGjk",
+        "tempo": 72.55017219151893,
+        "energy": 0.2958299390363476,
+        "danceability": 0.6574301252400756
     },
     {
         "name": "B.A.D.D",
         "artist": "Şam",
         "album": "SIRRUS",
         "duration_ms": 203999,
-        "track_id": "0aM6odUiPvBlWLt1YJc1OL"
+        "track_id": "0aM6odUiPvBlWLt1YJc1OL",
+        "tempo": 174.68576667746743,
+        "energy": 0.42281972876836593,
+        "danceability": 0.8279145803805854
     },
     {
         "name": "RÜZGAR",
         "artist": "Şam",
         "album": "RÜZGAR",
         "duration_ms": 236978,
-        "track_id": "3akhZBvj8ZOOnhDIj24jvV"
+        "track_id": "3akhZBvj8ZOOnhDIj24jvV",
+        "tempo": 91.77577249034812,
+        "energy": 0.08500557707375378,
+        "danceability": 0.8090106539788536
     },
     {
         "name": "Acıtır Gerçek",
         "artist": "Alba",
         "album": "Parçalar",
         "duration_ms": 144480,
-        "track_id": "4zS5SKVKsC2pvuNLroWwJw"
+        "track_id": "4zS5SKVKsC2pvuNLroWwJw",
+        "tempo": 127.97575848298625,
+        "energy": 0.5646382438329125,
+        "danceability": 0.506499840956895
     },
     {
         "name": "DALAVERE",
         "artist": "EVA",
         "album": "DALAVERE",
         "duration_ms": 132384,
-        "track_id": "6gWHuUiZLUfRK7XGaa399h"
+        "track_id": "6gWHuUiZLUfRK7XGaa399h",
+        "tempo": 75.54854969696753,
+        "energy": 0.9737683364830606,
+        "danceability": 0.6367478596660365
     },
     {
         "name": "İyi Ki Yoksun",
         "artist": "Da Poet",
         "album": "Kendini Bul",
         "duration_ms": 199811,
-        "track_id": "15MDK0KVjxIjKKzXw9wm0J"
+        "track_id": "15MDK0KVjxIjKKzXw9wm0J",
+        "tempo": 120.16019930037362,
+        "energy": 0.8822069317002653,
+        "danceability": 0.20472255902793424
     },
     {
         "name": "Hiç Sevmedim Seni",
         "artist": "Hayki",
         "album": "2005 - 2015 Compilation",
         "duration_ms": 282723,
-        "track_id": "6Ydk01HgyFkkZ92UtwmdJu"
+        "track_id": "6Ydk01HgyFkkZ92UtwmdJu",
+        "tempo": 65.63736346610688,
+        "energy": 0.13149062217564278,
+        "danceability": 0.25615041750571055
     },
     {
         "name": "Sonbahar",
         "artist": "Da Poet",
         "album": "Sonbahar",
         "duration_ms": 224000,
-        "track_id": "5XS0I9pJA1ei8gE2cuQixt"
+        "track_id": "5XS0I9pJA1ei8gE2cuQixt",
+        "tempo": 156.43104263761384,
+        "energy": 0.08798836843485236,
+        "danceability": 0.2707637767343828
     },
     {
         "name": "Hayale Daldım",
         "artist": "Kamufle",
         "album": "Hayale Daldım",
         "duration_ms": 250496,
-        "track_id": "3yoFKhjpEs3XuOU176cZJq"
+        "track_id": "3yoFKhjpEs3XuOU176cZJq",
+        "tempo": 101.50747027167324,
+        "energy": 0.4443830605836081,
+        "danceability": 0.4552795471647654
     },
     {
         "name": "Teneke Trampet",
         "artist": "Ağaçkakan",
         "album": "FERNWEH",
         "duration_ms": 193620,
-        "track_id": "27qpZGSdwHiIpO6uryYrah"
+        "track_id": "27qpZGSdwHiIpO6uryYrah",
+        "tempo": 162.0136295596401,
+        "energy": 0.5397688086673796,
+        "danceability": 0.37195370227578906
     },
     {
         "name": "Öteki - Depo - Live Sessions",
         "artist": "Çağrı Sinci",
         "album": "Çağrı Sinci & Yeraltı Sakinleri (Depo - Live Sessions)",
         "duration_ms": 169769,
-        "track_id": "3KV3Uh4IpNwRJaJGGATVTc"
+        "track_id": "3KV3Uh4IpNwRJaJGGATVTc",
+        "tempo": 68.52448277264335,
+        "energy": 0.49993232995722237,
+        "danceability": 0.6920832009333353
     },
     {
         "name": "Tuhaf Hikaye",
         "artist": "Çağrı Sinci",
         "album": "Zaman Sinekleri",
         "duration_ms": 176000,
-        "track_id": "6rSMXeNizDkCTFokMe96FS"
+        "track_id": "6rSMXeNizDkCTFokMe96FS",
+        "tempo": 106.21237158180855,
+        "energy": 0.3189622369973635,
+        "danceability": 0.11160950532009828
     },
     {
         "name": "Fesupanallah",
         "artist": "Çağrı Sinci",
         "album": "Fesupanallah",
         "duration_ms": 154588,
-        "track_id": "3T8nTKlw785zTqhQ0HCfyt"
+        "track_id": "3T8nTKlw785zTqhQ0HCfyt",
+        "tempo": 79.01096635937242,
+        "energy": 0.023967247144499826,
+        "danceability": 0.44400632083951397
     },
     {
         "name": "Çamur",
         "artist": "Çağrı Sinci",
         "album": "Çamur",
         "duration_ms": 221163,
-        "track_id": "0VztoWKHAVvBEHTAXn32D1"
+        "track_id": "0VztoWKHAVvBEHTAXn32D1",
+        "tempo": 107.45581261227473,
+        "energy": 0.7090833715296995,
+        "danceability": 0.4859001329644952
     },
     {
         "name": "Merhaba",
         "artist": "Çağrı Sinci",
         "album": "Karanlık",
         "duration_ms": 177272,
-        "track_id": "3yxOR5tiZeUaLkYxyAyBoE"
+        "track_id": "3yxOR5tiZeUaLkYxyAyBoE",
+        "tempo": 113.77198545367678,
+        "energy": 0.15197424680621063,
+        "danceability": 0.5785531302338017
     },
     {
         "name": "Yanlışın Var",
         "artist": "Çağrı Sinci",
         "album": "Modern Zamanlar",
         "duration_ms": 181115,
-        "track_id": "5jXYoMF3eKsat2xpjzc3fw"
+        "track_id": "5jXYoMF3eKsat2xpjzc3fw",
+        "tempo": 69.06978058441018,
+        "energy": 0.7153379502972385,
+        "danceability": 0.3797979270805051
     },
     {
         "name": "Lobotomi",
         "artist": "Çağrı Sinci",
         "album": "Lobotomi",
         "duration_ms": 164165,
-        "track_id": "1M7I8688W5ll3A3NFYFJIW"
+        "track_id": "1M7I8688W5ll3A3NFYFJIW",
+        "tempo": 83.32616651632746,
+        "energy": 0.10962803536369337,
+        "danceability": 0.7500326483055667
     },
     {
         "name": "Parıltı",
         "artist": "Çağrı Sinci",
         "album": "Parıltı",
         "duration_ms": 152925,
-        "track_id": "46P5jvHTaSiLhLQ15t3V9B"
+        "track_id": "46P5jvHTaSiLhLQ15t3V9B",
+        "tempo": 118.39472020162935,
+        "energy": 0.4829280049437056,
+        "danceability": 0.9979038340712998
     },
     {
         "name": "Devran",
         "artist": "İmpala",
         "album": "PERIPETEIA",
         "duration_ms": 164000,
-        "track_id": "5jqKe2Q9UBC5CKo4sDOoeG"
+        "track_id": "5jqKe2Q9UBC5CKo4sDOoeG",
+        "tempo": 158.6789640581402,
+        "energy": 0.9089293251308665,
+        "danceability": 0.6757942637952307
     },
     {
         "name": "Kaçamadım",
         "artist": "Çağrı Sinci",
         "album": "Modern Zamanlar",
         "duration_ms": 158894,
-        "track_id": "3LySeEB89ILe0D39Xzn20N"
+        "track_id": "3LySeEB89ILe0D39Xzn20N",
+        "tempo": 111.93160812125683,
+        "energy": 0.5645979815100843,
+        "danceability": 0.018708139030755633
     },
     {
         "name": "Göğe bakmak için",
         "artist": "Saian",
         "album": "Berhava",
         "duration_ms": 190000,
-        "track_id": "5khUsMbZN67DTBj35YMNxp"
+        "track_id": "5khUsMbZN67DTBj35YMNxp",
+        "tempo": 91.40418438232712,
+        "energy": 0.869630389257051,
+        "danceability": 0.8973672668205155
     },
     {
         "name": "Daha Neler",
         "artist": "Çağrı Sinci",
         "album": "Kayıp Şarkılar",
         "duration_ms": 193465,
-        "track_id": "4QoDhiNPfY9jqT7eX67lbw"
+        "track_id": "4QoDhiNPfY9jqT7eX67lbw",
+        "tempo": 137.16280714377592,
+        "energy": 0.12419087481480973,
+        "danceability": 0.9902748784059502
     },
     {
         "name": "Bak İşine",
         "artist": "Çağrı Sinci",
         "album": "Kayıp Şarkılar",
         "duration_ms": 245162,
-        "track_id": "2aXjdy8bbjVlq68KzIQgIg"
+        "track_id": "2aXjdy8bbjVlq68KzIQgIg",
+        "tempo": 71.36379664640224,
+        "energy": 0.8073701464483073,
+        "danceability": 0.5116828000194541
     },
     {
         "name": "Yanlış Zaman Yanlış Yer",
         "artist": "Çağrı Sinci",
         "album": "Yeraltı Sakinleri",
         "duration_ms": 216874,
-        "track_id": "5uBH9viC50RPKL6lr5bTSP"
+        "track_id": "5uBH9viC50RPKL6lr5bTSP",
+        "tempo": 160.45682966858942,
+        "energy": 0.8419146197162483,
+        "danceability": 0.4567420076657853
     },
     {
         "name": "Korkçak Bişey Yok",
         "artist": "Çağrı Sinci",
         "album": "Modern Zamanlar",
         "duration_ms": 208178,
-        "track_id": "5RfodosXF2xsgnL6ziHTKz"
+        "track_id": "5RfodosXF2xsgnL6ziHTKz",
+        "tempo": 134.28200914251408,
+        "energy": 0.4203289250656169,
+        "danceability": 0.3398845048855431
     },
     {
         "name": "Yol",
         "artist": "Gazapizm",
         "album": "HİZA",
         "duration_ms": 255914,
-        "track_id": "264Jd7JzmNOb4mYeGIQrrZ"
+        "track_id": "264Jd7JzmNOb4mYeGIQrrZ",
+        "tempo": 176.64529398172724,
+        "energy": 0.5408508313990642,
+        "danceability": 0.869304799568186
     },
     {
         "name": "Oyunun Kuralı",
         "artist": "Allame",
         "album": "Anakronik",
         "duration_ms": 161610,
-        "track_id": "3P9gDWh7yPBU3F9IVhFEDG"
+        "track_id": "3P9gDWh7yPBU3F9IVhFEDG",
+        "tempo": 75.23867804922969,
+        "energy": 0.2796331917162116,
+        "danceability": 0.30011589054051546
     },
     {
         "name": "Fil İnadı",
         "artist": "Allame",
         "album": "Fil İnadı",
         "duration_ms": 148000,
-        "track_id": "66PR48Jr5kMUlFQblYK3r9"
+        "track_id": "66PR48Jr5kMUlFQblYK3r9",
+        "tempo": 140.07593913021554,
+        "energy": 0.5828566774899802,
+        "danceability": 0.7457146460633326
     },
     {
         "name": "Büyüdüm",
         "artist": "Şiir!",
         "album": "Büyüdüm",
         "duration_ms": 163650,
-        "track_id": "6atCvarKS8XISxyxrt2OPc"
+        "track_id": "6atCvarKS8XISxyxrt2OPc",
+        "tempo": 143.85242697714767,
+        "energy": 0.016024273194008898,
+        "danceability": 0.5916161397461266
     },
     {
         "name": "Dijital Yalnızlık ve Mavi Saçların",
         "artist": "Şiir!",
         "album": "Yalnız İkilemler",
         "duration_ms": 145632,
-        "track_id": "2KPjw3spdxXVuYrtIzg10e"
+        "track_id": "2KPjw3spdxXVuYrtIzg10e",
+        "tempo": 76.39666985739906,
+        "energy": 0.4807390262794775,
+        "danceability": 0.3822561569456969
     },
     {
         "name": "Unutmak İstedim",
         "artist": "Şiir!",
         "album": "Yağmurlu Şarkılar",
         "duration_ms": 113767,
-        "track_id": "4HMBIz45atgOaVY4vdhYVd"
+        "track_id": "4HMBIz45atgOaVY4vdhYVd",
+        "tempo": 60.19956708088908,
+        "energy": 0.32725965116316,
+        "danceability": 0.7155433177056602
     },
     {
         "name": "Naptın Olm ?",
         "artist": "Kozmos",
         "album": "Naptın Olm ?",
         "duration_ms": 176052,
-        "track_id": "152p0bR3nmngPtJurMbgTq"
+        "track_id": "152p0bR3nmngPtJurMbgTq",
+        "tempo": 161.1250710277726,
+        "energy": 0.22544508954843134,
+        "danceability": 0.5739335056950681
     },
     {
         "name": "Keşke Benim Olsan",
         "artist": "Kozmos",
         "album": "Keşke Benim Olsan",
         "duration_ms": 154000,
-        "track_id": "71JJwk000lqBMKSQ6pHzMP"
+        "track_id": "71JJwk000lqBMKSQ6pHzMP",
+        "tempo": 86.02559613335771,
+        "energy": 0.5375283206758393,
+        "danceability": 0.12511275022293222
     },
     {
         "name": "GEÇMİŞİ SİL",
         "artist": "Kozmos",
         "album": "K.I.N.G",
         "duration_ms": 188312,
-        "track_id": "6pVJE3r0YISuES96sHcebK"
+        "track_id": "6pVJE3r0YISuES96sHcebK",
+        "tempo": 179.41715080926576,
+        "energy": 0.3253260619918166,
+        "danceability": 0.43854171416416343
     },
     {
         "name": "KISIL KAPANA",
         "artist": "Kozmos",
         "album": "K.I.N.G",
         "duration_ms": 128500,
-        "track_id": "4fy3jzPUS8I5JTm02zK6jm"
+        "track_id": "4fy3jzPUS8I5JTm02zK6jm",
+        "tempo": 153.3818660479632,
+        "energy": 0.6658924698492124,
+        "danceability": 0.7790573036470639
     },
     {
         "name": "Yarım Kalan Sigara",
         "artist": "No.1",
         "album": "Kron1k",
         "duration_ms": 183612,
-        "track_id": "0HbKbkAMK7Wnps5vpZW4j2"
+        "track_id": "0HbKbkAMK7Wnps5vpZW4j2",
+        "tempo": 166.14005879640993,
+        "energy": 0.06680597462147164,
+        "danceability": 0.044972677714410825
     },
     {
         "name": "Sagopa Yaşlı Planet",
         "artist": "Sagopa Kajmer",
         "album": "Romantizma",
         "duration_ms": 196803,
-        "track_id": "5vLGqpRIfC2LUhcI7S0FPQ"
+        "track_id": "5vLGqpRIfC2LUhcI7S0FPQ",
+        "tempo": 99.0986139266464,
+        "energy": 0.9343311671030228,
+        "danceability": 0.7490452532485431
     },
     {
         "name": "Bir İmam ve Bir Fahişe",
         "artist": "Siirbaz",
         "album": "Kulaklık Müziği",
         "duration_ms": 192692,
-        "track_id": "0DJvGpHyIhZnvpRGfZqMCf"
+        "track_id": "0DJvGpHyIhZnvpRGfZqMCf",
+        "tempo": 105.0644038420044,
+        "energy": 0.8863555132261642,
+        "danceability": 0.6900986786841533
     },
     {
         "name": "Anlatmak İstemedim",
         "artist": "ceas",
         "album": "Anlatmak İstemedim",
         "duration_ms": 210999,
-        "track_id": "4j4QMCjtgLtG2y2zpAurPr"
+        "track_id": "4j4QMCjtgLtG2y2zpAurPr",
+        "tempo": 102.8646937723802,
+        "energy": 0.013991086861435242,
+        "danceability": 0.3180945297379896
     },
     {
         "name": "İstemem",
         "artist": "Ahiyan",
         "album": "SAKLAYANLARDANIM",
         "duration_ms": 198181,
-        "track_id": "3lic57ZmqP8F7yrtPCk02G"
+        "track_id": "3lic57ZmqP8F7yrtPCk02G",
+        "tempo": 168.1418017372983,
+        "energy": 0.17829601929600014,
+        "danceability": 0.35129874735925704
     },
     {
         "name": "L.O",
         "artist": "Anıl Piyancı",
         "album": "L.O",
         "duration_ms": 185600,
-        "track_id": "7prEgBLcWxMXSfwPs4IJwR"
+        "track_id": "7prEgBLcWxMXSfwPs4IJwR",
+        "tempo": 82.09137367701965,
+        "energy": 0.960423464258913,
+        "danceability": 0.1333329908329195
     },
     {
         "name": "YENİ KASET",
         "artist": "Ben Fero",
         "album": "YABANİ",
         "duration_ms": 122307,
-        "track_id": "4RFi5wM5m1J3pfqx5OnU3T"
+        "track_id": "4RFi5wM5m1J3pfqx5OnU3T",
+        "tempo": 136.74279038482211,
+        "energy": 0.5748789955770772,
+        "danceability": 0.22622252739509974
     },
     {
         "name": "24",
         "artist": "Sagopa Kajmer",
         "album": "Bir Pesimistin Gözyaşları",
         "duration_ms": 292586,
-        "track_id": "1VNHyFYkNXY1mhOqrpEvYT"
+        "track_id": "1VNHyFYkNXY1mhOqrpEvYT",
+        "tempo": 116.4108967559755,
+        "energy": 0.9209729874050541,
+        "danceability": 0.5581682687743489
     },
     {
         "name": "Peygamber Sabrı",
         "artist": "Lil Zey",
         "album": "Kara Tiyatro",
         "duration_ms": 191624,
-        "track_id": "3GFRJgMAPKeYJ717UeB0zp"
+        "track_id": "3GFRJgMAPKeYJ717UeB0zp",
+        "tempo": 68.22543583484185,
+        "energy": 0.5897452913055596,
+        "danceability": 0.9939523404039454
     },
     {
         "name": "Yolu Yok",
         "artist": "Ati242",
         "album": "Yolu Yok",
         "duration_ms": 204512,
-        "track_id": "5hxfGCnFX0ruGMVsPKZ9eU"
+        "track_id": "5hxfGCnFX0ruGMVsPKZ9eU",
+        "tempo": 67.87175977965126,
+        "energy": 0.06678575926709218,
+        "danceability": 0.3944894530770434
     },
     {
         "name": "Kara Maskeli İstanbul",
         "artist": "Dr. Fuchs",
         "album": "Huzur N Darem",
         "duration_ms": 221933,
-        "track_id": "5S00kW4QrHi4zUSrYmpgSs"
+        "track_id": "5S00kW4QrHi4zUSrYmpgSs",
+        "tempo": 66.71317772662827,
+        "energy": 0.04943099429512454,
+        "danceability": 0.5357871286513312
     },
     {
         "name": "Hissizleşmiş",
         "artist": "Kamufle",
         "album": "Denge",
         "duration_ms": 227719,
-        "track_id": "1FvYoB3T19Ce1ruRFMFrEl"
+        "track_id": "1FvYoB3T19Ce1ruRFMFrEl",
+        "tempo": 144.41952941018724,
+        "energy": 0.4608041187083288,
+        "danceability": 0.18698367281866457
     },
     {
         "name": "Bu Kaçıncı İsyan",
         "artist": "Kayra",
         "album": "Ömrümün Son Güzel Günleri",
         "duration_ms": 207000,
-        "track_id": "5v8KMYJJWg1Fm17QrZpZFX"
+        "track_id": "5v8KMYJJWg1Fm17QrZpZFX",
+        "tempo": 112.2884060869414,
+        "energy": 0.6658374088296489,
+        "danceability": 0.8631664403730723
     },
     {
         "name": "Müneccim",
         "artist": "İkra",
         "album": "Herkes Kadar Kimse",
         "duration_ms": 198048,
-        "track_id": "3FeF2ztiZjlE37EMKi4QZH"
+        "track_id": "3FeF2ztiZjlE37EMKi4QZH",
+        "tempo": 120.46874787549157,
+        "energy": 0.5310268542424315,
+        "danceability": 0.35789820838980935
     },
     {
         "name": "Hüznü Hecem",
         "artist": "Yener Çevik",
         "album": "Sokak Dili ve Edebiyatı",
         "duration_ms": 158257,
-        "track_id": "6pZ31N4gd3Yk9277ptUHjb"
+        "track_id": "6pZ31N4gd3Yk9277ptUHjb",
+        "tempo": 81.59118223831278,
+        "energy": 0.13066947531661166,
+        "danceability": 0.8771311550324544
     },
     {
         "name": "Eskimiş Senelere",
         "artist": "Aspova",
         "album": "Hell",
         "duration_ms": 195789,
-        "track_id": "2yjtOzf6oHNmLPUDIwq5PQ"
+        "track_id": "2yjtOzf6oHNmLPUDIwq5PQ",
+        "tempo": 79.4088650849549,
+        "energy": 0.7238480380713321,
+        "danceability": 0.7338138908698084
     },
     {
         "name": "Neden Olmasın?",
         "artist": "Skapova",
         "album": "Neden Olmasın?",
         "duration_ms": 234000,
-        "track_id": "7bQs0QDP7Su8mI35XPBUVW"
+        "track_id": "7bQs0QDP7Su8mI35XPBUVW",
+        "tempo": 163.73375213789058,
+        "energy": 0.5987371741433674,
+        "danceability": 0.3581333266889607
     },
     {
         "name": "Fırtına",
         "artist": "Farazi",
         "album": "Ölmek İçin Doğanlar",
         "duration_ms": 240284,
-        "track_id": "6b7h1VxpnIjKoY0LQZexgn"
+        "track_id": "6b7h1VxpnIjKoY0LQZexgn",
+        "tempo": 83.06597093535461,
+        "energy": 0.8325719934520579,
+        "danceability": 0.08704957973516514
     }
 ]
