@@ -1,0 +1,912 @@
+[
+    {
+        "name": "Bu Gece",
+        "artist": "Rezzan Yücel",
+        "album": "Bu Gece / Birdenbire",
+        "duration_ms": 242293,
+        "track_id": "6FfxuCfXOtwb2HMKWrDunF"
+    },
+    {
+        "name": "Mavi Boncuk",
+        "artist": "Kamuran Akkor",
+        "album": "Bir Zamanlar 1-2-3-4-5",
+        "duration_ms": 148986,
+        "track_id": "0kprtwLzm2MuRXSisqq4ux"
+    },
+    {
+        "name": "Sonbahar Rüzgarları",
+        "artist": "Ajda Pekkan",
+        "album": "Unutulmayanlar",
+        "duration_ms": 266173,
+        "track_id": "5MkBSGMGwMzCFWKNMrDs0c"
+    },
+    {
+        "name": "Sessiz Gemi",
+        "artist": "Hümeyra",
+        "album": "Hümeyra (Türk Pop Tarihi)",
+        "duration_ms": 210293,
+        "track_id": "1hJ448kD4yTFp4AItGeiNa"
+    },
+    {
+        "name": "Hipokondriyak",
+        "artist": "Zakkum",
+        "album": "Zehr-i Zakkum",
+        "duration_ms": 369760,
+        "track_id": "1GEB9gD1jBDcTGWdZ9FUag"
+    },
+    {
+        "name": "Anlıyorsun",
+        "artist": "Zakkum",
+        "album": "Zehr-i Zakkum",
+        "duration_ms": 344160,
+        "track_id": "2vU5q30bDCH4joJIaWqa73"
+    },
+    {
+        "name": "İnsan Hali",
+        "artist": "Turgut Berkes",
+        "album": "Kara Kutu",
+        "duration_ms": 498666,
+        "track_id": "2xi4i77Ut32OzebLP08zC8"
+    },
+    {
+        "name": "Ara Sıra Bazı Bazı",
+        "artist": "Nilüfer",
+        "album": "Oh Ya",
+        "duration_ms": 170062,
+        "track_id": "4Mye0IMIFvnBWxrZGJ4L1t"
+    },
+    {
+        "name": "Arkadaşımın Aşkısın",
+        "artist": "Nesrin Sipahi",
+        "album": "Bebek",
+        "duration_ms": 228159,
+        "track_id": "3fPmI27Fh0llt4WQ3pcTWU"
+    },
+    {
+        "name": "Bal Gibi Olur",
+        "artist": "Asu Maralman",
+        "album": "Asu Maralman (Türk Pop Tarihi)",
+        "duration_ms": 168293,
+        "track_id": "4TO8P8RZ7FRdS4NOvJl3Yi"
+    },
+    {
+        "name": "The Mermaid Song (Instrumental)",
+        "artist": "Johnny Depp",
+        "album": "The Rum Diary (Original Motion Picture Soundtrack)",
+        "duration_ms": 94373,
+        "track_id": "3APd1xiXbAYN5rbAYLvdBD"
+    },
+    {
+        "name": "Rocky Mountain Way",
+        "artist": "Joe Walsh",
+        "album": "The Smoker You Drink, The Player You Get",
+        "duration_ms": 315400,
+        "track_id": "2XHjFJVXYlEzoDvN82h8s5"
+    },
+    {
+        "name": "Last Night on Earth",
+        "artist": "Green Day",
+        "album": "21st Century Breakdown",
+        "duration_ms": 236533,
+        "track_id": "5TpPSTItCwtZ8Sltr3vdzm"
+    },
+    {
+        "name": "Dutağacı",
+        "artist": "Ezginin Günlügü",
+        "album": "Alagözlü Yar (Azeri Nihavent)",
+        "duration_ms": 274666,
+        "track_id": "7FQSUbXSVU11Jd3qNIU8uj"
+    },
+    {
+        "name": "La Flor De Estambul",
+        "artist": "Javier Ruibal",
+        "album": "Sahara",
+        "duration_ms": 217200,
+        "track_id": "43fJSlNn4BnQnfw0MfDNRq"
+    },
+    {
+        "name": "－･･ ･－ －･ －･－･ ･ －－ ･ － －－－ － ････ ･ ･ －･ －･･ －－－ ･･－･ ･－･･ －－－ ･･･－ ･",
+        "artist": "･ ･－･ ･－ ･･･ ･ －･･",
+        "album": "－･･ ･－ －･ －･－･ ･ －－ ･ － －－－ － ････ ･ ･ －･ －･･ －－－ ･･－･ ･－･･ －－－ ･･･－ ･",
+        "duration_ms": 356698,
+        "track_id": "1F9f5t7GZk7aJZNGZIbfqP"
+    },
+    {
+        "name": "La vie en rose",
+        "artist": "Louis Armstrong",
+        "album": "The Very Best Of Louis Armstrong",
+        "duration_ms": 204266,
+        "track_id": "0Yj7WP1MbAqQVQA5Na4I7E"
+    },
+    {
+        "name": "Layla",
+        "artist": "Derek & The Dominos",
+        "album": "Classic Eric Clapton",
+        "duration_ms": 423680,
+        "track_id": "5vqJA5BMokxeEPnwYPNkUn"
+    },
+    {
+        "name": "Layla - Acoustic Live",
+        "artist": "Eric Clapton",
+        "album": "Unplugged (Deluxe Edition) (Live)",
+        "duration_ms": 289026,
+        "track_id": "5phbwzg5d2MqNAoc0435Zu"
+    },
+    {
+        "name": "I Shot The Sheriff",
+        "artist": "Eric Clapton",
+        "album": "The Cream Of Clapton",
+        "duration_ms": 263426,
+        "track_id": "10LWVafpsc00GjdXTQqITk"
+    },
+    {
+        "name": "My Friends",
+        "artist": "Johnny Depp",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 228226,
+        "track_id": "3bh9jyKSTLGto75BPXmJNd"
+    },
+    {
+        "name": "Epiphany",
+        "artist": "Johnny Depp",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 196880,
+        "track_id": "7vORhZg2DUYSJnQezoEZ3K"
+    },
+    {
+        "name": "A Little Priest",
+        "artist": "Johnny Depp",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 315013,
+        "track_id": "7FmI3ygVG04KIhikMHKOKB"
+    },
+    {
+        "name": "By the Sea",
+        "artist": "Johnny Depp",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 139866,
+        "track_id": "0y5V4rtQW7AnfBemF9HXH8"
+    },
+    {
+        "name": "Pretty Women",
+        "artist": "Johnny Depp",
+        "album": "Sweeney Todd: The Demon Barber of Fleet Street (The Motion Picture Soundtrack)",
+        "duration_ms": 267356,
+        "track_id": "0Jb67k3sP4C7ymAOUQSzWu"
+    },
+    {
+        "name": "Opening Title",
+        "artist": "Stephen Sondheim",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 210653,
+        "track_id": "3Z17B3Siq8taXCkRneIHLR"
+    },
+    {
+        "name": "No Place Like London",
+        "artist": "Johnny Depp",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 331960,
+        "track_id": "4flRg2zM66h5fho3Yce2bx"
+    },
+    {
+        "name": "Green Finch and Linnett Bird",
+        "artist": "Jayne Wisener",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 136186,
+        "track_id": "57ZyGDjiu8njGz5HgEdPJP"
+    },
+    {
+        "name": "Pirelli's Miracle Elixir",
+        "artist": "Edwards Sanders",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 120240,
+        "track_id": "2XNxfjWBLqChCppnQPzldT"
+    },
+    {
+        "name": "Wait",
+        "artist": "Johnny Depp",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 158786,
+        "track_id": "2JAEyonTQpALpkyoBrcC8O"
+    },
+    {
+        "name": "Ladies in Their Sensitivities",
+        "artist": "Alan Rickman",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 83066,
+        "track_id": "2tFynDMRSxj1ephdwFgX5E"
+    },
+    {
+        "name": "God, That's Good!",
+        "artist": "Edward Sanders",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 166893,
+        "track_id": "2iGRy4VZ8Er6NoKuCr4sKA"
+    },
+    {
+        "name": "Not While I'm Around",
+        "artist": "Edward Sanders",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 251813,
+        "track_id": "3xvYLzcnpr2wOIWCkToTST"
+    },
+    {
+        "name": "Final Scene",
+        "artist": "Johnny Depp",
+        "album": "Sweeney Todd, The Demon Barber of Fleet Street, The Motion Picture Soundtrack",
+        "duration_ms": 621866,
+        "track_id": "0rn0RebtaABAWlSAVPTTnO"
+    },
+    {
+        "name": "Böyle Gelmiş Böyle Geçer Dünya",
+        "artist": "Gönül Akkor",
+        "album": "Yeşilçam Şarkıları Vol. 3 / Yıldızların Altında",
+        "duration_ms": 184830,
+        "track_id": "5MIsgmxWOaftT7WXKznmZ7"
+    },
+    {
+        "name": "Beyaz Ev",
+        "artist": "Erkut Taçkın",
+        "album": "En İyileriyle Erkut Taçkın",
+        "duration_ms": 231346,
+        "track_id": "4nYTocZW2DRRUNzWQQUZ8x"
+    },
+    {
+        "name": "Yer Blues - Live",
+        "artist": "Dirty Mac",
+        "album": "The Rolling Stones Rock and Roll Circus",
+        "duration_ms": 266600,
+        "track_id": "1mT4MwmdVPHvcqAkYyFg9C"
+    },
+    {
+        "name": "We've Been Told (Jesus Is Coming Soon)",
+        "artist": "Eric Clapton",
+        "album": "Give Me Strength: The ‘74/’75 Studio Recordings",
+        "duration_ms": 268986,
+        "track_id": "3MWVdhQm8IOrFVrJrgwWMu"
+    },
+    {
+        "name": "Origins",
+        "artist": "Jreams",
+        "album": "Letters from Jupiter",
+        "duration_ms": 193004,
+        "track_id": "4DW0RmglHKtnlXBSIzMKnr"
+    },
+    {
+        "name": "Follow Me Home",
+        "artist": "Dire Straits",
+        "album": "Communiqué",
+        "duration_ms": 350866,
+        "track_id": "63JIZfWgk8RfqtodNGI0w2"
+    },
+    {
+        "name": "Jane",
+        "artist": "Jefferson Starship",
+        "album": "Freedom At Point Zero",
+        "duration_ms": 252200,
+        "track_id": "2RNd6VgxG19db0zs0M1C4Z"
+    },
+    {
+        "name": "Motherless Children",
+        "artist": "Eric Clapton",
+        "album": "Give Me Strength: The ‘74/’75 Studio Recordings",
+        "duration_ms": 293425,
+        "track_id": "1FKd2BknPB1PpHo1YIMREO"
+    },
+    {
+        "name": "Deep River Blues",
+        "artist": "Doc Watson",
+        "album": "Doc Watson",
+        "duration_ms": 192000,
+        "track_id": "4PvPkRcbnO4s67MPnij3sh"
+    },
+    {
+        "name": "Our Love Is Here To Stay",
+        "artist": "Eric Clapton",
+        "album": "Old Sock (Track By Track)",
+        "duration_ms": 252733,
+        "track_id": "6h405JbffVj4r7jGefKw5U"
+    },
+    {
+        "name": "Behind the Mask - 2015 Remaster",
+        "artist": "Eric Clapton",
+        "album": "Forever Man",
+        "duration_ms": 287600,
+        "track_id": "35eoGTsyba7tZDZ63Xm29W"
+    },
+    {
+        "name": "Knockin' On Heaven's Door - Live 1977 Hammersmith Odeon",
+        "artist": "Eric Clapton",
+        "album": "Crossroads 2 (Live In The Seventies)",
+        "duration_ms": 320173,
+        "track_id": "0MuSsRidDIDWfXj1wIACGq"
+    },
+    {
+        "name": "Merkezde Araç Yok Arkadaşlar",
+        "artist": "Malt",
+        "album": "Merkezde Araç Yok Arkadaşlar",
+        "duration_ms": 160551,
+        "track_id": "7oUVXivKdN3NR87R9IM8w9"
+    },
+    {
+        "name": "Cenaze Evi",
+        "artist": "Yüzyüzeyken Konuşuruz",
+        "album": "Evdekilere Selam",
+        "duration_ms": 367200,
+        "track_id": "5pcm4HNDNsPTCwWiQS9swb"
+    },
+    {
+        "name": "It's Easy",
+        "artist": "J.J. Cale",
+        "album": "The Road to Escondido",
+        "duration_ms": 256866,
+        "track_id": "0pam9exwMGxRwe9nKt1V44"
+    },
+    {
+        "name": "Come As You Are",
+        "artist": "Nirvana",
+        "album": "Nevermind",
+        "duration_ms": 218920,
+        "track_id": "0keNu0t0tqsWtExGM3nT1D"
+    },
+    {
+        "name": "Ne Zaman Gitti Tren",
+        "artist": "Kesmeşeker",
+        "album": "Kum",
+        "duration_ms": 273120,
+        "track_id": "3bt7UPeoMsT7ix5tBk1gnF"
+    },
+    {
+        "name": "Kara Maskeli İstanbul",
+        "artist": "Dr. Fuchs",
+        "album": "Huzur N Darem",
+        "duration_ms": 221933,
+        "track_id": "5S00kW4QrHi4zUSrYmpgSs"
+    },
+    {
+        "name": "Private Investigations - Edit",
+        "artist": "Dire Straits",
+        "album": "Sultans Of Swing - The Very Best Of Dire Straits",
+        "duration_ms": 351133,
+        "track_id": "12wbmCzrubqvQJKFg9KsWE"
+    },
+    {
+        "name": "Goca Dünya",
+        "artist": "Altin Gün",
+        "album": "Goca Dünya",
+        "duration_ms": 237317,
+        "track_id": "7jnJSw2SKsNibByy0PeYLC"
+    },
+    {
+        "name": "Borrowed Time (From Rick and Morty: Season 5)",
+        "artist": "Rick and Morty",
+        "album": "Borrowed Time (From Rick and Morty: Season 5)",
+        "duration_ms": 181506,
+        "track_id": "2TDeIENQbavBr4qfDNIn3l"
+    },
+    {
+        "name": "(Don't Fear) The Reaper - Single Version",
+        "artist": "Blue Öyster Cult",
+        "album": "Pure... Rock",
+        "duration_ms": 307200,
+        "track_id": "41pXUhrCUypo9mjVvNMmIx"
+    },
+    {
+        "name": "Oğul",
+        "artist": "Teoman",
+        "album": "O",
+        "duration_ms": 245800,
+        "track_id": "08R6rdwEG6uY9BOVGsWA6D"
+    },
+    {
+        "name": "Bad Love",
+        "artist": "Eric Clapton",
+        "album": "Complete Clapton",
+        "duration_ms": 308013,
+        "track_id": "4cw7ZxWkydjJXtLZYrdedB"
+    },
+    {
+        "name": "Kusursuz Cinayetler Çağında",
+        "artist": "Kesmeşeker",
+        "album": "İnsülin",
+        "duration_ms": 261413,
+        "track_id": "0RfabN71N4qCuP2qBVyVui"
+    },
+    {
+        "name": "High",
+        "artist": "Eric Clapton",
+        "album": "Give Me Strength: The ‘74/’75 Studio Recordings",
+        "duration_ms": 212111,
+        "track_id": "0fg3FRsfwDyi7wFeWXypAp"
+    },
+    {
+        "name": "Tunnel Of Love",
+        "artist": "Dire Straits",
+        "album": "Making Movies",
+        "duration_ms": 489506,
+        "track_id": "4ZSDreApKOo6eQYFx9qXfD"
+    },
+    {
+        "name": "Gerçekten Özleyince",
+        "artist": "Kesmeşeker",
+        "album": "Aşk Ve Para",
+        "duration_ms": 271627,
+        "track_id": "45rJaE75GmomUFUmtcP5jc"
+    },
+    {
+        "name": "O Yaz",
+        "artist": "Teoman",
+        "album": "17",
+        "duration_ms": 202840,
+        "track_id": "34xMKtq8yc95OvcTRhGlhX"
+    },
+    {
+        "name": "Geyikli Baba Uzaylılar Şarabı",
+        "artist": "Cenk Taner",
+        "album": "Yoldan Çıkmış Şarkılar",
+        "duration_ms": 303586,
+        "track_id": "0bY9CeXKiyErJWr9Jbw3eM"
+    },
+    {
+        "name": "Herido De Sombras",
+        "artist": "Ibrahim Ferrer",
+        "album": "Ibrahim Ferrer (Buena Vista Social Club presents)",
+        "duration_ms": 251226,
+        "track_id": "3RL6volOSpOzEGO0BVwvYX"
+    },
+    {
+        "name": "Bu Biçim",
+        "artist": "Pilli Bebek",
+        "album": "Bu Biçim",
+        "duration_ms": 291306,
+        "track_id": "6AA90aefhdkpEUSIrsbSRU"
+    },
+    {
+        "name": "Bozburun",
+        "artist": "Bülent Ortaçgil",
+        "album": "İkinci Perde",
+        "duration_ms": 223608,
+        "track_id": "2xQ1dQ0s1mA8HH3trJD6Eo"
+    },
+    {
+        "name": "Got No Shame",
+        "artist": "Brother Cane",
+        "album": "Drive Fast, Rock Hard",
+        "duration_ms": 274600,
+        "track_id": "5c1nPzFo0fziACO6fKtxqT"
+    },
+    {
+        "name": "Highway Tune",
+        "artist": "Greta Van Fleet",
+        "album": "Black Smoke Rising",
+        "duration_ms": 181213,
+        "track_id": "7JuD5r43XpRLSrUBRBQ7Dy"
+    },
+    {
+        "name": "Bohemian Rhapsody - Remastered 2011",
+        "artist": "Queen",
+        "album": "A Night At The Opera (2011 Remaster)",
+        "duration_ms": 354320,
+        "track_id": "1AhDOtG9vPSOmsWgNW0BEY"
+    },
+    {
+        "name": "You Really Got Me",
+        "artist": "The Kinks",
+        "album": "Kinks (Deluxe)",
+        "duration_ms": 131573,
+        "track_id": "29SyMC0plk6qw8NMF7lfRL"
+    },
+    {
+        "name": "Working Man",
+        "artist": "Rush",
+        "album": "Spirit Of Radio: Greatest Hits (1974-1987)",
+        "duration_ms": 429866,
+        "track_id": "1BgQUsAUiQFuIUVz4FFyAk"
+    },
+    {
+        "name": "Keep On Swinging",
+        "artist": "Rival Sons",
+        "album": "Head Down",
+        "duration_ms": 239413,
+        "track_id": "1tP9umMLmXZ3qrXFGVq1y8"
+    },
+    {
+        "name": "Safari Song",
+        "artist": "Greta Van Fleet",
+        "album": "From The Fires",
+        "duration_ms": 234600,
+        "track_id": "1BfR5GMOgW0peHkPxrwf11"
+    },
+    {
+        "name": "Just What the Doctor Ordered",
+        "artist": "Ted Nugent",
+        "album": "The Essential Ted Nugent",
+        "duration_ms": 225466,
+        "track_id": "6uufS093628MRruPbXiW5g"
+    },
+    {
+        "name": "Rock Bottom - 2007 Remastered Version",
+        "artist": "UFO",
+        "album": "Phenomenon",
+        "duration_ms": 389333,
+        "track_id": "1XGAxBPuIMGSoCcV71V36R"
+    },
+    {
+        "name": "A Horse with No Name",
+        "artist": "America",
+        "album": "America",
+        "duration_ms": 252239,
+        "track_id": "54eZmuggBFJbV7k248bTTt"
+    },
+    {
+        "name": "Break on Through (To the Other Side)",
+        "artist": "The Doors",
+        "album": "The Doors",
+        "duration_ms": 145866,
+        "track_id": "6ToM0uwxtPKo9CMpbPGYvM"
+    },
+    {
+        "name": "Sunshine Of Your Love",
+        "artist": "Cream",
+        "album": "Disraeli Gears",
+        "duration_ms": 250000,
+        "track_id": "6FRwDxXsvSasw0y2eDArsz"
+    },
+    {
+        "name": "Roadhouse Blues - New Stereo Mix",
+        "artist": "The Doors",
+        "album": "The Future Starts Here: The Essential Doors Hits",
+        "duration_ms": 248146,
+        "track_id": "4VHvZjaD1sdWA7vC4Dm2Au"
+    },
+    {
+        "name": "Kimse Görmesin Seni",
+        "artist": "Pinhani",
+        "album": "Kimse Görmesin Seni",
+        "duration_ms": 226750,
+        "track_id": "22nTxxXYT4SlI6XFasqK0G"
+    },
+    {
+        "name": "Zor Günler",
+        "artist": "Pinhani",
+        "album": "Kediköy",
+        "duration_ms": 186750,
+        "track_id": "2OZDdzrrqzNq2hcBr809yG"
+    },
+    {
+        "name": "Düşmedim Daha",
+        "artist": "Umay Umay",
+        "album": "Naylon",
+        "duration_ms": 274991,
+        "track_id": "1YWowAZNko9k7fOIlQBEfl"
+    },
+    {
+        "name": "Desecration Smile",
+        "artist": "Red Hot Chili Peppers",
+        "album": "Stadium Arcadium",
+        "duration_ms": 301626,
+        "track_id": "0GRvnYqlnh7ttq9NS6s3Ta"
+    },
+    {
+        "name": "Tell Me Baby",
+        "artist": "Red Hot Chili Peppers",
+        "album": "Stadium Arcadium",
+        "duration_ms": 247666,
+        "track_id": "0itNMuBHye9fu392b4e9oa"
+    },
+    {
+        "name": "Warped",
+        "artist": "Red Hot Chili Peppers",
+        "album": "One Hot Minute",
+        "duration_ms": 304680,
+        "track_id": "2xRLe9CwyZCP9RahXOP768"
+    },
+    {
+        "name": "The Heavy Wing",
+        "artist": "Red Hot Chili Peppers",
+        "album": "Unlimited Love",
+        "duration_ms": 331424,
+        "track_id": "4VnqpGitjmsIRNCnonQMzi"
+    },
+    {
+        "name": "Deep Kick",
+        "artist": "Red Hot Chili Peppers",
+        "album": "One Hot Minute",
+        "duration_ms": 393906,
+        "track_id": "1Rq0c7NwNpEiG83ayqKb6x"
+    },
+    {
+        "name": "The Hunter",
+        "artist": "Red Hot Chili Peppers",
+        "album": "The Getaway",
+        "duration_ms": 240360,
+        "track_id": "1ZPMK5UTafelYEQXmckRgN"
+    },
+    {
+        "name": "Thirty Dirty Birds - Remastered",
+        "artist": "Red Hot Chili Peppers",
+        "album": "Freaky Styley",
+        "duration_ms": 14533,
+        "track_id": "2kWX2aZ7KWBpJqrCFLphOl"
+    },
+    {
+        "name": "This Velvet Glove",
+        "artist": "Red Hot Chili Peppers",
+        "album": "Californication",
+        "duration_ms": 225200,
+        "track_id": "0GIDR7iLJgV5fJwdcv8TXo"
+    },
+    {
+        "name": "Venice Queen",
+        "artist": "Red Hot Chili Peppers",
+        "album": "By the Way",
+        "duration_ms": 367026,
+        "track_id": "2pTkbTFJ6QAVAuVzdfUzU4"
+    },
+    {
+        "name": "Black Summer",
+        "artist": "Red Hot Chili Peppers",
+        "album": "Unlimited Love",
+        "duration_ms": 232412,
+        "track_id": "2a5cbTg2UIi784t9E2wT35"
+    },
+    {
+        "name": "Can Bebeğim",
+        "artist": "Kenan Doğulu",
+        "album": "İhtimaller",
+        "duration_ms": 254150,
+        "track_id": "49zqPAckkYPqcqZC0iDIr7"
+    },
+    {
+        "name": "Stop Crying Your Heart Out",
+        "artist": "Oasis",
+        "album": "Heathen Chemistry",
+        "duration_ms": 303133,
+        "track_id": "5YciOakY5dB5dULkiLdCaf"
+    },
+    {
+        "name": "Modern Zaman",
+        "artist": "Peyk",
+        "album": "Suluşaka",
+        "duration_ms": 181360,
+        "track_id": "6WRIjOKK4MrrsfM6bnMU3w"
+    },
+    {
+        "name": "You Got The Silver",
+        "artist": "Susan Tedeschi",
+        "album": "Hope And Desire",
+        "duration_ms": 171600,
+        "track_id": "5jQPaMjSWpFOMx8BVUOtpM"
+    },
+    {
+        "name": "Qué Bueno Baila Usted",
+        "artist": "Ibrahim Ferrer",
+        "album": "Ibrahim Ferrer (Buena Vista Social Club presents)",
+        "duration_ms": 279333,
+        "track_id": "3b2J8pXcrlrGMY4q7zsBtI"
+    },
+    {
+        "name": "The Man's Too Strong",
+        "artist": "Dire Straits",
+        "album": "Brothers In Arms",
+        "duration_ms": 278706,
+        "track_id": "0DeLHrPqVdRayndn0Upt4i"
+    },
+    {
+        "name": "Presence Of The Lord",
+        "artist": "Blind Faith",
+        "album": "Complete Clapton",
+        "duration_ms": 287053,
+        "track_id": "3RRYgUiS8IrRYesNxeybZk"
+    },
+    {
+        "name": "Fuga y misterio",
+        "artist": "Astor Piazzolla",
+        "album": "Between Worlds (Including Spotify Commentary)",
+        "duration_ms": 460506,
+        "track_id": "0NfcwLwRbA0BXnunOKyOkS"
+    },
+    {
+        "name": "Mainline Florida",
+        "artist": "Eric Clapton",
+        "album": "461 Ocean Boulevard",
+        "duration_ms": 244506,
+        "track_id": "5i63d35sAlhhddtB0Cx5Zp"
+    },
+    {
+        "name": "Kimse Bilemez",
+        "artist": "Yavuz Çetin",
+        "album": "İlk",
+        "duration_ms": 247533,
+        "track_id": "6p10uRYb1zlOFv2AVHSAEw"
+    },
+    {
+        "name": "Let It Rain",
+        "artist": "Eric Clapton",
+        "album": "Eric Clapton",
+        "duration_ms": 302493,
+        "track_id": "6iNFe16r5xPX9ltRdSZXmx"
+    },
+    {
+        "name": "Serapmış",
+        "artist": "Şebnem Ferah",
+        "album": "Benim Adım Orman",
+        "duration_ms": 308686,
+        "track_id": "4ytKdtqTLPlYLyWg6HyWUZ"
+    },
+    {
+        "name": "ザ・ワード II",
+        "artist": "セキトオ・シゲオ",
+        "album": "華麗なるエレクトーン -ザ・ワード-",
+        "duration_ms": 183569,
+        "track_id": "3OCxOUUH3FUf8xk0RuWADJ"
+    },
+    {
+        "name": "Found Out",
+        "artist": "Caribou",
+        "album": "Swim",
+        "duration_ms": 198880,
+        "track_id": "39xoLh1KrYRknPZLrbmwqA"
+    },
+    {
+        "name": "Parklife",
+        "artist": "Blur",
+        "album": "Blur: The Best Of",
+        "duration_ms": 187040,
+        "track_id": "3mqRLlD9j92BBv1ueFhJ1l"
+    },
+    {
+        "name": "Donkey",
+        "artist": "Bessie Turner",
+        "album": "Donkey",
+        "duration_ms": 176104,
+        "track_id": "4Lkqdk7axHmD1WwOOPT5SY"
+    },
+    {
+        "name": "Her Şey Boş - Arabic",
+        "artist": "Nez",
+        "album": "Sakın Ha",
+        "duration_ms": 355293,
+        "track_id": "2BrUQMEpspOlVXqE4r7d6Z"
+    },
+    {
+        "name": "Willie And The Hand Jive / Get Ready - Live At Long Beach Arena, California / 1974",
+        "artist": "Eric Clapton",
+        "album": "Give Me Strength: The '74/'75 Recordings",
+        "duration_ms": 687324,
+        "track_id": "4mfB8lRPMTQjkvQu3CjtVc"
+    },
+    {
+        "name": "Joan Crawford",
+        "artist": "Blue Öyster Cult",
+        "album": "Fire of Unknown Origin",
+        "duration_ms": 294266,
+        "track_id": "0DcEV14d8zZykcFQ6PI2KQ"
+    },
+    {
+        "name": "The Pusher",
+        "artist": "Steppenwolf",
+        "album": "Steppenwolf",
+        "duration_ms": 350466,
+        "track_id": "1Qc7zCw6k2KTvSEl4IKSdP"
+    },
+    {
+        "name": "Mavilim",
+        "artist": "Kayahan",
+        "album": "Emrin Olur",
+        "duration_ms": 305000,
+        "track_id": "5Qb41GpCvFY1SQU8QjZcoC"
+    },
+    {
+        "name": "Dreamer",
+        "artist": "Astrud Gilberto",
+        "album": "The Astrud Gilberto Album",
+        "duration_ms": 120480,
+        "track_id": "21QkOionlOqhrkDaDgXNO7"
+    },
+    {
+        "name": "Hojas Verdes",
+        "artist": "Los Pakines",
+        "album": "Los Pakines",
+        "duration_ms": 197000,
+        "track_id": "7FaotOflDsoCCSdBBKr66H"
+    },
+    {
+        "name": "Morning",
+        "artist": "Cal Tjader",
+        "album": "Soul Burst",
+        "duration_ms": 176400,
+        "track_id": "5cXacUFCpf0Og88XZcB2w2"
+    },
+    {
+        "name": "Kusuri o Takusan",
+        "artist": "Taeko Onuki",
+        "album": "SUNSHOWER",
+        "duration_ms": 249293,
+        "track_id": "06acnazExu3JIGfkeaAmrP"
+    },
+    {
+        "name": "Nani mo Iranai",
+        "artist": "Taeko Onuki",
+        "album": "SUNSHOWER",
+        "duration_ms": 242666,
+        "track_id": "3xcZ5tTH1PBHzb1miiApl0"
+    },
+    {
+        "name": "Furiko no Yagi",
+        "artist": "Taeko Onuki",
+        "album": "SUNSHOWER",
+        "duration_ms": 343066,
+        "track_id": "3CvFuXbbe0E78au6CwWX5K"
+    },
+    {
+        "name": "Souvenir de Porto Rico",
+        "artist": "Louis Moreau Gottschalk",
+        "album": "Gottschalk: Night in the Tropics",
+        "duration_ms": 363142,
+        "track_id": "6ERSEI5qP3xJrb7hwKEbSV"
+    },
+    {
+        "name": "Çamur (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Mutsuz Parti",
+        "duration_ms": 231749,
+        "track_id": "5kBqOuf22NcIgxwbSAeyHR"
+    },
+    {
+        "name": "Cam Parçası - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 228836,
+        "track_id": "3AgC3ptwaWNcDeovhEJfxo"
+    },
+    {
+        "name": "EVREN BOZMASI",
+        "artist": "Büyük Ev Ablukada",
+        "album": "FIRTINAYT",
+        "duration_ms": 288566,
+        "track_id": "0mDDfA4yNuyw32ETB38jBj"
+    },
+    {
+        "name": "Evren Bozması - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada",
+        "album": "Ay Şuram Hâlâ Ağrıyo",
+        "duration_ms": 277210,
+        "track_id": "3SpWYt15hbgTyNKav1lZni"
+    },
+    {
+        "name": "Where Do You Think You're Going?",
+        "artist": "Dire Straits",
+        "album": "Communiqué",
+        "duration_ms": 229640,
+        "track_id": "2kKNeapwCHUUvMhmAOGce6"
+    },
+    {
+        "name": "The Zephyr Song",
+        "artist": "Red Hot Chili Peppers",
+        "album": "By the Way (Deluxe Edition)",
+        "duration_ms": 231933,
+        "track_id": "1ndGB6rvxKYN9seCYO1dTF"
+    },
+    {
+        "name": "Çaresizim",
+        "artist": "Funda",
+        "album": "Çaresizim",
+        "duration_ms": 214480,
+        "track_id": "6GNoRytYHewXprnDo6cvQn"
+    },
+    {
+        "name": "Didn't I",
+        "artist": "Darondo",
+        "album": "Let My People Go",
+        "duration_ms": 209160,
+        "track_id": "6Dq2LzijkY9WNPwBGDah4L"
+    },
+    {
+        "name": "Beneath The Veil of Flesh",
+        "artist": "The Fallen Prophets",
+        "album": "Beneath The Veil of Flesh",
+        "duration_ms": 271846,
+        "track_id": "7iYPXxeH8VPby5d4OeFWxV"
+    }
+]

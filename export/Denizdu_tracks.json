@@ -1,0 +1,1192 @@
+[
+    {
+        "name": "My Sweet Lord",
+        "artist": "George Harrison",
+        "album": "Eric Clapton: Life In 12 Bars (Original Motion Picture Soundtrack)",
+        "duration_ms": 280466,
+        "track_id": "6u9pmFX8oAmaUyQ6k8gEkw"
+    },
+    {
+        "name": "Ain't No Mountain High Enough",
+        "artist": "Marvin Gaye",
+        "album": "United",
+        "duration_ms": 151666,
+        "track_id": "7tqhbajSfrz2F7E1Z75ASX"
+    },
+    {
+        "name": "Ain't No Sunshine",
+        "artist": "Bill Withers",
+        "album": "Just As I Am",
+        "duration_ms": 125093,
+        "track_id": "1k1Bqnv2R0uJXQN4u6LKYt"
+    },
+    {
+        "name": "Landslide",
+        "artist": "Fleetwood Mac",
+        "album": "Fleetwood Mac",
+        "duration_ms": 199493,
+        "track_id": "5ihS6UUlyQAfmp48eSkxuQ"
+    },
+    {
+        "name": "Hooked On A Feeling",
+        "artist": "B.J. Thomas",
+        "album": "20 Greatest Hits",
+        "duration_ms": 167746,
+        "track_id": "09IaAg89NGaWLRvqlYoBPM"
+    },
+    {
+        "name": "I'm a Believer - 2006 Remaster",
+        "artist": "The Monkees",
+        "album": "More of The Monkees (Deluxe Edition)",
+        "duration_ms": 167373,
+        "track_id": "3G7tRC24Uh09Hmp1KZ7LQ2"
+    },
+    {
+        "name": "Spirit In The Sky - Deluxe Edition",
+        "artist": "Norman Greenbaum",
+        "album": "Spirit In The Sky (Deluxe Edition)",
+        "duration_ms": 242893,
+        "track_id": "0jvN7eQJJt4nxQzgQfZ1SP"
+    },
+    {
+        "name": "Moonage Daydream - 2002 Remaster",
+        "artist": "David Bowie",
+        "album": "Sound + Vision",
+        "duration_ms": 280773,
+        "track_id": "1K9ktcUxlgCM5DyziEGtDx"
+    },
+    {
+        "name": "Fooled Around And Fell In Love",
+        "artist": "Elvin Bishop",
+        "album": "The Devil's Rejects",
+        "duration_ms": 277600,
+        "track_id": "2heD738dGBY8O5j3EynzHf"
+    },
+    {
+        "name": "Who's Loving You",
+        "artist": "The Jackson 5",
+        "album": "Anthology: Jackson 5",
+        "duration_ms": 240240,
+        "track_id": "1KxMZqxvu6ZtuZmcchgrsR"
+    },
+    {
+        "name": "Rocket Man (I Think It's Going To Be A Long, Long Time)",
+        "artist": "Elton John",
+        "album": "Honky Chateau",
+        "duration_ms": 281613,
+        "track_id": "3gdewACMIVMEWVbyb8O9sY"
+    },
+    {
+        "name": "Nobody Knows You When You're Down And Out",
+        "artist": "Derek & The Dominos",
+        "album": "Layla And Other Assorted Love Songs (Remastered 2010)",
+        "duration_ms": 297320,
+        "track_id": "0xvRoqvLmijll3D5qTnrRP"
+    },
+    {
+        "name": "Just the Two of Us (feat. Bill Withers)",
+        "artist": "Grover Washington, Jr.",
+        "album": "Anthology",
+        "duration_ms": 438493,
+        "track_id": "1ko2lVN0vKGUl9zrU0qSlT"
+    },
+    {
+        "name": "Sultans Of Swing",
+        "artist": "Dire Straits",
+        "album": "Dire Straits",
+        "duration_ms": 348400,
+        "track_id": "37Tmv4NnfQeb0ZgUC4fOJj"
+    },
+    {
+        "name": "Come and Get Your Love - Single Version",
+        "artist": "Redbone",
+        "album": "Come and Get Your Love",
+        "duration_ms": 205933,
+        "track_id": "7GVUmCP00eSsqc4tzj1sDD"
+    },
+    {
+        "name": "Big In Japan",
+        "artist": "Ane Brun",
+        "album": "Songs 2003-2013",
+        "duration_ms": 189773,
+        "track_id": "09ICudooX2c6aCJpsofxQa"
+    },
+    {
+        "name": "Escape (The Pina Colada Song)",
+        "artist": "Rupert Holmes",
+        "album": "Partners In Crime",
+        "duration_ms": 276493,
+        "track_id": "5IMtdHjJ1OtkxbGe4zfUxQ"
+    },
+    {
+        "name": "O-o-h Child",
+        "artist": "The Five Stairsteps",
+        "album": "The First Family of Soul: The Best of The Five Stairsteps",
+        "duration_ms": 197160,
+        "track_id": "74JdR9aXE6I74oS1BVRsvb"
+    },
+    {
+        "name": "I Heard It Through The Grapevine",
+        "artist": "Marvin Gaye",
+        "album": "In The Groove",
+        "duration_ms": 194293,
+        "track_id": "1tqT6DhmsrtQgyCKUwotiw"
+    },
+    {
+        "name": "My Guy",
+        "artist": "Mary Wells",
+        "album": "Mary Wells Sings My Guy",
+        "duration_ms": 174440,
+        "track_id": "4591VqUIXysNlmI5NcAIUd"
+    },
+    {
+        "name": "Heaven Must Have Sent You - Mono Single",
+        "artist": "The Elgins",
+        "album": "The Motown Anthology",
+        "duration_ms": 150946,
+        "track_id": "2j24h8ZvzouJRg2HzHvRH4"
+    },
+    {
+        "name": "Helpless - Stereo Version",
+        "artist": "Kim Weston",
+        "album": "The Motown Anthology",
+        "duration_ms": 155973,
+        "track_id": "15MtkMqZIqHSej2FfEi8gA"
+    },
+    {
+        "name": "River",
+        "artist": "Leon Bridges",
+        "album": "Coming Home",
+        "duration_ms": 238560,
+        "track_id": "0NeJjNlprGfZpeX2LQuN6c"
+    },
+    {
+        "name": "While My Guitar Gently Weeps - Remastered 2009",
+        "artist": "The Beatles",
+        "album": "The Beatles (Remastered)",
+        "duration_ms": 285000,
+        "track_id": "389QX9Q1eUOEZ19vtzzI9O"
+    },
+    {
+        "name": "Layla - Acoustic; Live at MTV Unplugged, Bray Film Studios, Windsor, England, UK, 1/16/1992; 2013 Remaster",
+        "artist": "Eric Clapton",
+        "album": "Unplugged (Deluxe Edition)",
+        "duration_ms": 289026,
+        "track_id": "3BEZCNZSmVv30vsMNSOCri"
+    },
+    {
+        "name": "Down To The Waterline",
+        "artist": "Dire Straits",
+        "album": "Dire Straits",
+        "duration_ms": 241906,
+        "track_id": "7fYKKFD0jiSlMDgG9IUs1q"
+    },
+    {
+        "name": "The Thrill Is Gone",
+        "artist": "B.B. King",
+        "album": "B.B. King & Friends - 80",
+        "duration_ms": 301453,
+        "track_id": "4kyKnNbxFe86MMeV4xpDL8"
+    },
+    {
+        "name": "Everybody's Talkin'",
+        "artist": "Fred Neil",
+        "album": "Fred Neil",
+        "duration_ms": 164600,
+        "track_id": "5yZzLyY9SMI3ZjdqpXWYDp"
+    },
+    {
+        "name": "Mean Old World",
+        "artist": "Derek & The Dominos",
+        "album": "Martin Scorsese Presents The Blues: Eric Clapton",
+        "duration_ms": 230360,
+        "track_id": "4U5szMDcaXwdywZpIeN9Zt"
+    },
+    {
+        "name": "House of the Rising Sun",
+        "artist": "The Animals",
+        "album": "The Singles Plus",
+        "duration_ms": 269906,
+        "track_id": "4mn2kNTqiGLwaUR8JdhJ1l"
+    },
+    {
+        "name": "Knockin' On Heaven's Door",
+        "artist": "Bob Dylan",
+        "album": "Pat Garrett & Billy The Kid (Soundtrack From The Motion Picture)",
+        "duration_ms": 149880,
+        "track_id": "6HSXNV0b4M4cLJ7ljgVVeh"
+    },
+    {
+        "name": "Let It Be - Remastered 2009",
+        "artist": "The Beatles",
+        "album": "Let It Be (Remastered)",
+        "duration_ms": 243026,
+        "track_id": "7iN1s7xHE4ifF5povM6A48"
+    },
+    {
+        "name": "Me and Julio Down by the Schoolyard",
+        "artist": "Paul Simon",
+        "album": "Paul Simon",
+        "duration_ms": 164813,
+        "track_id": "6vxHp3CDNo0afgKGp2yi1E"
+    },
+    {
+        "name": "Peace Train",
+        "artist": "Yusuf / Cat Stevens",
+        "album": "Teaser And The Firecat",
+        "duration_ms": 251333,
+        "track_id": "1ppuHX1oVMku5LTL0swNZP"
+    },
+    {
+        "name": "Blackbird - Remastered 2009",
+        "artist": "The Beatles",
+        "album": "The Beatles (Remastered)",
+        "duration_ms": 138386,
+        "track_id": "5jgFfDIR6FR0gvlA56Nakr"
+    },
+    {
+        "name": "Mr. Tambourine Man",
+        "artist": "Bob Dylan",
+        "album": "Bringing It All Back Home",
+        "duration_ms": 330533,
+        "track_id": "3RkQ3UwOyPqpIiIvGVewuU"
+    },
+    {
+        "name": "Dreams - 2004 Remaster",
+        "artist": "Fleetwood Mac",
+        "album": "Rumours (Super Deluxe)",
+        "duration_ms": 257800,
+        "track_id": "0ofHAoxe9vBkTCp2UQIavz"
+    },
+    {
+        "name": "The Scientist",
+        "artist": "Coldplay",
+        "album": "A Rush of Blood to the Head",
+        "duration_ms": 309600,
+        "track_id": "75JFxkI2RXiU7L9VXzMkle"
+    },
+    {
+        "name": "Purple Rain",
+        "artist": "Prince",
+        "album": "Purple Rain",
+        "duration_ms": 520786,
+        "track_id": "54X78diSLoUDI3joC2bjMz"
+    },
+    {
+        "name": "Ich kann auch ohne dich",
+        "artist": "Killerpilze",
+        "album": "Invasion der Killerpilze",
+        "duration_ms": 193693,
+        "track_id": "4SA7YJ7RR6FhzPqtuD2AQy"
+    },
+    {
+        "name": "Stormy Weather",
+        "artist": "Etta James",
+        "album": "At Last!",
+        "duration_ms": 187666,
+        "track_id": "2IdwQxhJn9ZE4zIotcCefR"
+    },
+    {
+        "name": "Why Don't You Do Right (Get Me Some Money Too) - Remastered 1998",
+        "artist": "Peggy Lee",
+        "album": "The Best Of Miss Peggy Lee",
+        "duration_ms": 147800,
+        "track_id": "5bIcVAGdof8JGvFKtWlHnD"
+    },
+    {
+        "name": "Under the Bridge",
+        "artist": "Red Hot Chili Peppers",
+        "album": "Blood Sugar Sex Magik (Deluxe Edition)",
+        "duration_ms": 264306,
+        "track_id": "3d9DChrdc6BOeFsbrZ3Is0"
+    },
+    {
+        "name": "Don't Look Back in Anger - Remastered",
+        "artist": "Oasis",
+        "album": "(What's The Story) Morning Glory? [Remastered]",
+        "duration_ms": 289560,
+        "track_id": "0UvCh63URrLFcPkKt99hHd"
+    },
+    {
+        "name": "Wonderwall - Remastered",
+        "artist": "Oasis",
+        "album": "(What's The Story) Morning Glory? [Remastered]",
+        "duration_ms": 258773,
+        "track_id": "5qqabIl2vWzo9ApSC317sa"
+    },
+    {
+        "name": "Roxanne",
+        "artist": "The Police",
+        "album": "Outlandos D'Amour (Remastered 2003)",
+        "duration_ms": 191946,
+        "track_id": "3EYOJ48Et32uATr9ZmLnAo"
+    },
+    {
+        "name": "Fragile",
+        "artist": "Sting",
+        "album": "...Nothing Like The Sun",
+        "duration_ms": 236306,
+        "track_id": "5oE6INocVL9viDow5y8QNM"
+    },
+    {
+        "name": "Stand By Me",
+        "artist": "Ben E. King",
+        "album": "Don't Play That Song (Mono)",
+        "duration_ms": 180055,
+        "track_id": "3SdTKo2uVsxFblQjpScoHy"
+    },
+    {
+        "name": "Yassassin - Turkish For: Long Live; 2017 Remaster",
+        "artist": "David Bowie",
+        "album": "Lodger (2017 Remaster)",
+        "duration_ms": 253133,
+        "track_id": "7GUqTaobt7S0eQp6QXE4dE"
+    },
+    {
+        "name": "It Hurt So Bad",
+        "artist": "Susan Tedeschi",
+        "album": "Just Won't Burn",
+        "duration_ms": 290000,
+        "track_id": "6Wo4NzqOlmk774LQ7wDeTq"
+    },
+    {
+        "name": "Come and Get Your Love (Rerecorded)",
+        "artist": "Redbone",
+        "album": "The Best of Redbone",
+        "duration_ms": 208306,
+        "track_id": "2T43UrvAg60ubJVo5KQ3t7"
+    },
+    {
+        "name": "Have You Ever Seen The Rain",
+        "artist": "Creedence Clearwater Revival",
+        "album": "Pendulum (Expanded Edition)",
+        "duration_ms": 160133,
+        "track_id": "2LawezPeJhN4AWuSB0GtAU"
+    },
+    {
+        "name": "White Room",
+        "artist": "Cream",
+        "album": "Wheels Of Fire",
+        "duration_ms": 298333,
+        "track_id": "3Xls4cNOwy01dtrNXb1inG"
+    },
+    {
+        "name": "Light My Fire",
+        "artist": "The Doors",
+        "album": "The Doors",
+        "duration_ms": 429760,
+        "track_id": "5uvosCdMlFdTXhoazkTI5R"
+    },
+    {
+        "name": "Fire and Rain - 2019 Remaster",
+        "artist": "James Taylor",
+        "album": "Sweet Baby James (2019 Remaster)",
+        "duration_ms": 203613,
+        "track_id": "1oht5GevPN9t1T3kG1m1GO"
+    },
+    {
+        "name": "Mr. Blue Sky",
+        "artist": "Electric Light Orchestra",
+        "album": "Out of the Blue",
+        "duration_ms": 303373,
+        "track_id": "2RlgNHKcydI9sayD2Df2xp"
+    },
+    {
+        "name": "Should I Stay or Should I Go - Remastered",
+        "artist": "The Clash",
+        "album": "Combat Rock (Remastered)",
+        "duration_ms": 188986,
+        "track_id": "39shmbIHICJ2Wxnk1fPSdz"
+    },
+    {
+        "name": "Historia de un Amor",
+        "artist": "Guadalupe Pineda",
+        "album": "Canciones De Amor De Guadalupe Pineda",
+        "duration_ms": 204506,
+        "track_id": "7hjKgEe7XwWQn2zfp8EWWz"
+    },
+    {
+        "name": "Jimmy",
+        "artist": "Moriarty",
+        "album": "Gee Whiz But This Is a Lonesome Town",
+        "duration_ms": 264826,
+        "track_id": "6Zw0NBdfr1VlVJjDRFwUe1"
+    },
+    {
+        "name": "Autumn Leaves",
+        "artist": "Eric Clapton",
+        "album": "Clapton",
+        "duration_ms": 340786,
+        "track_id": "6bLy8YiVKRpUzwWZG6lVDq"
+    },
+    {
+        "name": "California Dreamin' - Single Version",
+        "artist": "The Mamas & The Papas",
+        "album": "If You Can Believe Your Eyes & Ears",
+        "duration_ms": 162373,
+        "track_id": "4s6LhHAV5SEsOV0lC2tjvJ"
+    },
+    {
+        "name": "There's No Way out of Here - 2006 Remaster",
+        "artist": "David Gilmour",
+        "album": "David Gilmour",
+        "duration_ms": 323786,
+        "track_id": "6vEsARqRHApKQ25XRIE8j8"
+    },
+    {
+        "name": "Wild Horses - 2009 Mix",
+        "artist": "The Rolling Stones",
+        "album": "Sticky Fingers (Remastered)",
+        "duration_ms": 341773,
+        "track_id": "52dm9op3rbfAkc1LGXgipW"
+    },
+    {
+        "name": "At Last",
+        "artist": "Etta James",
+        "album": "At Last!",
+        "duration_ms": 179693,
+        "track_id": "4Hhv2vrOTy89HFRcjU3QOx"
+    },
+    {
+        "name": "I'd Rather Go Blind",
+        "artist": "Etta James",
+        "album": "Tell Mama",
+        "duration_ms": 156653,
+        "track_id": "1kPBT8S2wJFNAyBMnGVZgL"
+    },
+    {
+        "name": "Put On Your Sunday Clothes",
+        "artist": "Jerry Herman",
+        "album": "Hello, Dolly!",
+        "duration_ms": 332493,
+        "track_id": "1IWR45a70faZVTduyIRpG9"
+    },
+    {
+        "name": "Oh Girl",
+        "artist": "The Chi-Lites",
+        "album": "The Ultimate Chi-Lites",
+        "duration_ms": 217520,
+        "track_id": "5tcR6nVpY1JRDyDcK0K60f"
+    },
+    {
+        "name": "Tu Penses Encore À Lui",
+        "artist": "Barış Manço",
+        "album": "Manlac Blues 9, Volume 1 (Demo 1965 - 1966)",
+        "duration_ms": 202371,
+        "track_id": "6rI3JDm3bDTQWqdqQ64Wwe"
+    },
+    {
+        "name": "Lovely Day",
+        "artist": "Bill Withers",
+        "album": "Lean on Me: The Best of Bill Withers",
+        "duration_ms": 255066,
+        "track_id": "0ACACkoHUwgfgY5CxVIL4N"
+    },
+    {
+        "name": "And The Sun Will Shine",
+        "artist": "Bee Gees",
+        "album": "Best Of Bee Gees (Vol. 2)",
+        "duration_ms": 214400,
+        "track_id": "7tH02gHPONOydLNiyh77XZ"
+    },
+    {
+        "name": "Spicks And Specks",
+        "artist": "Bee Gees",
+        "album": "The Record - Their Greatest Hits",
+        "duration_ms": 171533,
+        "track_id": "3VDc5gm14mRYDUANXeLW5Y"
+    },
+    {
+        "name": "Love and Happiness",
+        "artist": "Al Green",
+        "album": "I'm Still in Love with You",
+        "duration_ms": 307062,
+        "track_id": "6SMHgPgNkhe9lneNTbgtel"
+    },
+    {
+        "name": "Signed, Sealed, Delivered (I'm Yours)",
+        "artist": "Stevie Wonder",
+        "album": "Signed, Sealed And Delivered",
+        "duration_ms": 161160,
+        "track_id": "2eF8pWbiivYsYRpbntYsnc"
+    },
+    {
+        "name": "Home",
+        "artist": "Edward Sharpe & The Magnetic Zeros",
+        "album": "Up From Below",
+        "duration_ms": 306320,
+        "track_id": "0cBPuDA3xUjR4Vh9o7CKy8"
+    },
+    {
+        "name": "Stuck In The Middle With You",
+        "artist": "Stealers Wheel",
+        "album": "Stealers Wheel",
+        "duration_ms": 208946,
+        "track_id": "3Vby4nGmtbDo7HDJamOWkT"
+    },
+    {
+        "name": "Mrs. Robinson - From \"The Graduate\" Soundtrack",
+        "artist": "Simon & Garfunkel",
+        "album": "Bookends",
+        "duration_ms": 244026,
+        "track_id": "0iOZM63lendWRTTeKhZBSC"
+    },
+    {
+        "name": "With A Little Help From My Friends",
+        "artist": "Joe Cocker",
+        "album": "With A Little Help From My Friends",
+        "duration_ms": 312173,
+        "track_id": "0YZ3J8xzGwLOg4yEgST1YK"
+    },
+    {
+        "name": "Easy",
+        "artist": "Commodores",
+        "album": "Commodores",
+        "duration_ms": 256426,
+        "track_id": "1JQ6Xm1JrvHfvAqhl5pwaA"
+    },
+    {
+        "name": "Miranda",
+        "artist": "Fleetwood Mac",
+        "album": "Say You Will",
+        "duration_ms": 257146,
+        "track_id": "1zgYm6oTVVyUMVK7XtCIre"
+    },
+    {
+        "name": "Long As I Can See The Light",
+        "artist": "Creedence Clearwater Revival",
+        "album": "Cosmo's Factory (Expanded Edition)",
+        "duration_ms": 210866,
+        "track_id": "4Sk6QA0RoRqZ3Hg9TlAX4X"
+    },
+    {
+        "name": "The Longest Time",
+        "artist": "Billy Joel",
+        "album": "An Innocent Man",
+        "duration_ms": 217906,
+        "track_id": "5DH7nDryMhpixm4G4B7RP9"
+    },
+    {
+        "name": "How to Fight Loneliness",
+        "artist": "Wilco",
+        "album": "Summerteeth",
+        "duration_ms": 232026,
+        "track_id": "1CsMuJeMzRqNgS7G0fo1Gv"
+    },
+    {
+        "name": "Across The Overpass",
+        "artist": "The Solids",
+        "album": "The Solids",
+        "duration_ms": 245626,
+        "track_id": "4sqIBV3ukQDqRr8Me2nvQb"
+    },
+    {
+        "name": "Do I Wanna Know?",
+        "artist": "Arctic Monkeys",
+        "album": "AM",
+        "duration_ms": 272394,
+        "track_id": "5FVd6KXrgO9B3JPmC8OPst"
+    },
+    {
+        "name": "If You See Her, Say Hello",
+        "artist": "Bob Dylan",
+        "album": "Blood On The Tracks",
+        "duration_ms": 288000,
+        "track_id": "3xNO6JUk9ySYjxuqzcZYRB"
+    },
+    {
+        "name": "L-O-V-E",
+        "artist": "Nat King Cole",
+        "album": "L-O-V-E",
+        "duration_ms": 155306,
+        "track_id": "4QxDOjgpYtQDxxbWPuEJOy"
+    },
+    {
+        "name": "The Blue Room",
+        "artist": "Ella Fitzgerald",
+        "album": "Ella Fitzgerald Sings The Rodgers And Hart Song Book",
+        "duration_ms": 151546,
+        "track_id": "4vh2xfZrAOdCtqpFZdMD3B"
+    },
+    {
+        "name": "Superstition - Single Version",
+        "artist": "Stevie Wonder",
+        "album": "The Definitive Collection",
+        "duration_ms": 245493,
+        "track_id": "1h2xVEoJORqrg71HocgqXd"
+    },
+    {
+        "name": "California Dreamin'",
+        "artist": "Bobby Womack",
+        "album": "Fly Me To The Moon",
+        "duration_ms": 200973,
+        "track_id": "6G7MHIvSDR3ehXPkuDFAlM"
+    },
+    {
+        "name": "Hard to Handle",
+        "artist": "Otis Redding",
+        "album": "Soul Manifesto: 1964-1970",
+        "duration_ms": 141000,
+        "track_id": "3AW8RH8wosGLxd6ZojTGBe"
+    },
+    {
+        "name": "Bell Bottom Blues",
+        "artist": "Derek & The Dominos",
+        "album": "The Cream Of Clapton",
+        "duration_ms": 303666,
+        "track_id": "0kzuHiTkK8HLpg4sG8Uzky"
+    },
+    {
+        "name": "Eleanor Rigby - Remastered",
+        "artist": "The Beatles",
+        "album": "Revolver (Remastered)",
+        "duration_ms": 126533,
+        "track_id": "77f3aNeabAbOaSB32Sd5QE"
+    },
+    {
+        "name": "A Day In The Life - Remastered",
+        "artist": "The Beatles",
+        "album": "Sgt. Pepper's Lonely Hearts Club Band (Remastered)",
+        "duration_ms": 337413,
+        "track_id": "3ZFBeIyP41HhnALjxWy1pR"
+    },
+    {
+        "name": "Heads in Georgia",
+        "artist": "J.J. Cale",
+        "album": "The Road to Escondido",
+        "duration_ms": 249440,
+        "track_id": "223ebnSx4gnLXWAEsIfuB7"
+    },
+    {
+        "name": "Sunshine Of Your Love",
+        "artist": "Cream",
+        "album": "Disraeli Gears",
+        "duration_ms": 250000,
+        "track_id": "6FRwDxXsvSasw0y2eDArsz"
+    },
+    {
+        "name": "Ramblin' Man",
+        "artist": "Allman Brothers Band",
+        "album": "Dreams",
+        "duration_ms": 288506,
+        "track_id": "5cfYurP1XKldMBtvBBJiTs"
+    },
+    {
+        "name": "Rock Me Baby",
+        "artist": "B.B. King",
+        "album": "Deuces Wild",
+        "duration_ms": 397200,
+        "track_id": "1bursm5ZnNHQS55a23h7kR"
+    },
+    {
+        "name": "Postcards from Italy",
+        "artist": "Beirut",
+        "album": "Gulag Orkestar",
+        "duration_ms": 257480,
+        "track_id": "4qBHDoJFUUSvTa4aZJfEuw"
+    },
+    {
+        "name": "I'm Your Hoochie Coochie Man",
+        "artist": "Muddy Waters",
+        "album": "King Of The Electric Blues",
+        "duration_ms": 238533,
+        "track_id": "3KSchPNSklO5McIqRH3qYX"
+    },
+    {
+        "name": "Don't Stop Believin'",
+        "artist": "Journey",
+        "album": "Escape (Bonus Track Version)",
+        "duration_ms": 250986,
+        "track_id": "4bHsxqR3GMrXTxEPLuK5ue"
+    },
+    {
+        "name": "space girl",
+        "artist": "Frances Forever",
+        "album": "space girl",
+        "duration_ms": 231440,
+        "track_id": "7FjIYiD53wxlQmzTT6Wdpf"
+    },
+    {
+        "name": "Breathe (In The Air) - 2011 Remastered Version",
+        "artist": "Pink Floyd",
+        "album": "The Dark Side Of The Moon (2011 Remastered Version)",
+        "duration_ms": 169560,
+        "track_id": "3zJRvtQkHQRTNEXSY8jQPR"
+    },
+    {
+        "name": "I Get A Kick Out Of You",
+        "artist": "Ella Fitzgerald",
+        "album": "Ella Fitzgerald Sings The Cole Porter Song Book",
+        "duration_ms": 241613,
+        "track_id": "1NV8LlaC1InXaDQOcMBQTg"
+    },
+    {
+        "name": "Wicked Game",
+        "artist": "Chris Isaak",
+        "album": "Best of Chris Isaak (Remastered)",
+        "duration_ms": 286880,
+        "track_id": "390AWnOn2rfe9FzQjYmxIH"
+    },
+    {
+        "name": "Across The Universe - Remastered 2009",
+        "artist": "The Beatles",
+        "album": "Let It Be (Remastered)",
+        "duration_ms": 228133,
+        "track_id": "4dkoqJrP0L8FXftrMZongF"
+    },
+    {
+        "name": "Harvest Moon",
+        "artist": "Neil Young",
+        "album": "Harvest Moon",
+        "duration_ms": 303213,
+        "track_id": "5l9c6bJmzvftumhz4TMPgk"
+    },
+    {
+        "name": "Heart of Gold - 2009 Remaster",
+        "artist": "Neil Young",
+        "album": "Harvest (2009 Remaster)",
+        "duration_ms": 187013,
+        "track_id": "1Q1b8eVkUPGlpSArl8JAVw"
+    },
+    {
+        "name": "Relax, Take It Easy",
+        "artist": "MIKA",
+        "album": "Life In Cartoon Motion",
+        "duration_ms": 270000,
+        "track_id": "0KM2y796j63t5RHhvRUxld"
+    },
+    {
+        "name": "Take It Easy - 2013 Remaster",
+        "artist": "Eagles",
+        "album": "Eagles (2013 Remaster)",
+        "duration_ms": 211577,
+        "track_id": "4yugZvBYaoREkJKtbG08Qr"
+    },
+    {
+        "name": "Dark Necessities",
+        "artist": "Red Hot Chili Peppers",
+        "album": "The Getaway",
+        "duration_ms": 302000,
+        "track_id": "2oaK4JLVnmRGIO9ytBE1bt"
+    },
+    {
+        "name": "My My, Hey Hey (Out of the Blue) - 2016 Remaster",
+        "artist": "Neil Young",
+        "album": "Rust Never Sleeps",
+        "duration_ms": 227705,
+        "track_id": "6VltRkmJbCTqgKrTHk4Ulw"
+    },
+    {
+        "name": "Lithium",
+        "artist": "Nirvana",
+        "album": "Nevermind (Deluxe Edition)",
+        "duration_ms": 257053,
+        "track_id": "26D1PRJjD9Jj1JGRk88KVc"
+    },
+    {
+        "name": "Where Is My Mind? - 2007 Remaster",
+        "artist": "Pixies",
+        "album": "Surfer Rosa (2007 Remaster)",
+        "duration_ms": 234973,
+        "track_id": "7wCmS9TTVUcIhRalDYFgPy"
+    },
+    {
+        "name": "Tenderly",
+        "artist": "Ella Fitzgerald",
+        "album": "The Complete Ella And Louis On Verve",
+        "duration_ms": 308866,
+        "track_id": "23FPH08OAhFgWn9jWUzmO5"
+    },
+    {
+        "name": "I'm In The Mood For Love",
+        "artist": "Julie London",
+        "album": "Julie Is Her Name",
+        "duration_ms": 149826,
+        "track_id": "6crfO56bDm0RjpctUuGs5X"
+    },
+    {
+        "name": "Feeling Good",
+        "artist": "Nina Simone",
+        "album": "I Put A Spell On You",
+        "duration_ms": 174000,
+        "track_id": "6Rqn2GFlmvmV4w9Ala0I1e"
+    },
+    {
+        "name": "Proud Mary",
+        "artist": "Creedence Clearwater Revival",
+        "album": "Bayou Country (Expanded Edition)",
+        "duration_ms": 187213,
+        "track_id": "6pxWv6GV35VGmcPf5dh6CH"
+    },
+    {
+        "name": "Born Under A Bad Sign",
+        "artist": "Albert King",
+        "album": "Born Under A Bad Sign",
+        "duration_ms": 167040,
+        "track_id": "2izaaCVI9F3B6d4CYggKsR"
+    },
+    {
+        "name": "Lucille",
+        "artist": "B.B. King",
+        "album": "Lucille",
+        "duration_ms": 616560,
+        "track_id": "4ZSJs1cqeincEi2KjUGmZC"
+    },
+    {
+        "name": "Blue Moon",
+        "artist": "Billie Holiday",
+        "album": "Solitude",
+        "duration_ms": 207826,
+        "track_id": "1pZn8AX1WulW8IO338hE5D"
+    },
+    {
+        "name": "Scar Tissue",
+        "artist": "Red Hot Chili Peppers",
+        "album": "Californication (Deluxe Edition)",
+        "duration_ms": 215906,
+        "track_id": "1G391cbiT3v3Cywg8T7DM1"
+    },
+    {
+        "name": "My Babe",
+        "artist": "Little Walter",
+        "album": "The Essential Little Walter",
+        "duration_ms": 162040,
+        "track_id": "4KMXlzvtC8xjLseDqDjpeU"
+    },
+    {
+        "name": "Last Night",
+        "artist": "Little Walter",
+        "album": "The Essential Little Walter",
+        "duration_ms": 174506,
+        "track_id": "1eVYc7k0T5QmllPqfUwYHR"
+    },
+    {
+        "name": "Blackbird - Remastered",
+        "artist": "The Beatles",
+        "album": "The Beatles (Remastered)",
+        "duration_ms": 138386,
+        "track_id": "4Z92RMiyJpUrApZi3LtpJ6"
+    },
+    {
+        "name": "Be My Baby",
+        "artist": "The Ronettes",
+        "album": "Be My Baby: The Very Best of The Ronettes",
+        "duration_ms": 160906,
+        "track_id": "2G2YzndIA6jeWFPBXhUjh5"
+    },
+    {
+        "name": "Soothe Me",
+        "artist": "Sam & Dave",
+        "album": "The Best of Sam & Dave",
+        "duration_ms": 152333,
+        "track_id": "3pL0x4IUqemNfzJPn5Hvbi"
+    },
+    {
+        "name": "You Don't Own Me",
+        "artist": "Lesley Gore",
+        "album": "Lesley Gore Sings Of Mixed-Up Hearts",
+        "duration_ms": 150000,
+        "track_id": "5E1pngWasYW2Y6OjV6WMUs"
+    },
+    {
+        "name": "You Never Can Tell",
+        "artist": "Chuck Berry",
+        "album": "You Never Can Tell: His Complete Chess Recordings 1960 -1966",
+        "duration_ms": 161946,
+        "track_id": "7xcFTtcCiyRvqLLq8s61WF"
+    },
+    {
+        "name": "Can't Help Falling In Love",
+        "artist": "Elvis Presley",
+        "album": "If I Can Dream: Elvis Presley with the Royal Philharmonic Orchestra",
+        "duration_ms": 198600,
+        "track_id": "6sE53f6saWW6AwB5V8Z47U"
+    },
+    {
+        "name": "What A Man",
+        "artist": "Linda Lyndell",
+        "album": "Stax 50th Anniversary",
+        "duration_ms": 160546,
+        "track_id": "20fHsQJ6sXz6EFN3VTPpOD"
+    },
+    {
+        "name": "Build Me Up Buttercup",
+        "artist": "The Foundations",
+        "album": "Build Me Up Buttercup",
+        "duration_ms": 178533,
+        "track_id": "3XcuLPQb1LG13ZJEEa6wUI"
+    },
+    {
+        "name": "Live And Let Die - 2018 Remaster",
+        "artist": "Wings",
+        "album": "Red Rose Speedway (Archive Collection)",
+        "duration_ms": 192773,
+        "track_id": "0VV8wkOM4w78A2OHZOTzNP"
+    },
+    {
+        "name": "Give A Little Bit",
+        "artist": "Supertramp",
+        "album": "Even In The Quietest Moments",
+        "duration_ms": 248173,
+        "track_id": "6XUHsYE38CEbYunT983O9G"
+    },
+    {
+        "name": "Hold the Line",
+        "artist": "TOTO",
+        "album": "Toto",
+        "duration_ms": 235546,
+        "track_id": "4aVuWgvD0X63hcOCnZtNFA"
+    },
+    {
+        "name": "Do You Believe in Magic?",
+        "artist": "The Lovin' Spoonful",
+        "album": "Do you Believe In Magic",
+        "duration_ms": 125826,
+        "track_id": "1udKn1oNKYQSQ9OmiIWCMu"
+    },
+    {
+        "name": "My Girl",
+        "artist": "The Temptations",
+        "album": "The Temptations Sing Smokey",
+        "duration_ms": 165000,
+        "track_id": "6RrXd9Hph4hYR4bf3dbM6H"
+    },
+    {
+        "name": "Ho Hey",
+        "artist": "The Lumineers",
+        "album": "The Lumineers (Deluxe Edition)",
+        "duration_ms": 163133,
+        "track_id": "1K3LRUEcUz5FMtPYyg0F45"
+    },
+    {
+        "name": "Ain't Nobody's Problem",
+        "artist": "The Lumineers",
+        "album": "The Lumineers (Deluxe Edition)",
+        "duration_ms": 297293,
+        "track_id": "0pU1HbVdZbEjEfIwm6LVrt"
+    },
+    {
+        "name": "I'll Be Alright",
+        "artist": "Eric Clapton",
+        "album": "I Still Do",
+        "duration_ms": 263439,
+        "track_id": "2C63KZhvPoHgRWggVgFR6q"
+    },
+    {
+        "name": "Breaking Up Is Hard to Do",
+        "artist": "Neil Sedaka",
+        "album": "Collections",
+        "duration_ms": 136266,
+        "track_id": "7utoClKnLShFg6u6dZ20gp"
+    },
+    {
+        "name": "Be Thankful for What You Got (Pt. 1 & Pt. 2)",
+        "artist": "William DeVaughn",
+        "album": "Be Thankful for What You Got",
+        "duration_ms": 429371,
+        "track_id": "7pN8GMLw3prWFn5nvJRM6O"
+    },
+    {
+        "name": "In the Lap of the Mountain",
+        "artist": "Garret Wall",
+        "album": "Buried",
+        "duration_ms": 248626,
+        "track_id": "3vVjgztCAk9z8eBEhXgo9Q"
+    },
+    {
+        "name": "Guilty",
+        "artist": "Al Bowlly",
+        "album": "Goodnight Sweetheart",
+        "duration_ms": 192317,
+        "track_id": "6nvlZApzLzfZCCPjs8DXcd"
+    },
+    {
+        "name": "Sweet Wanomi",
+        "artist": "Bill Withers",
+        "album": "Just As I Am",
+        "duration_ms": 152773,
+        "track_id": "0vJ3Y2MnDXi4hpxSeQdQEC"
+    },
+    {
+        "name": "Then Came the Last Days of May",
+        "artist": "Blue Öyster Cult",
+        "album": "Blue Oyster Cult",
+        "duration_ms": 210546,
+        "track_id": "60TYdVs6TWIsAJ1MPRdv59"
+    },
+    {
+        "name": "Back In Love Again",
+        "artist": "L.T.D.",
+        "album": "Classics Volume 27",
+        "duration_ms": 284733,
+        "track_id": "6dQSzIIt4gNE9BpF02Tus4"
+    },
+    {
+        "name": "Little Green Bag",
+        "artist": "George Baker Selection",
+        "album": "The Tarantino Connection",
+        "duration_ms": 195333,
+        "track_id": "4DR5MStkWtDYf17jBUOo0V"
+    },
+    {
+        "name": "If I Were A Rich Man",
+        "artist": "John Williams",
+        "album": "Fiddler On The Roof (Original Motion Picture Soundtrack)",
+        "duration_ms": 324600,
+        "track_id": "76FAfdFlazdZxS63izv3j4"
+    },
+    {
+        "name": "I'm Gonna Be (500 Miles)",
+        "artist": "The Proclaimers",
+        "album": "Sunshine on Leith",
+        "duration_ms": 219466,
+        "track_id": "67iAlVNDDdddxqSD2EZhFs"
+    },
+    {
+        "name": "9 to 5",
+        "artist": "Dolly Parton",
+        "album": "9 To 5 And Odd Jobs",
+        "duration_ms": 162466,
+        "track_id": "4w3tQBXhn5345eUXDGBWZG"
+    },
+    {
+        "name": "Learn to Fly",
+        "artist": "Foo Fighters",
+        "album": "There Is Nothing Left To Lose",
+        "duration_ms": 235293,
+        "track_id": "5OQsiBsky2k2kDKy2bX2eT"
+    },
+    {
+        "name": "Heartbreaker",
+        "artist": "Pat Benatar",
+        "album": "In The Heat Of The Night",
+        "duration_ms": 209360,
+        "track_id": "22ML0MuFKfw16WejbxsLOy"
+    },
+    {
+        "name": "Pastime Paradise",
+        "artist": "Stevie Wonder",
+        "album": "At The Close Of A Century",
+        "duration_ms": 207706,
+        "track_id": "6lDeVSpTzOFAx4E1jY0eV0"
+    },
+    {
+        "name": "We Can Work It Out",
+        "artist": "Stevie Wonder",
+        "album": "Signed, Sealed And Delivered",
+        "duration_ms": 199506,
+        "track_id": "41q8ZiB3LZl4HRmmzUTIo4"
+    },
+    {
+        "name": "Heavy Hours",
+        "artist": "Crooked Fingers",
+        "album": "Breaks in the Armor",
+        "duration_ms": 301761,
+        "track_id": "3aZS35xQXnpGuBoxVPEnLz"
+    },
+    {
+        "name": "Don't Cry (Original)",
+        "artist": "Guns N' Roses",
+        "album": "Use Your Illusion I",
+        "duration_ms": 283733,
+        "track_id": "2N2yrmodOnVF10mKvItC9P"
+    },
+    {
+        "name": "Love Street",
+        "artist": "The Doors",
+        "album": "Waiting for the Sun",
+        "duration_ms": 169533,
+        "track_id": "5Q2Im8o4RthlAMkvUMYwGj"
+    },
+    {
+        "name": "That Funny Feeling",
+        "artist": "Bo Burnham",
+        "album": "Inside (The Songs)",
+        "duration_ms": 301110,
+        "track_id": "7uCq4vBPffjaTMlE8EQzJD"
+    },
+    {
+        "name": "Museum of Flight",
+        "artist": "Damien Jurado",
+        "album": "Maraqopa (Deluxe Edition)",
+        "duration_ms": 170906,
+        "track_id": "3jPiv3uw7BUSkhdOuxUxkq"
+    },
+    {
+        "name": "Blowin' in the Wind",
+        "artist": "Bob Dylan",
+        "album": "The Freewheelin' Bob Dylan",
+        "duration_ms": 165426,
+        "track_id": "18GiV1BaXzPVYpp9rmOg0E"
+    },
+    {
+        "name": "I Still Haven't Found What I'm Looking For - Remastered 2007",
+        "artist": "U2",
+        "album": "The Joshua Tree",
+        "duration_ms": 277480,
+        "track_id": "3MRQ3CSjoiV1HFil8ykM9M"
+    },
+    {
+        "name": "Two Princes",
+        "artist": "Spin Doctors",
+        "album": "Pocket Full Of Kryptonite",
+        "duration_ms": 256733,
+        "track_id": "4ePP9So5xRzspjLFVVbj90"
+    },
+    {
+        "name": "Raindrops Keep Fallin' On My Head",
+        "artist": "B.J. Thomas",
+        "album": "Raindrops Keep Fallin' On My Head",
+        "duration_ms": 184493,
+        "track_id": "0zRtBDhwtIFTfoK2HuURbM"
+    },
+    {
+        "name": "Immigrant Song - Remaster",
+        "artist": "Led Zeppelin",
+        "album": "Led Zeppelin III (Remaster)",
+        "duration_ms": 146250,
+        "track_id": "78lgmZwycJ3nzsdgmPPGNx"
+    },
+    {
+        "name": "I've Got a Woman",
+        "artist": "Ray Charles",
+        "album": "Ray Charles (aka: Hallelujah, I Love Her So)",
+        "duration_ms": 171466,
+        "track_id": "2xar08Fq5xra2KKZs5Bw9j"
+    },
+    {
+        "name": "Just One Time",
+        "artist": "Don Gibson",
+        "album": "Lovin' Lies",
+        "duration_ms": 122373,
+        "track_id": "3bK8OzAP6ngTNfh6ZeLivY"
+    },
+    {
+        "name": "Friday I'm In Love",
+        "artist": "The Cure",
+        "album": "Wish",
+        "duration_ms": 215160,
+        "track_id": "4QlzkaRHtU8gAdwqjWmO8n"
+    },
+    {
+        "name": "Texas Sun",
+        "artist": "Khruangbin",
+        "album": "Texas Sun",
+        "duration_ms": 252811,
+        "track_id": "24ntSW3QVJzR79lHAAOTaY"
+    },
+    {
+        "name": "Where Do You Think You're Going?",
+        "artist": "Dire Straits",
+        "album": "Communiqué",
+        "duration_ms": 229640,
+        "track_id": "2kKNeapwCHUUvMhmAOGce6"
+    },
+    {
+        "name": "New Recruit - 2000 Remaster",
+        "artist": "Eric Clapton",
+        "album": "Rush (Music from the Motion Picture Soundtrack)",
+        "duration_ms": 92040,
+        "track_id": "64knc4zMDqZwavp4TgBm27"
+    }
+]
