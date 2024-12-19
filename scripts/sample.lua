@@ -1,69 +1,64 @@
 -- Lua Script for Reaper: Import Tracks with Tempo, Energy, and Danceability
-
--- Add path to dkjson library
+-- JSON kütüphanesi (dkjson) dahil edilir
 package.path = package.path .. ";C:/Users/denizdu/AppData/Roaming/REAPER/Scripts/?.lua"
 local json = require("dkjson") -- JSON parsing library
 
--- Function to read JSON file
-function read_json_file(file_path)
-    local file = io.open(file_path, "r")
+-- JSON dosyasını okuma fonksiyonu
+local function read_json_file(file_path)
+    local file, err = io.open(file_path, "r")
     if not file then
-        error("Error: Could not open file " .. file_path)
+        reaper.ShowMessageBox("JSON dosyası açılamadı: " .. err, "Hata", 0)
+        return nil
     end
-    local content = file:read("*all")
+    local content = file:read("*a")
     file:close()
-    local data, _, err = json.decode(content)
-    if err then
-        error("Error parsing JSON: " .. err)
-    end
-    return data
+    return json.decode(content)
 end
 
--- Insert a sample into a track
-function insert_sample_to_track(track_name, tempo, energy, danceability)
-    if not tempo or not energy or not danceability then
-        reaper.ShowConsoleMsg("Error: Missing tempo, energy, or danceability values.\n")
-        return
-    end
-
-    -- Create a new track
-    reaper.InsertTrackAtIndex(reaper.CountTracks(0), true)
-    local track = reaper.GetTrack(0, reaper.CountTracks(0) - 1)
+-- Track ve Media Item oluşturma
+local function create_track_with_items(track_name, tracks_data)
+    -- Yeni bir track oluştur
+    local track_index = reaper.CountTracks(0)
+    reaper.InsertTrackAtIndex(track_index, true)
+    local track = reaper.GetTrack(0, track_index)
     reaper.GetSetMediaTrackInfo_String(track, "P_NAME", track_name, true)
 
-    -- Set tempo, energy, and danceability as track parameters
-    local tempo_str = string.format("Tempo: %.2f", tempo)
-    local energy_str = string.format("Energy: %.2f", energy)
-    local danceability_str = string.format("Danceability: %.2f", danceability)
+    -- Her bir şarkı için media item ekle
+    local position = 0 -- Başlangıç pozisyonu
+    for _, track_data in ipairs(tracks_data) do
+        local tempo = track_data.tempo or 120
+        local energy = track_data.energy or 0.5
+        local danceability = track_data.danceability or 0.5
 
-    -- Add track notes with the values
-    local note = tempo_str .. "\n" .. energy_str .. "\n" .. danceability_str
-    reaper.GetSetMediaTrackInfo_String(track, "P_NOTES", note, true)
+        -- Şarkının uzunluğu ve enerjiye bağlı ses seviyesi
+        local duration = (track_data.duration_ms or 200000) / 1000 -- Saniyeye çevir
+        local volume = energy * 1.5 -- Ses seviyesi enerjiden etkilenir
 
-    reaper.ShowConsoleMsg("Track created: " .. track_name .. "\n" .. note .. "\n")
-end
+        -- Media item oluştur ve track'e ekle
+        local item = reaper.CreateNewMIDIItemInProj(track, position, position + duration, false)
+        local take = reaper.GetMediaItemTake(item, 0)
+        reaper.GetSetMediaItemInfo_String(item, "P_NAME", track_data.name, true)
+        reaper.SetMediaItemInfo_Value(item, "D_VOL", volume)
 
--- Main function
-function main()
-    -- Path to the JSON file exported from Python
-    local json_file_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/export/Ardışık_tracks.json"
-    local tracks_data = read_json_file(json_file_path)
+        -- MIDI notalar ekle
+        local start_pitch = math.floor(danceability * 60 + 36) -- Dans edilebilirlik ton aralığını belirler
+        reaper.MIDI_InsertNote(take, false, false, 0, 240, 0, start_pitch, 100, false)
 
-    -- Iterate through the tracks and create Reaper tracks
-    for _, track in ipairs(tracks_data) do
-        local track_name = track.name or "Untitled Track"
-        local tempo = track.tempo
-        local energy = track.energy
-        local danceability = track.danceability
-
-        -- Validate and insert sample
-        if tempo and energy and danceability then
-            insert_sample_to_track(track_name, tempo, energy, danceability)
-        else
-            reaper.ShowConsoleMsg("Skipping track: " .. track_name .. " (missing required values)\n")
-        end
+        -- Pozisyonu ilerlet
+        position = position + duration + 1 -- Şarkılar arasında 1 saniye boşluk
     end
 end
 
--- Run the script
-main()
+-- Kullanıcıdan JSON dosyasını seçmesini iste
+local retval, file_path = reaper.GetUserFileNameForRead("", "Cleaned JSON Dosyasını Seçin", ".json")
+if not retval then return end
+
+-- JSON dosyasını oku
+local playlist_data = read_json_file(file_path)
+if not playlist_data then return end
+
+-- Reaper üzerinde patternler oluştur
+create_track_with_items("Spotify Playlist", playlist_data)
+
+-- İşlem tamamlandı
+reaper.ShowMessageBox("Playlist başarıyla işlendi ve patternler oluşturuldu.", "Tamamlandı", 0)
