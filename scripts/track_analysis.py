@@ -73,12 +73,21 @@ def analyze_track(file_path):
         tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
         chroma = librosa.feature.chroma_stft(y=y, sr=sr)
         energy = float(sum(librosa.feature.rms(y=y)[0]))
+        spectral_centroid = librosa.feature.spectral_centroid(y=y, sr=sr).mean()
+        spectral_bandwidth = librosa.feature.spectral_bandwidth(y=y, sr=sr).mean()
+        rolloff = librosa.feature.spectral_rolloff(y=y, sr=sr).mean()
+        zero_crossings = librosa.zero_crossings(y=y, pad=False).sum()
+        mfcc = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13).mean(axis=1)
 
-        chroma_mean = chroma.mean(axis=1)  # Ortalama değerler
         analysis_result = {
             "tempo": tempo,
             "energy": energy,
-            "chroma_mean": chroma_mean
+            "chroma_mean": chroma.mean(axis=1),
+            "spectral_centroid": spectral_centroid,
+            "spectral_bandwidth": spectral_bandwidth,
+            "rolloff": rolloff,
+            "zero_crossings": zero_crossings,
+            "mfcc": mfcc.tolist()
         }
         return analysis_result
     except Exception as e:
@@ -131,7 +140,7 @@ def process_and_analyze_tracks(input_file, cleaned_output, removed_output):
         os.remove(file_path)
 
         if analysis:
-            track.update(sanitize_for_json(analysis))  # JSON uyumlu hale getirme
+            track.update(sanitize_for_json(analysis))
             cleaned_tracks.append(track)
         else:
             removed_tracks.append(track)
