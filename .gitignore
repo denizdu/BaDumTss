@@ -1,1 +1,35 @@
-.cache
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Environments
+.env
+venv/
+.Python
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# PyInstaller
+*.spec
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Output directories
+output/
+downloads/
+
+# IDE settings
+.idea/
+.vscode/
+
+# Tüm downloads klasörünü yok say, ancak important_file.txt'yi takip et
+#downloads/*
+# "!downloads/important_file.txt"
+
