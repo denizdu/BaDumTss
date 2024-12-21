@@ -1,6 +1,15 @@
 import os
 import json
 from pytube import Search, YouTube
+from dotenv import load_dotenv
+import os
+
+# .env dosyasını yükle
+load_dotenv()
+
+#client_id = os.getenv("CLIENT_ID")
+#client_secret = os.getenv("CLIENT_SECRET")
+#redirect_uri = os.getenv("REDIRECT_URI")
 
 # Dosya adlarını sanitize eden fonksiyon
 def sanitize_filename(name):
