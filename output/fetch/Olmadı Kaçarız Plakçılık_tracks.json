@@ -1,0 +1,386 @@
+[
+    {
+        "name": "Pazartesi",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Şirâze",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Beklediğim Gibiyim",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Oh Be!",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Kopuk Uçurtma",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Karargâh",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "FeeL",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "@defne.kalbim96",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Yangın Akvaryum",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Güneş Yerinde (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Çamur (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Hayaletler (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Ne var ne yok (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Olanla Olunmaz (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Evren Bozması (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "İhtimallerin Heyecanına Üzülüyorum (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Boşluk (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Arayan Bulur (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Hoşçakal Kadar (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "En Güzel Yerinde Evin (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Dinozorlar (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Çıldırmicam (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Ne deve ne Kush (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Benim Kafam Siktirmiş Gitmiş (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Hepsine Ne Fena (Canlı Şekli - DasDas 2019)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "ah güzel kafam",
+        "artist": "Korhan Futacı"
+    },
+    {
+        "name": "HOŞÇAKAL KADAR (Canlı Şekli)",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "ne deve ne kush",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "GÜNEŞ YERİNDE",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "EVREN BOZMASI",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "BOŞLUK",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "ARAYAN BULUR",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "HOŞÇAKAL KADAR",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "HAYALETLER",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "HEPSİNE NE FENA",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "BENİM KAFAM SİKTİRMİŞ GİTMİŞ",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "İHTİMALLERİN HEYECANINA ÜZÜLÜYORUM",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Ben Oradaydım Zaten",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "Silik Düşler",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "Ben Oradaydım Zaten",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "Silik Düşler",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "Sadece",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "Güneş Orhan",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "Hiçbir Sebep Yok",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "Geriye Dönme",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "Bekliyorum Seni",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "9.00",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "Belki de Sensin",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "Uçurumlardan",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "Değişmem",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "Majör",
+        "artist": "Can Güngör"
+    },
+    {
+        "name": "İkimizin Oralar - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Ne var Ne yok - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Evren Bozması - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Bi Hıçkırık Gibi - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Havadar - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "En Çirkini Güzellerin - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "En Güzel Yerinde Evin - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Çamur - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "75 Lira - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Lilililerle - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Olanla Olunmaz - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Çıldırmicam - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Bil - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Nasıl istediysen öyle işte - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Takıl yani Takmıyo belli - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Cam Parçası - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Tayyar Ahmet'in Sonsuz Sayılı Günleri - Çıplak Ayaklar Stüdyosu 2013",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Arayan Bulur - Tekli Şekli",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Hayaletler - Tekli Şekli",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Havadar",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Nasıl İstediysen Öyle İşte",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Takıl Yani Takmıyo Belli",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Çıldırmicam",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Olanla Olunmaz",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "İkimizin Oralar",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Ne Var Ne Yok",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Bi Hıçkırık Gibi",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "En Güzel Yerinde Evin",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Bil",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Tayyar Ahmet'in Sonsuz Sayılı Günleri",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Abbas",
+        "artist": "Gaye Su Akyol"
+    },
+    {
+        "name": "Develerle Yaşıyorum",
+        "artist": "Gaye Su Akyol"
+    },
+    {
+        "name": "Biliyorum",
+        "artist": "Gaye Su Akyol"
+    },
+    {
+        "name": "Yıllar Yılan",
+        "artist": "Gaye Su Akyol"
+    },
+    {
+        "name": "Zaman Asla Affetmez",
+        "artist": "Gaye Su Akyol"
+    },
+    {
+        "name": "Çok Mutlusun",
+        "artist": "Gaye Su Akyol"
+    },
+    {
+        "name": "Ölü Bir Adama",
+        "artist": "Gaye Su Akyol"
+    },
+    {
+        "name": "Cehennem Meyhanesi",
+        "artist": "Gaye Su Akyol"
+    },
+    {
+        "name": "Ruhun Ölmüş Senin",
+        "artist": "Gaye Su Akyol"
+    },
+    {
+        "name": "Boşluk / Aslan Şekli",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Ne var ne yok / Kuytu Köşe Şekli",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Bi hıçkırık gibi / Meteor Firari Şekli",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Hoşçakal kadar / Afordisman Salihins Şekli",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Yangın Akvaryum - Tekli Şekli",
+        "artist": "Büyük Ev Ablukada"
+    },
+    {
+        "name": "Vesaire",
+        "artist": "Balıklar"
+    }
+]
