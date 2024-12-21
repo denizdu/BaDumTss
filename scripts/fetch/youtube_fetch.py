@@ -1,52 +1,43 @@
 import os
-import json
-from pytube import Search, YouTube
+import subprocess
 from dotenv import load_dotenv
-import os
 
 # .env dosyasını yükle
 load_dotenv()
 
-#client_id = os.getenv("CLIENT_ID")
-#client_secret = os.getenv("CLIENT_SECRET")
-#redirect_uri = os.getenv("REDIRECT_URI")
+# Dizinler
+DIR_DOWNLOAD = os.getenv("DIR_DOWNLOAD")
 
-# Dosya adlarını sanitize eden fonksiyon
-def sanitize_filename(name):
-    return name.replace("/", "_").replace("\\", "_").replace(":", "_").replace("*", "_").replace("?", "_").replace("\"", "_").replace("<", "_").replace(">", "_").replace("|", "_")
-
-# Şarkı indirici
-def download_song(song_name, artist_name, download_path):
-    search_query = f"{song_name} {artist_name}"
-    print(f"Searching for: {search_query}")
-    search = Search(search_query)
+def download_song_as_wav(search_query, output_dir):
+    os.makedirs(output_dir, exist_ok=True)
     try:
-        youtube_url = search.results[0].watch_url
-        print(f"Found: {youtube_url}")
-        yt = YouTube(youtube_url)
-        stream = yt.streams.filter(only_audio=True).first()
-        sanitized_song_name = sanitize_filename(f"{song_name} - {artist_name}")
-        file_path = os.path.join(download_path, f"{sanitized_song_name}.mp3")
-        stream.download(output_path=download_path, filename=f"{sanitized_song_name}.mp3")
-        print(f"Downloaded: {file_path}")
-        return file_path
+        print(f"Downloading {search_query}...")
+        result = subprocess.run(
+            [
+                "yt-dlp",
+                "-x", "--audio-format", "wav",
+                "--output", f"{output_dir}/%(title)s.%(ext)s",
+                f"ytsearch1:{search_query}"
+            ],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+        
+        if result.returncode == 0:
+            print(f"Successfully downloaded: {search_query}")
+
+            # İndirilen dosyanın tam yolunu bul
+            for file_name in os.listdir(output_dir):
+                if search_query.split(" ")[0] in file_name:  # Şarkı adından parça içeren dosyayı bul
+                    file_path = os.path.join(output_dir, file_name)
+                    print(f"Filepath: {file_path}")
+                    return file_path
+
+            print("Downloaded file not found.")
+            return None
+        else:
+            print(f"Error downloading {search_query}: {result.stderr.decode('utf-8')}")
+            return None
     except Exception as e:
-        print(f"Failed to download {song_name} by {artist_name}: {e}")
+        print(f"Error in download_song_as_wav: {e}")
         return None
-
-if __name__ == "__main__":
-    # Playlist adı ve dosya yolu
-    playlist_name = input("Enter the playlist name: ")
-    playlist_file = f"./output/fetch/{playlist_name}_tracks.json"
-    download_dir = f"./downloads/{playlist_name}"
-    os.makedirs(download_dir, exist_ok=True)
-
-    # Playlist şarkılarını yükle
-    with open(playlist_file, "r", encoding="utf-8") as f:
-        tracks = json.load(f)
-
-    # Her şarkıyı indir
-    for track in tracks:
-        song_name = track["name"]
-        artist_name = track["artist"]
-        download_song(song_name, artist_name, download_dir)

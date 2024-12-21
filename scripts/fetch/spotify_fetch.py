@@ -9,10 +9,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Spotify API bilgileri
-client_id = os.getenv("CLIENT_ID")
-client_secret = os.getenv("CLIENT_SECRET")
+client_id = os.getenv("SPOTIFY_CLIENT_ID")
+client_secret = os.getenv("SPOTIFY_CLIENT_SECRET")
 redirect_uri = os.getenv("REDIRECT_URI")
 scope = "playlist-read-private user-library-read"
+
+# Dizinler
+DIR_OUTPUT_FETCH = os.getenv("DIR_OUTPUT_FETCH")
 
 # Spotify istemcisi
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,
@@ -22,15 +25,40 @@ sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,
 
 # Dosya adlarını sanitize eden fonksiyon
 def sanitize_filename(name):
-    return re.sub(r'[<>:"/\\|?*]', '_', name)
+    translation_table = str.maketrans({
+        ' ': '_',
+        'ı': 'i',
+        'İ': 'I',
+        'ş': 's',
+        'Ş': 'S',
+        'ğ': 'g',
+        'Ğ': 'G',
+        'ö': 'o',
+        'Ö': 'O',
+        'ü': 'u',
+        'Ü': 'U',
+        'ç': 'c',
+        'Ç': 'C',
+        '|': '',
+        ',': '',
+        '.': '',
+        "'": ''
+    })
+    sanitized = name.translate(translation_table)
+    sanitized = re.sub(r'_+', '_', sanitized)  # Birden fazla alt çizgiyi tek bir alt çizgiye indir
+    sanitized = sanitized.strip('_')  # Baştaki ve sondaki alt çizgileri kaldır
+    return sanitized
 
 # Çalma listesi adlarını ve ID'lerini çek
 def get_playlists():
     playlists = sp.current_user_playlists(limit=50)["items"]
     playlist_data = []
     for playlist in playlists:
+        original_name = playlist["name"]
+        sanitized_name = sanitize_filename(original_name)
         playlist_data.append({
-            "name": playlist["name"],
+            "original_name": original_name,
+            "sanitized_name": sanitized_name,
             "id": playlist["id"]
         })
     return playlist_data
@@ -58,10 +86,10 @@ def save_to_json(data, file_path):
 if __name__ == "__main__":
     # Çalma listelerini çek ve kaydet
     playlists = get_playlists()
-    save_to_json(playlists, "./output/fetch/playlists.json")
+    save_to_json(playlists, os.path.join(DIR_OUTPUT_FETCH, "playlists.json"))
 
     # Her çalma listesi için şarkıları ayrı dosyalara kaydet
     for playlist in playlists:
-        playlist_name = sanitize_filename(playlist["name"])
+        playlist_name = playlist["sanitized_name"]
         tracks = get_tracks_from_playlist(playlist["id"])
-        save_to_json(tracks, f"./output/fetch/{playlist_name}_tracks.json")
+        save_to_json(tracks, os.path.join(DIR_OUTPUT_FETCH, f"{playlist_name}_tracks.json"))
