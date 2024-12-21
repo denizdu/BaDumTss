@@ -3,11 +3,15 @@ from spotipy.oauth2 import SpotifyOAuth
 import json
 import os
 import re
+from dotenv import load_dotenv
+
+# .env dosyasını yükle
+load_dotenv()
 
 # Spotify API bilgileri
-client_id = "73bce3be0fa34320a350e72d2a2cde3b"
-client_secret = "318c48fdd78544f587c09363ee29a212"
-redirect_uri = "http://localhost:8080"
+client_id = os.getenv("CLIENT_ID")
+client_secret = os.getenv("CLIENT_SECRET")
+redirect_uri = os.getenv("REDIRECT_URI")
 scope = "playlist-read-private user-library-read"
 
 # Spotify istemcisi
