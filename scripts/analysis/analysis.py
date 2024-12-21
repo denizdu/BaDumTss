@@ -1,6 +1,9 @@
+import sys
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../fetch')))
 import json
-import requests
+from dotenv import load_dotenv
+from youtube_fetch import download_song_as_wav
 from derived_features import process_derived_features
 from extra_features import process_extra_features
 from freq_and_spectrum import process_freq_and_spectrum
@@ -8,52 +11,63 @@ from main_features import process_main_features
 from rhythm import process_rhythm
 from spectral_features import process_spectral_features
 
-# Dosya adlarını sanitize eden fonksiyon
-def sanitize_filename(name):
-    return name.replace("/", "_").replace("\\", "_")
+# .env dosyasını yükle
+load_dotenv()
 
-# Şarkı indirme fonksiyonu (dummy olarak hazırlanmış, gerçek indirme için API entegrasyonu gerekebilir)
-def download_song(song_name, artist_name, download_path):
-    # Şarkı ve sanatçı adlarını birleştirip sanitize et
-    sanitized_song_name = sanitize_filename(f"{song_name} - {artist_name}")
-    file_path = os.path.join(download_path, f"{sanitized_song_name}.mp3")
-    
-    # Dummy dosya oluştur
-    with open(file_path, "w") as f:
-        f.write("Dummy audio data for " + sanitized_song_name)
-    
-    return file_path
+# Dizinler
+DIR_DOWNLOAD = os.getenv("DIR_DOWNLOAD")
+DIR_OUTPUT_FETCH = os.getenv("DIR_OUTPUT_FETCH")
+PLAYLIST_TOBE_ANALYZED = os.getenv("PLAYLIST_TOBE_ANALYZED")
+
+# Playlist adlarını parse et
+playlists_to_analyze = [p.strip() for p in PLAYLIST_TOBE_ANALYZED.split(",")]
 
 # Şarkı analiz et ve ardından sil
 def analyze_and_delete_song(song_file):
     try:
+        print(f"Analyzing: {song_file}")
         process_main_features(song_file)
         process_derived_features(song_file)
         process_extra_features(song_file)
         process_freq_and_spectrum(song_file)
         process_rhythm(song_file)
         process_spectral_features(song_file)
+        print(f"Analysis completed for: {song_file}")
+    except Exception as e:
+        print(f"Error during analysis of {song_file}: {e}")
     finally:
-        return
-        #if os.path.exists(song_file):
-            #os.remove(song_file)
+        if os.path.exists(song_file):
+            os.remove(song_file)
+            print(f"Deleted: {song_file}")
 
 if __name__ == "__main__":
-    # Analiz yapmak istediğimiz playlist adı
-    playlist_name = input("Enter the playlist name: ")
+    os.makedirs(DIR_DOWNLOAD, exist_ok=True)  # İndirme dizinini oluştur
+    for playlist_name in playlists_to_analyze:
+        print(f"Starting analysis for playlist: {playlist_name}")
 
-    # Playlist dosyasını kontrol et
-    playlist_file = f"./output/fetch/{playlist_name}_tracks.json"
-    download_dir = "./downloads"
-    os.makedirs(download_dir, exist_ok=True)
+        # Playlist dosyasını kontrol et
+        playlist_file = os.path.join(DIR_OUTPUT_FETCH, f"{playlist_name}_tracks.json")
+        if not os.path.exists(playlist_file):
+            print(f"Playlist file {playlist_file} does not exist. Skipping.")
+            continue
 
-    with open(playlist_file, "r", encoding="utf-8") as f:
-        tracks = json.load(f)
+        with open(playlist_file, "r", encoding="utf-8") as f:
+            tracks = json.load(f)
 
-    # Playlistteki her şarkıyı tek tek indir, analiz et ve sil
-    for track in tracks:
-        song_file = download_song(track["name"], track["artist"], download_dir)
-        print(f"Processing song: {track['name']} by {track['artist']}")
-        analyze_and_delete_song(song_file)
+        # Playlistteki her şarkıyı sırayla indir, analiz et ve sil
+        for track in tracks:
+            search_query = f"{track['name']} {track['artist']}"
+            print(f"Processing song: {track['name']} by {track['artist']}")
 
-    print(f"Analysis for playlist '{playlist_name}' completed.")
+            # Şarkıyı indir
+            print(f"Attempting to download: {search_query}")
+            song_file = download_song_as_wav(search_query, DIR_DOWNLOAD)
+            print(f"Download result: {song_file}")
+
+            # Şarkı indirildiyse analiz et ve sil
+            if song_file and os.path.exists(song_file):
+                analyze_and_delete_song(song_file)
+            else:
+                print(f"Failed to process {search_query}. Skipping.")
+
+        print(f"Analysis for playlist '{playlist_name}' completed.")

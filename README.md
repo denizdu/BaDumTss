@@ -1,176 +1,82 @@
-# README for Spotify to Reaper Workflow
+# BaDumTss Projesi
 
-This workflow processes Spotify playlist data and generates track combinations in REAPER using several scripts. Below is a detailed guide on the functionality and usage of each script.
+Bu proje, Spotify çalma listelerini indirip analiz etmek için hazırlanmış bir Python uygulamasıdır. Çalma listelerindeki şarkıları YouTube üzerinden indirir ve analiz işlemleri için düzenler.
 
----
+## Özellikler
+- Spotify çalma listelerini JSON formatında dışa aktarır.
+- Belirli bir çalma listesindeki şarkıları YouTube üzerinden indirir.
+- Tüm dizin ve path yapılandırmaları `.env` dosyasından yönetilir.
 
-## Prerequisites
+## Gereksinimler
+- Python 3.8 veya üstü
+- Spotify API için kayıtlı bir uygulama ve API anahtarları
 
-1. **Python Environment**:
-   - Python 3.8 or above.
-   - Required Python libraries:
-     - `requests`
-     - `json`
-     - `librosa`
-     - `mutagen`
-     - `re`
-     - `os`
-     - `subprocess`
-   - Install dependencies using:
-     ```bash
-     pip install requests librosa mutagen
-     ```
+### Kullanılan Kütüphaneler
+- `spotipy`: Spotify API ile etkileşim
+- `pytube`: YouTube üzerinden şarkı indirme
+- `python-dotenv`: `.env` dosyasını yükleme ve yönetme
 
-2. **JSONLint**:
-   - Install JSONLint using npm:
-     ```bash
-     npm install -g jsonlint
-     ```
-   - Ensure `jsonlint` is in the system PATH.
+## Kurulum
+1. Bu projeyi klonlayın veya indirin.
+2. Sanal bir ortam oluşturun ve aktifleştirin:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # Windows için: venv\Scripts\activate
+   ```
+3. Gerekli bağımlılıkları yükleyin:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Proje kök dizininde bir `.env` dosyası oluşturun ve şu bilgileri girin:
+   ```env
+   PROJECT_ROOT=/path/to/BaDumTss
 
-3. **Reaper**:
-   - Reaper must be installed for Lua scripts to function.
+   DIR_DOWNLOAD=${PROJECT_ROOT}/downloads
+   DIR_OUTPUT_ANALYSIS=${PROJECT_ROOT}/output/analysis
+   DIR_OUTPUT_FETCH=${PROJECT_ROOT}/output/fetch
+   DIR_OUTPUT_MODEL=${PROJECT_ROOT}/output/model
+   DIR_OUTPUT_SAMPLING=${PROJECT_ROOT}/output/sampling
 
----
+   SPOTIFY_CLIENT_ID=your_client_id
+   SPOTIFY_CLIENT_SECRET=your_client_secret
+   REDIRECT_URI=http://localhost:8080
+   ```
 
-## Workflow Steps
-
-### 1. Fetch Spotify Data
-**Script**: `spotify_fetch.py`
-
-This script retrieves playlist data from Spotify and saves it in a JSON format for further processing.
-
-#### Usage:
+## Kullanım
+### 1. Spotify Fetch
+Spotify çalma listelerini JSON formatında dışa aktarmak için:
 ```bash
-python spotify_fetch.py
+python scripts/fetch/spotify_fetch.py
 ```
-- **Input**: Spotify API credentials in the script.
-- **Output**: `spotify_tracks.json` in the output directory.
 
-#### Notes:
-- Ensure Spotify API credentials are correctly configured.
-- Modify the script to target specific playlists or user data if needed.
-
-### 2. Analyze Tracks
-**Script**: `track_analysis.py`
-
-This script downloads, cleans, and analyzes tracks for tempo, energy, chroma mean, and other features using Librosa.
-
-#### Usage:
+### 2. YouTube Fetch
+Belirli bir çalma listesindeki şarkıları indirmek için:
 ```bash
-python track_analysis.py
+python scripts/fetch/youtube_fetch.py
 ```
-- **Input**: `spotify_tracks.json` (output from Step 1).
-- **Output**:
-  - `cleaned_tracks.json` (analyzed data).
-  - `removed_tracks.json` (failed tracks).
+Komut çalıştırıldığında çalma listesi adını girmeniz istenir.
 
-#### Notes:
-- Temporary files are stored in the system's temp directory.
-- Tracks with missing or invalid data are moved to `removed_tracks.json`.
-
-### 3. Generate Track Combinations
-**Script**: `track_combinations.py`
-
-This script processes the cleaned track data and generates combinations of features like tempo and energy.
-
-#### Usage:
-```bash
-python track_combinations.py
-```
-- **Input**: `cleaned_tracks.json` (output from Step 2).
-- **Output**: `track_combinations.json`.
-
-### 4. Clean JSON Files
-**Script**: `clean_json.py`
-
-This script validates and cleans JSON files, ensuring they are properly formatted for further processing.
-
-#### Usage:
-```bash
-python clean_json.py <input_file> <output_file>
-```
-- **Input**: `track_combinations.json` (output from Step 3).
-- **Output**: `cleaned_track_combinations.json`.
-
-#### Notes:
-- If JSONLint is installed, the script validates the output JSON.
-
-### 5. Create Tracks in Reaper
-**Script**: `track_combinations.lua`
-
-This Lua script reads the cleaned JSON data and creates corresponding tracks in Reaper.
-
-#### Usage:
-1. Copy the `track_combinations.lua` file to your REAPER Scripts directory.
-2. Run the script from REAPER's Actions List.
-
-- **Input**: `cleaned_track_combinations.json` (output from Step 4).
-- **Output**: Tracks created in REAPER.
-
-#### Notes:
-- Ensure `cleaned_track_combinations.json` is correctly formatted.
-- Debugging can be done by checking REAPER’s console output.
-
----
-
-## Debugging and Tips
-
-1. **General Troubleshooting**:
-   - Ensure all input/output file paths are correct.
-   - Validate JSON files manually using `jsonlint`:
-     ```bash
-     jsonlint <file_path>
-     ```
-
-2. **Spotify API**:
-   - Check Spotify API rate limits.
-   - Ensure the correct scopes are set in the Spotify developer dashboard.
-
-3. **Reaper Lua Scripts**:
-   - Check for Lua script errors in REAPER’s console.
-   - Ensure the JSON parser in Lua is working with simplified JSON formats.
-
-4. **File Paths**:
-   - Use absolute paths to avoid file not found errors.
-   - Ensure temp files are cleaned up after each script.
-
----
-
-## Directory Structure
+## Dizin Yapısı
 ```
 BaDumTss/
-├── output/
-│   ├── spotify_tracks.json
-│   ├── cleaned/
-│   │   ├── cleaned_tracks.json
-│   │   ├── removed_tracks.json
-│   ├── analysis/
-│   │   ├── track_combinations.json
-│   │   ├── cleaned_track_combinations.json
 ├── scripts/
-│   ├── spotify_fetch.py
-│   ├── track_analysis.py
-│   ├── track_combinations.py
-│   ├── clean_json.py
-│   ├── track_combinations.lua
+│   ├── fetch/
+│   │   ├── spotify_fetch.py
+│   │   ├── youtube_fetch.py
+├── output/
+│   ├── fetch/
+│   ├── analysis/
+├── downloads/
+├── .env
+├── requirements.txt
 ```
 
----
+## Hata Ayıklama
+- `.env` dosyasının doğru şekilde yapılandırıldığından emin olun.
+- Python kütüphanelerinin kurulu olduğundan emin olun:
+  ```bash
+  pip list
+  ```
 
-## Dependencies
-- Python 3.8+
-- Node.js (for JSONLint)
-- REAPER (with Lua scripting enabled)
-
----
-
-## Future Improvements
-- Automate the entire pipeline with a master script.
-- Enhance error logging and reporting.
-- Introduce a GUI for user-friendly interaction.
-
----
-
-For further assistance, contact the developer or refer to the documentation of the respective tools.
-
+## Lisans
+Bu proje MIT lisansı altında sunulmaktadır.
