@@ -1,4 +1,10 @@
-Elbette, bir Python virtual environment (sanal ortam) kurmak ve projeyi sorunsuz şekilde çalıştırmak için aşağıdaki adımları takip edebilirsin:
+# ENV Kurulumu
+
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+pip freeze > requirements.txt
+
 
 ---
 
