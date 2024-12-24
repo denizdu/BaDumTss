@@ -101,4 +101,154 @@ Bir şarkıyı ifade eden başlıca sayısal veriler şunlardır:
 4. Harmonik ve ritmik özelliklerini analiz et.
 5. Bu verileri sentezlemek veya manipüle etmek için bir DAW (ör. Reaper) ve Python kullan.
 
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+
+### **1. Diğer Scriptlerden Çıkan Veriler**
+Analiz scriptlerinin çıktılarında hangi sayısal verilerin yer aldığını anlamamız gerekiyor. Örnek olarak, şu tür veriler olabilir:
+
+1. **Main Features (`process_main_features`)**:
+   - **Ortalama ses yüksekliği (average amplitude)**: Şarkının genel olarak ne kadar yüksek sesli olduğunu ifade eder.
+   - **Dinamik aralık (dynamic range)**: Şarkıdaki sessiz ve gürültülü bölümler arasındaki fark.
+
+2. **Frequency and Spectrum (`process_freq_and_spectrum`)**:
+   - **Dominant frekans (dominant frequency)**: Şarkının baskın frekansı, genelde şarkının tonal özelliklerini verir.
+   - **Frekans çeşitliliği (frequency variability)**: Şarkıda kullanılan farklı frekansların zenginliği.
+
+3. **Rhythm (`process_rhythm`)**:
+   - **BPM (tempo)**: Şarkının hızı.
+   - **Ritim kararlılığı (rhythm stability)**: Ritimdeki tutarlılık veya değişkenlik.
+
+4. **Spectral Features (`process_spectral_features`)**:
+   - **Spectral centroid**: Şarkının frekans tayfındaki ağırlık merkezi, şarkının parlaklığını ölçmek için kullanılabilir.
+   - **Spectral roll-off**: Şarkının frekans içeriğinin %85'inin altındaki frekans noktası.
+
+5. **Extra Features (`process_extra_features`)**:
+   - **Zero-crossing rate**: Şarkıdaki sıfır geçişlerinin oranı, genelde perkusif öğelerle ilişkilidir.
+   - **Harmonik/anharmonik oranı**: Şarkının tonlarının ne kadar düzenli olduğunu ölçer.
+
 ---
+
+### **2. Türetilmiş Veriler ve Etiketleme**
+Bu sayısal verileri birleştirerek şu tür türetilmiş bilgileri oluşturabilir ve şarkıları etiketleyebiliriz:
+
+#### **a. Enerji Düzeyi ve Dinamik Yapı**
+- **Türetilmiş Veriler**:
+  - **Ortalama enerji**: Ortalama ses yüksekliği (amplitude) ve BPM'in bir kombinasyonu.
+  - **Yoğunluk kategorisi**: Yüksek enerji (yüksek BPM ve amplitude), orta enerji, düşük enerji.
+- **Etiketleme**:
+  - "Yoğun şarkı" (enerji yüksek).
+  - "Sakin şarkı" (enerji düşük).
+
+#### **b. Tonal ve Harmonik Yapı**
+- **Türetilmiş Veriler**:
+  - **Parlaklık**: Spectral centroid ve spectral roll-off birleşimi.
+  - **Harmoni analizi**: Harmonik/anharmonik oranına dayalı.
+- **Etiketleme**:
+  - "Parlak şarkı" (yüksek spectral centroid).
+  - "Karanlık şarkı" (düşük spectral centroid).
+
+#### **c. Ritim ve Zamanlama**
+- **Türetilmiş Veriler**:
+  - **Ritim karmaşıklığı**: BPM, ritim kararlılığı ve zero-crossing rate kombinasyonu.
+  - **Ritim türü**: Kararlı veya değişken.
+- **Etiketleme**:
+  - "Dans şarkısı" (yüksek BPM, kararlı ritim).
+  - "Daha deneysel şarkı" (düşük kararlılık).
+
+#### **d. Frekans ve Spektrum**
+- **Türetilmiş Veriler**:
+  - **Frekans zenginliği**: Dominant frekans ve frekans çeşitliliği birleşimi.
+  - **Bass ağırlıklı mı?**: Dominant frekansın düşük olması.
+- **Etiketleme**:
+  - "Bass ağırlıklı" (dominant frekans düşük).
+  - "Tiz ağırlıklı" (dominant frekans yüksek).
+
+---
+Analiz scriptlerinden gelen sayısal verilerin anlamını ve hangi aralıklarda olabileceğini öğrenmek, türetilmiş özellikler oluşturmayı ve şarkıları etiketlemeyi kolaylaştıracaktır. Aşağıda, her bir analiz scriptinden gelen sayısal verilerin teknik detaylarını ve olası anlamlarını açıklıyorum:
+
+---
+
+### **1. Main Features**
+#### **Ortalama Ses Yüksekliği (`average_amplitude`)**
+- **Aralık**: 0 ile 1 arasında normalize edilmiş bir değer.
+- **Tabana Yakın**: Ses düzeyi düşük, genelde sakin şarkılar veya yumuşak pasajlar.
+- **Tavana Yakın**: Ses düzeyi yüksek, genelde yoğun ve gürültülü şarkılar.
+
+#### **Dinamik Aralık (`dynamic_range`)**
+- **Aralık**: 10 ile 30 dB arasında tipik olarak ölçülür.
+- **Tabana Yakın**: Dinamik çeşitlilik düşük, şarkı homojen veya sıkıştırılmış.
+- **Tavana Yakın**: Dinamik çeşitlilik yüksek, şarkıda sessiz ve gürültülü kısımlar arasında belirgin fark var.
+
+---
+
+### **2. Frequency and Spectrum**
+#### **Baskın Frekans (`dominant_frequency`)**
+- **Aralık**: 20 Hz (derin bass) ile 20 kHz (insan işitme sınırı) arasında.
+- **Tabana Yakın**: Bass ağırlıklı şarkılar.
+- **Tavana Yakın**: Tiz veya parlak sesler ağırlıklı.
+
+#### **Frekans Çeşitliliği (`frequency_variability`)**
+- **Aralık**: 0 ile 100 arasında normalize edilmiş bir değer.
+- **Tabana Yakın**: Sınırlı bir frekans aralığı, genelde monoton veya minimal şarkılar.
+- **Tavana Yakın**: Zengin bir frekans aralığı, genelde kompleks veya katmanlı müzik.
+
+---
+
+### **3. Rhythm**
+#### **BPM (Tempo)**
+- **Aralık**: 40 BPM (ağır baladlar) ile 240 BPM (hızlı dans şarkıları) arasında.
+- **Tabana Yakın**: Yavaş tempolu şarkılar, sakin veya duygusal.
+- **Tavana Yakın**: Hızlı tempolu şarkılar, genelde dans veya enerji dolu.
+
+#### **Ritim Kararlılığı (`rhythm_stability`)**
+- **Aralık**: 0 ile 1 arasında normalize edilmiş bir değer.
+- **Tabana Yakın**: Değişken ritim, genelde deneysel veya düzensiz.
+- **Tavana Yakın**: Tutarlı ritim, genelde dans müzikleri veya pop şarkıları.
+
+---
+
+### **4. Spectral Features**
+#### **Spectral Centroid**
+- **Aralık**: 0 Hz (karanlık sesler) ile 10 kHz (parlak sesler) arasında.
+- **Tabana Yakın**: Karanlık tonlar, bass ağırlıklı şarkılar.
+- **Tavana Yakın**: Parlak tonlar, tiz ve yüksek frekanslı öğeler.
+
+#### **Spectral Roll-off**
+- **Aralık**: Genelde 100 Hz ile 15 kHz arasında.
+- **Tabana Yakın**: Düşük frekans ağırlıklı, genelde bass-dominant.
+- **Tavana Yakın**: Tiz ağırlıklı, genelde parlak sesler.
+
+---
+
+### **5. Extra Features**
+#### **Zero-Crossing Rate**
+- **Aralık**: 0 ile 1 arasında normalize edilmiş bir değer.
+- **Tabana Yakın**: Genelde yumuşak, melodik sesler.
+- **Tavana Yakın**: Perkusif ve sert sesler, örneğin davul veya elektronik beat.
+
+#### **Harmonik-Oransızlık Oranı (`harmonic_ratio`)**
+- **Aralık**: 0 ile 1 arasında normalize edilmiş bir değer.
+- **Tabana Yakın**: Daha az harmonik düzen, genelde gürültülü veya deneysel müzik.
+- **Tavana Yakın**: Yüksek harmonik düzen, genelde melodik ve tonlu müzik.
+
+---
+
+### **Türetilmiş Veriler için Tavsiyeler**
+- **Enerji Analizi**:
+  - **Ortalama Ses Yüksekliği + BPM**: Enerji seviyesini belirlemek için birleştirilebilir.
+  - Yüksek amplitude ve BPM = **Yoğun enerji**.
+  - Düşük amplitude ve BPM = **Düşük enerji**.
+
+- **Parlaklık ve Ton Analizi**:
+  - **Spectral Centroid + Spectral Roll-off**: Şarkının parlaklık seviyesini belirleyebilir.
+  - Yüksek centroid ve roll-off = **Parlak şarkı**.
+  - Düşük centroid ve roll-off = **Karanlık şarkı**.
+
+- **Ritim Etiketleme**:
+  - **BPM + Rhythm Stability**: Şarkının dans edilebilirliği veya ritim kararlılığını belirleyebilir.
+  - Yüksek BPM ve kararlılık = **Dans müziği**.
+  - Düşük kararlılık = **Daha deneysel ritimler**.
+
+---
+

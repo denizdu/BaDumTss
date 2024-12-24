@@ -15,7 +15,7 @@ Bu proje, belirli bir şarkı listesi üzerinden müzik analizi yapmayı ve ilgi
 ## 🚀 Kurulum ve Kullanım
 
 ### 1. Gerekli Bağımlılıkların Kurulumu
-Proje, bağımlılıkların sanal bir Python ortamında kurulmasını önerir. 
+Proje, bağımlılıkların sanal bir Python ortamında kurulmasını önerir.
 
 ```bash
 # Sanal ortam oluşturun
