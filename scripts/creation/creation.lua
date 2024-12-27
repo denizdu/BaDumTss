@@ -1,191 +1,159 @@
--- Include dkjson library for JSON parsing
+-- creation.lua script
+
+-- JSON kütüphanesini yükler
 local json = require("dkjson")
 
--- Load environment variables from a .env file
-function load_env(filepath)
-    local env_vars = {}
-    local file = io.open(filepath, "r")
-    if not file then
-        reaper.ShowConsoleMsg("Error: Could not open .env file at " .. filepath .. "\n")
-        return env_vars
-    end
+local kick_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Kicks/Cymatics_9God_Kick_1_C.wav"
+local snare_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Snares/Cymatics_9God_Snare_1_C.wav"
+local hihat_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Cymbals/Rides/Cymatics_9God_Ride_1.wav" -- Varsayılan HiHat
 
-    -- İlk geçiş: Tüm değişkenleri yükle
-    for line in file:lines() do
-        if line:match("^%s*$") == nil and not line:match("^#") then
-            local key, value = line:match("^(%w+)=(.+)$")
-            if key and value then
-                env_vars[key] = value
-            else
-                reaper.ShowConsoleMsg("Warning: Skipping invalid line in .env file: " .. line .. "\n")
-            end
+-- Input dosyasını okur
+function read_json_file(file_path)
+    local file = io.open(file_path, "r")
+    if not file then error("Dosya açılamadı: " .. file_path) end
+    local content = file:read("*a")
+    file:close()
+    return json.decode(content)
+end
+
+-- Dosya adlarını sanitize eden fonksiyon
+function sanitize_filename(name)
+    local translation_table = {
+        [" "] = "_",
+        ["ı"] = "i",
+        ["İ"] = "I",
+        ["ş"] = "s",
+        ["Ş"] = "S",
+        ["ğ"] = "g",
+        ["Ğ"] = "G",
+        ["ö"] = "o",
+        ["Ö"] = "O",
+        ["ü"] = "u",
+        ["Ü"] = "U",
+        ["ç"] = "c",
+        ["Ç"] = "C",
+        ["|"] = "",
+        [","] = "",
+        ["."] = "",
+        ["'"] = "",
+        ["/"] = "", -- Yol karakterlerini temizle
+        ["\\"] = "",
+        [":"] = "",
+        ["*"] = "",
+        ["?"] = "",
+        ["\""] = "",
+        ["<"] = "",
+        [">"] = ""
+    }
+    name = name:gsub(".", translation_table)
+    name = name:gsub("_+", "_") -- Birden fazla alt çizgiyi tek bir alt çizgiye indir
+    name = name:gsub("^_+", ""):gsub("_+$", "") -- Baştaki ve sondaki alt çizgileri kaldır
+    return name
+end
+
+-- Reaper'da yeni proje oluşturur
+function create_new_project()
+    reaper.Main_openProject("") -- Boş bir proje açar
+end
+
+-- Track ekler
+function add_track()
+    reaper.InsertTrackAtIndex(0, true) -- İlk sırada yeni bir track ekler
+end
+
+-- Örnek ses dosyasını track'e ekler
+function add_sample_to_track(track, sample_path, start_position)
+    local retval = reaper.InsertMedia(sample_path, 0)
+    if retval then
+        local item = reaper.GetTrackMediaItem(track, reaper.CountTrackMediaItems(track) - 1)
+        if item then
+            reaper.SetMediaItemInfo_Value(item, "D_POSITION", start_position)
         end
     end
-    file:close()
-
-    -- İkinci geçiş: Değişken interpolasyonlarını çöz
-    for key, value in pairs(env_vars) do
-        env_vars[key] = value:gsub("%${(.-)}", function(var_name)
-            return env_vars[var_name] or ""
-        end)
-    end
-
-    return env_vars
 end
 
--- Check if file exists
-function file_exists(filepath)
-    local file = io.open(filepath, "r")
-    if file then
-        file:close()
-        return true
-    else
-        return false
+-- MIDI notası ekler
+function add_midi_note_to_track(track, note, start_position)
+    local item = reaper.CreateNewMIDIItemInProj(track, math.floor(start_position), math.floor(start_position + 960), false) -- MIDI PPQ: 960 = çeyrek nota
+    local take = reaper.GetMediaItemTake(item, 0)
+    if take then
+        reaper.MIDI_InsertNote(take, false, false, math.floor(start_position), math.floor(start_position + 480), 0, math.floor(note), 100, false)
     end
 end
 
--- Load model output from a JSON file
-function load_model_output(filepath)
-    if not file_exists(filepath) then
-        reaper.ShowConsoleMsg("Error: File does not exist - " .. filepath .. "\n")
-        return nil
-    end
-    local file = io.open(filepath, "r")
-    local content = file:read("*all")
-    file:close()
-    local data, pos, err = json.decode(content, 1, nil)
-    if err then
-        reaper.ShowConsoleMsg("Error parsing JSON: " .. err .. "\n")
-        return nil
-    end
-    return data
+-- Ana özellikleri işler
+function process_main_features(features)
+    local tempo = features["Tempo (BPM)"]
+    reaper.SetCurrentBPM(0, tempo, true) -- Tempo ayarla
 end
 
--- Initialize a new Reaper project
-function initialize_reaper()
-    reaper.Main_OnCommand(40025, 0) -- New Project
-    reaper.ShowConsoleMsg("Initialized Reaper project\n")
-end
-
--- Create a new track
-function create_new_track(track_name)
-    local track_index = reaper.CountTracks(0)
-    reaper.InsertTrackAtIndex(track_index, true)
-    local track = reaper.GetTrack(0, track_index)
-    reaper.GetSetMediaTrackInfo_String(track, "P_NAME", track_name, true)
-    reaper.ShowConsoleMsg("Created track: " .. track_name .. "\n")
-    return track
-end
-
--- Create a MIDI item on a given track
-function create_midi_item(track, start_time, end_time)
-    local item = reaper.CreateNewMIDIItemInProj(track, start_time, end_time, false)
-    reaper.ShowConsoleMsg("Created MIDI item\n")
-    return item
-end
-
--- Process Main Features
-function process_main_features(track, main_features)
-    if main_features["Tempo (BPM)"] then
-        reaper.CSurf_OnTempoChange(main_features["Tempo (BPM)"])
-        reaper.ShowConsoleMsg("Set tempo to " .. main_features["Tempo (BPM)"] .. " BPM\n")
-    end
-    if main_features["Key (Tonalite)"] then
-        reaper.ShowConsoleMsg("Set key to " .. main_features["Key (Tonalite)"] .. "\n")
+-- Frekans ve spektrum özelliklerini işler
+function process_freq_and_spectrum(freq_spec, track)
+    local spectrum = freq_spec["Frequency Spectrum"]
+    reaper.TrackFX_AddByName(track, "ReaEQ", false, -1) -- EQ ekle
+    for i, value in ipairs(spectrum) do
+        reaper.TrackFX_SetParam(track, 0, i - 1, value / 50) -- EQ bandını ayarla
     end
 end
 
--- Process Frequency and Spectrum
-function process_freq_and_spectrum(track, freq_data)
-    if freq_data then
-        reaper.ShowConsoleMsg("Processing frequency spectrum for track\n")
-        -- Add frequency manipulation logic
+-- Ritim ve melodi oluşturur
+function create_rhythm_and_melody(song_data, track)
+    if not reaper.file_exists(kick_path) then
+        reaper.ShowConsoleMsg("Kick sample bulunamadı. Lütfen bir ses dosyası ekleyin.\n")
+        return
     end
-end
-
--- Process Rhythm
-function process_rhythm(track, rhythm_data)
-    if rhythm_data then
-        reaper.ShowConsoleMsg("Processing rhythm for track\n")
-        -- Add rhythm processing logic
+    if not reaper.file_exists(snare_path) then
+        reaper.ShowConsoleMsg("Snare sample bulunamadı. Lütfen bir ses dosyası ekleyin.\n")
+        return
     end
-end
-
--- Process Spectral Features
-function process_spectral_features(track, spectral_data)
-    if spectral_data then
-        reaper.ShowConsoleMsg("Processing spectral features for track\n")
-        -- Add spectral feature processing logic
-    end
-end
-
--- Process Extra Features
-function process_extra_features(track, extra_data)
-    if extra_data then
-        reaper.ShowConsoleMsg("Processing extra features for track\n")
-        -- Add extra feature processing logic
-    end
-end
-
--- Process the pipeline for each track
-function process_pipeline(model_data)
-    for track_name, track_data in pairs(model_data) do
-        reaper.ShowConsoleMsg("Processing track: " .. track_name .. "\n")
-        local track = create_new_track(track_name)
-
-        -- Create a placeholder MIDI item
-        create_midi_item(track, 0, 10)
-
-        -- Process each feature
-        process_main_features(track, track_data["Main Features"])
-        process_freq_and_spectrum(track, track_data["Frequency and Spectrum"])
-        process_rhythm(track, track_data["Rhythm"])
-        process_spectral_features(track, track_data["Spectral Features"])
-        process_extra_features(track, track_data["Extra Features"])
-    end
-end
-
--- Save the project
-function save_project(output_directory, filename)
-    local project_path = output_directory .. "/" .. filename
-    reaper.ShowConsoleMsg("Saving project to: " .. project_path .. "\n")
-
-    -- Ensure the output directory exists
-    local output_folder_check = os.execute('mkdir "' .. output_directory .. '"')
-    if output_folder_check ~= 0 then
-        reaper.ShowConsoleMsg("Warning: Output directory already exists or could not be created.\n")
-    end
-
-    -- Save the project
-    local success = reaper.Main_SaveProject(0, false)
-    if success then
-        reaper.ShowConsoleMsg("Project successfully saved to: " .. project_path .. "\n")
-    else
-        reaper.ShowConsoleMsg("Error: Failed to save the project.\n")
-    end
-end
-
-
--- Main Function
-function main()
-    -- Get paths from environment variables
-    local output_directory = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/creation"
-    local model_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/model/model_output.json"
-
-    -- Load model data
-    local model_data = load_model_output(model_path)
-    if not model_data then
+    if not reaper.file_exists(hihat_path) then
+        reaper.ShowConsoleMsg("HiHat sample bulunamadı. Lütfen bir ses dosyası ekleyin.\n")
         return
     end
 
-    -- Initialize Reaper project
-    initialize_reaper()
+    local rhythm = song_data["Rhythm"]
+    local melody = song_data["Frequency and Spectrum"]["Melody Contour"]
 
-    -- Process the creation pipeline
-    -- process_pipeline(model_data)
+    for i, beat in ipairs(rhythm["Beat Grid"]) do
+        if i % 4 == 1 then -- Her 4 beat'in birincisine kick ekle
+            add_sample_to_track(track, kick_path, beat)
+        elseif i % 4 == 2 or i % 4 == 4 then -- İkinci ve dördüncü vuruşlara snare ekle
+            add_sample_to_track(track, snare_path, beat)
+        else -- Diğer tüm vuruşlara hihat ekle
+            add_sample_to_track(track, hihat_path, beat)
+        end
+    end
 
-    -- Save the project
-    --save_project(output_directory, "created_project.rpp")
+    for i, freq in ipairs(melody) do
+        local note = math.floor(69 + 12 * math.log(freq / 440) / math.log(2)) -- Frekansı MIDI notalarına çevir
+        local start_pos = math.floor(i * 960) -- Tam sayıya çevir
+        add_midi_note_to_track(track, note, start_pos)
+    end
+end
+
+-- Şarkıyı işler ve proje kaydeder
+function process_song(song_name, song_data)
+    create_new_project()
+    add_track()
+    local track = reaper.GetTrack(0, 0)
+
+    process_main_features(song_data["Main Features"])
+    process_freq_and_spectrum(song_data["Frequency and Spectrum"], track)
+    create_rhythm_and_melody(song_data, track)
+
+    local sanitized_name = sanitize_filename(song_name)
+    local save_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/creation/" .. sanitized_name .. ".rpp"
+    reaper.Main_SaveProjectEx(0, save_path, 0)
+end
+
+-- Ana script akışı
+function main()
+    local input_file = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/model/model_output.json" -- JSON dosyasının yolu
+    local song_data = read_json_file(input_file)
+
+    for song_name, data in pairs(song_data) do
+        process_song(song_name, data)
+    end
 end
 
 main()
