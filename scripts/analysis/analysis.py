@@ -10,6 +10,7 @@ from freq_and_spectrum import process_freq_and_spectrum
 from main_features import process_main_features
 from rhythm import process_rhythm
 from spectral_features import process_spectral_features
+from drum_analysis import process_drum_analysis
 
 # .env dosyasını yükle
 load_dotenv()
@@ -38,7 +39,8 @@ def analyze_and_delete_song(song_file):
         process_rhythm(song_file, output_file)
         process_spectral_features(song_file, output_file)
         process_extra_features(song_file, output_file)
-        #process_derived_features(song_file, output_file)
+        process_drum_analysis(song_file, output_file)
+
         print(f"Analysis completed for: {song_file}")
     except Exception as e:
         print(f"Error during analysis of {song_file}: {e}")
