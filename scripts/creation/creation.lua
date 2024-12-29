@@ -5,7 +5,7 @@ local json = require("dkjson")
 
 local kick_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Kicks/Cymatics_9God_Kick_1_C.wav"
 local snare_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Snares/Cymatics_9God_Snare_1_C.wav"
-local hihat_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Cymbals/Rides/Cymatics_9God_Ride_1.wav" -- Varsayılan HiHat
+local hihat_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Cymbals/Rides/Cymatics_9God_Ride_1.wav"
 
 -- Input dosyasını okur
 function read_json_file(file_path)
@@ -98,22 +98,21 @@ end
 
 -- Ritim ve melodi oluşturur
 function create_rhythm_and_melody(song_data, track)
-    if not reaper.file_exists(kick_path) then
-        reaper.ShowConsoleMsg("Kick sample bulunamadı. Lütfen bir ses dosyası ekleyin.\n")
-        return
-    end
-    if not reaper.file_exists(snare_path) then
-        reaper.ShowConsoleMsg("Snare sample bulunamadı. Lütfen bir ses dosyası ekleyin.\n")
-        return
-    end
-    if not reaper.file_exists(hihat_path) then
-        reaper.ShowConsoleMsg("HiHat sample bulunamadı. Lütfen bir ses dosyası ekleyin.\n")
-        return
-    end
-
     local rhythm = song_data["Rhythm"]
-    local melody = song_data["Frequency and Spectrum"]["Melody Contour"]
+    local melody = song_data["Frequency and Spectrum"] and song_data["Frequency and Spectrum"]["Melody Contour"]
 
+    -- Ritim ve melodi değerlerini kontrol et
+    if not rhythm or not rhythm["Beat Grid"] then
+        reaper.ShowConsoleMsg("Ritim bilgileri eksik veya hatalı.\n")
+        return
+    end
+
+    if not melody then
+        reaper.ShowConsoleMsg("Melody Contour eksik veya hatalı.\n")
+        return
+    end
+
+    -- Ritim için Kick, Snare ve HiHat ekle
     for i, beat in ipairs(rhythm["Beat Grid"]) do
         if i % 4 == 1 then -- Her 4 beat'in birincisine kick ekle
             add_sample_to_track(track, kick_path, beat)
@@ -124,8 +123,9 @@ function create_rhythm_and_melody(song_data, track)
         end
     end
 
+    -- Melodi ekle
     for i, freq in ipairs(melody) do
-        local note = math.floor(69 + 12 * math.log(freq / 440) / math.log(2)) -- Frekansı MIDI notalarına çevir
+        local note = math.floor(69 + 12 * math.log(freq / 440) / math.log(2) + 0.5) -- Yuvarlama eklendi
         local start_pos = math.floor(i * 960) -- Tam sayıya çevir
         add_midi_note_to_track(track, note, start_pos)
     end
