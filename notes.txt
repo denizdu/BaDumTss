@@ -1,0 +1,3 @@
+testleri koşarken proje pathinde (cmd)
+set PYTHONPATH=.
+pytest
