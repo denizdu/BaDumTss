@@ -92,7 +92,7 @@ def create_midi_file(output_path, drum_analysis):
         print(f"Error: Unable to write MIDI file. {e}")
 
 def main():
-    midi_output_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/generated_drums_with_tracks.mid"
+    midi_output_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/generated_drums_kk.mid"
     json_file = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/analysis/analysis_output.json"
 
     # Read JSON file
