@@ -1,97 +1,72 @@
+import os
 import json
+from dotenv import load_dotenv
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
 
-# 1. Veri Yükleme
-file_path = r"C:\\Users\\denizdu\\OneDrive\\Masaüstü\\BaDumTss\\output\\analysis\\analysis_output.json"
-with open(file_path, 'r') as file:
+# .env dosyasını yükle
+load_dotenv()
+
+# Dizinler
+DIR_OUTPUT_ANALYSIS = os.getenv("DIR_OUTPUT_ANALYSIS")
+DIR_OUTPUT_MODEL = os.getenv("DIR_OUTPUT_MODEL")
+
+input_data_file = os.path.join(DIR_OUTPUT_ANALYSIS, "analysis_output.json")
+output_file = os.path.join(DIR_OUTPUT_MODEL, "drum_kit_recommendation_model.pkl")
+
+# Analiz dosyasının bulunduğu dizini oluştur
+os.makedirs(DIR_OUTPUT_ANALYSIS, exist_ok=True)
+
+# Veri Yükleme
+with open(input_data_file, 'r') as file:
     data = json.load(file)
 
-# 2. Veriyi İşleme
-rows = []
-for file, features in data.items():
-    main_features = features.get("Main Features", {})
-    freq_features = features.get("Frequency and Spectrum", {})
-    spectral_features = features.get("Spectral Features", {})
-    extra_features = features.get("Extra Features", {})
+# Veriyi Hazırlama
+def prepare_data(data):
+    features = []
+    labels = []
 
-    rows.append({
-        "file": file,
-        "tempo_bpm": main_features.get("Tempo (BPM)", np.nan),
-        "key": main_features.get("Key (Tonalite)", "Unknown"),
-        "loudness_db": main_features.get("Loudness (dB)", np.nan),
-        "dynamics": main_features.get("Dynamics", np.nan),
-        "harmonic_content": freq_features.get("Harmonic Content", np.nan),
-        "spectral_centroid": spectral_features.get("Spectral Centroid", np.nan),
-        "spectral_rolloff": spectral_features.get("Spectral Roll-off", np.nan),
-        "zero_crossing_rate": extra_features.get("Zero-Crossing Rate", np.nan)
-    })
+    for file_path, analysis in data.items():
+        # Ana özelliklerden bazılarını seçiyoruz
+        main_features = analysis["Main Features"]
+        tempo = main_features.get("Tempo (BPM)", 0)
+        loudness = main_features.get("Loudness (dB)", 0)
+        dynamics = main_features.get("Dynamics", 0)
 
-# Pandas DataFrame oluşturma
-df = pd.DataFrame(rows)
+        # Frekans spektrumunun ortalamasını alıyoruz
+        spectrum = analysis["Frequency and Spectrum"].get("Frequency Spectrum", [])
+        spectrum_mean = sum(spectrum) / len(spectrum) if spectrum else 0
 
-# Eksik verileri doldurma (sadece sayısal sütunlar için)
-numeric_columns = df.select_dtypes(include=[np.number])
-df[numeric_columns.columns] = numeric_columns.fillna(numeric_columns.mean())
+        # Drum kit önerisi için dummy bir label ekleniyor (örneğin "Rock", "Hip-Hop")
+        # Gerçek verilerinizde bu etiketlerin doğru olmasını sağlamalısınız.
+        label = "Rock" if tempo > 120 else "Jazz"  # Bu kısım örnek.
 
-# Sayısal olmayan sütunlar için varsayılan değerler atama
-non_numeric_columns = df.select_dtypes(exclude=[np.number])
-for col in non_numeric_columns.columns:
-    df[col] = df[col].fillna("Unknown")
+        features.append([tempo, loudness, dynamics, spectrum_mean])
+        labels.append(label)
 
-# 3. Veri Görselleştirme
-def plot_feature_distribution(df, feature):
-    plt.figure(figsize=(8, 6))
-    plt.hist(df[feature], bins=20, alpha=0.7, color='blue')
-    plt.title(f"Distribution of {feature}")
-    plt.xlabel(feature)
-    plt.ylabel("Frequency")
-    plt.show()
+    return pd.DataFrame(features, columns=["Tempo", "Loudness", "Dynamics", "Spectrum Mean"]), labels
 
-# Örnek görselleştirme
-plot_feature_distribution(df, "tempo_bpm")
-plot_feature_distribution(df, "spectral_centroid")
+# Veriyi işleme
+X, y = prepare_data(data)
 
-# 4. Veri Ölçekleme ve Modelleme
-scaler = StandardScaler()
-scaled_features = scaler.fit_transform(df.drop(columns=["file", "key"]))
+# Veri Setini Eğitim ve Test Olarak Ayırma
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# K-Means Modeli
-n_clusters = min(len(df), 3)  # Veri boyutuna uygun küme sayısı belirleme
-kmeans = KMeans(n_clusters=n_clusters, random_state=42)
-kmeans.fit(scaled_features)
-df['cluster'] = kmeans.labels_
+# Modeli Eğitme
+model = RandomForestClassifier(random_state=42)
+model.fit(X_train, y_train)
 
-# PCA ile boyut indirgeme
-pca = PCA(n_components=2)
-pca_features = pca.fit_transform(scaled_features)
+# Modeli Test Etme
+y_pred = model.predict(X_test)
 
-def plot_clusters(pca_features, labels):
-    plt.figure(figsize=(8, 6))
-    plt.scatter(pca_features[:, 0], pca_features[:, 1], c=labels, cmap='viridis', alpha=0.6)
-    plt.title("Cluster Visualization")
-    plt.xlabel("PCA Component 1")
-    plt.ylabel("PCA Component 2")
-    plt.colorbar(label="Cluster")
-    plt.show()
+# Sonuçları Yazdırma
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
 
-plot_clusters(pca_features, kmeans.labels_)
+# Modeli Kaydetme
+import joblib
+joblib.dump(model, output_file)
 
-# 5. Öneri Motoru
-def recommend_similar_songs(df, cluster_id, top_n=3):
-    cluster_songs = df[df['cluster'] == cluster_id]
-    return cluster_songs.sort_values(by="tempo_bpm").head(top_n)["file"].tolist()
-
-# Örnek öneriler
-cluster_id = 0
-recommendations = recommend_similar_songs(df, cluster_id)
-print(f"Recommended songs for cluster {cluster_id}: {recommendations}")
-
-# 6. Analiz Raporu - `ace_tools` olmadan
-output_path = r"C:\\Users\\denizdu\\OneDrive\\Masaüstü\\BaDumTss\\output\\model\\clustered_music_data.csv"
-df.to_csv(output_path, index=False)
-print(f"Clustered music data saved to {output_path}")
+print("Model başarıyla eğitildi ve kaydedildi!")

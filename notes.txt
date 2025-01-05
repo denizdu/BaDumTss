@@ -1,3 +1,6 @@
 testleri koşarken proje pathinde (cmd)
 set PYTHONPATH=.
 pytest
+
+Sınıflandırma: Drum kit kategorileri belirliyse (ör. "Rock", "Hip-Hop", "Jazz"). analize eklenmeli
+
