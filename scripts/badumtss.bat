@@ -1,5 +1,7 @@
+C:\Users\denizdu\OneDrive\Masaüstü\BaDumTss\venv\Scripts\activate.bat
+pip install -r requirements.txt
 set PYTHONPATH=.
-
-python C:\Users\denizdu\OneDrive\Masaüstü\BaDumTss\scripts\fetch\spotify_fetch.py
-python C:\Users\denizdu\OneDrive\Masaüstü\BaDumTss\scripts\analysis\analysis.py
-python C:\Users\denizdu\OneDrive\Masaüstü\BaDumTss\scripts\model\model.py
+python scripts\fetch\spotify_fetch.py
+python scripts\fetch\cookie_converter.py
+python scripts\analysis\analysis.py
+python scripts\model\model.py

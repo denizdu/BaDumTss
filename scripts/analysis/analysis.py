@@ -59,7 +59,7 @@ def process_track(track):
 
     # Şarkıyı indirirken YouTube çerezlerini kullan
     print(f"Attempting to download: {search_query}")
-    song_file = download_song_as_wav(search_query, DIR_DOWNLOAD, browser="edge", profile="Default")
+    song_file = download_song_as_wav(search_query, DIR_DOWNLOAD)
     print(f"Download result: {song_file}")
 
     # Şarkı indirildiyse analiz et ve sil

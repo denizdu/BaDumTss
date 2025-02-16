@@ -7,11 +7,15 @@ load_dotenv(dotenv_path="C://Users//denizdu//OneDrive//Masaüstü//BaDumTss//.en
 
 # Dizinler
 DIR_DOWNLOAD = os.getenv("DIR_DOWNLOAD")
+COOKIES_FILE = "C://Users//denizdu//OneDrive//Masaüstü//BaDumTss//cookies.txt"  # Çerez dosyası yolu
 
-def download_song_as_wav(search_query, output_dir, cookies=None, browser="edge", profile="Default"):
+def download_song_as_wav(search_query, output_dir):
     os.makedirs(output_dir, exist_ok=True)
+
     try:
         print(f"Downloading {search_query}...")
+
+        # İndirme komutu
         command = [
             "yt-dlp",
             "-x", "--audio-format", "wav",
@@ -19,17 +23,22 @@ def download_song_as_wav(search_query, output_dir, cookies=None, browser="edge",
             f"ytsearch1:{search_query}"
         ]
 
-        if cookies:
-            command.extend(["--cookies", cookies])  # Manuel çerez dosyasını belirt
+        # Sadece `cookies.txt` kullan
+        if os.path.exists(COOKIES_FILE):
+            print(f"Using cookies from: {COOKIES_FILE}")
+            command.extend(["--cookies", COOKIES_FILE])
         else:
-            command.extend(["--cookies-from-browser", f"{browser}:{profile}"])  # Tarayıcı ve profil kullan
+            print("Error: No cookies.txt file found. Please create it first.")
+            return None
 
+        # Komutu çalıştır
         result = subprocess.run(
             command,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE
         )
 
+        # Başarılı indirme
         if result.returncode == 0:
             print(f"Successfully downloaded: {search_query}")
 
