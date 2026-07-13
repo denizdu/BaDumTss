@@ -1,68 +1,44 @@
-import pytest
 import json
-import os
+from unittest.mock import patch
+
 import numpy as np
-from unittest.mock import patch, mock_open
-from extra_features import process_extra_features
+
 from derived_features import process_derived_features
 from drum_analysis import process_drum_analysis
+from extra_features import process_extra_features
 
-@pytest.fixture
-def mock_librosa_load():
-    with patch("librosa.load") as mock_load:
-        mock_load.return_value = (np.random.rand(22050 * 30), 22050)  # 30 saniyelik sahte bir ses
-        yield mock_load
 
-@patch("builtins.open", new_callable=mock_open)
-def test_process_extra_features_success(mock_open_file, mock_librosa_load):
-    output_file = "test_output.json"
+def test_process_extra_features_success(tmp_path):
+    output_file = tmp_path / "extra.json"
     song_file = "test_song.wav"
+    y = np.random.default_rng(1).random(22050)
 
-    # Test edilen fonksiyonu çalıştır
-    process_extra_features(song_file, output_file)
+    process_extra_features(song_file, str(output_file), y=y, sr=22050)
 
-    # JSON dosyası içerik kontrolü
-    mock_open_file.assert_called_with(output_file, "w", encoding="utf-8")
-    written_data = "".join(call.args[0] for call in mock_open_file().write.call_args_list)  # Yazılan veri
+    parsed_data = json.loads(output_file.read_text(encoding="utf-8"))
+    assert "MFCCs" in parsed_data[song_file]["Extra Features"]
+    assert "Zero-Crossing Rate" in parsed_data[song_file]["Extra Features"]
 
-    try:
-        parsed_data = json.loads(written_data)
-        assert song_file in parsed_data
-        assert "Extra Features" in parsed_data[song_file]
-        assert "MFCCs" in parsed_data[song_file]["Extra Features"]
-        assert "Zero-Crossing Rate" in parsed_data[song_file]["Extra Features"]
-    except json.JSONDecodeError:
-        print(f"Invalid JSON format: {written_data}")
-        raise
 
-@patch("builtins.open", new_callable=mock_open)
-def test_process_drum_analysis_success(mock_open_file, mock_librosa_load):
-    output_file = "test_output.json"
+def test_process_drum_analysis_success(tmp_path):
+    output_file = tmp_path / "drums.json"
     song_file = "test_song.wav"
+    y = np.zeros(22050)
+    y[::5512] = 1.0
 
-    # Test edilen fonksiyonu çalıştır
-    process_drum_analysis(song_file, output_file)
+    process_drum_analysis(song_file, str(output_file), y=y, sr=22050)
 
-    # JSON dosyası içerik kontrolü
-    mock_open_file.assert_called_with(output_file, "w", encoding="utf-8")
-    written_data = "".join(call.args[0] for call in mock_open_file().write.call_args_list)  # Yazılan veri
+    parsed_data = json.loads(output_file.read_text(encoding="utf-8"))
+    drum_data = parsed_data[song_file]["Drum Analysis"]
+    assert "Tempo (BPM)" in drum_data
+    assert "Kick Positions" in drum_data
+    assert "Snare Positions" in drum_data
+    assert "HiHat Positions" in drum_data
 
-    try:
-        parsed_data = json.loads(written_data)
-        assert song_file in parsed_data
-        assert "Drum Analysis" in parsed_data[song_file]
-        assert "Tempo (BPM)" in parsed_data[song_file]["Drum Analysis"]
-        assert "Kick Positions" in parsed_data[song_file]["Drum Analysis"]
-        assert "Snare Positions" in parsed_data[song_file]["Drum Analysis"]
-        assert "HiHat Positions" in parsed_data[song_file]["Drum Analysis"]
-    except json.JSONDecodeError:
-        print(f"Invalid JSON format: {written_data}")
-        raise
 
 def test_process_derived_features_success():
     song_file = "test_song.wav"
 
-    # Test edilen fonksiyonu çalıştır
     with patch("builtins.print") as mock_print:
         process_derived_features(song_file)
         mock_print.assert_called_with(f"Processing derived features for {song_file}")
