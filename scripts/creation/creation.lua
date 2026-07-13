@@ -72,12 +72,17 @@ function add_sample_to_track(track, sample_path, start_position)
     end
 end
 
--- Add a MIDI note.
-function add_midi_note_to_track(track, note, start_position)
-    local item = reaper.CreateNewMIDIItemInProj(track, math.floor(start_position), math.floor(start_position + 960), false) -- MIDI PPQ: 960 = quarter note.
+-- Add a MIDI note using project seconds for the item and PPQ positions for note events.
+function add_midi_note_to_track(track, note, start_seconds, duration_beats, tempo)
+    local duration_seconds = duration_beats * 60.0 / tempo
+    local end_seconds = start_seconds + duration_seconds
+    local item = reaper.CreateNewMIDIItemInProj(track, start_seconds, end_seconds, false)
     local take = reaper.GetMediaItemTake(item, 0)
     if take then
-        reaper.MIDI_InsertNote(take, false, false, math.floor(start_position), math.floor(start_position + 480), 0, math.floor(note), 100, false)
+        local start_ppq = reaper.MIDI_GetPPQPosFromProjTime(take, start_seconds)
+        local end_ppq = reaper.MIDI_GetPPQPosFromProjTime(take, end_seconds)
+        reaper.MIDI_InsertNote(take, false, false, start_ppq, end_ppq, 0, math.floor(note), 100, false)
+        reaper.MIDI_Sort(take)
     end
 end
 
@@ -100,6 +105,7 @@ end
 function create_rhythm_and_melody(song_data, track)
     local rhythm = song_data["Rhythm"]
     local melody = song_data["Frequency and Spectrum"] and song_data["Frequency and Spectrum"]["Melody Contour"]
+    local tempo = tonumber(song_data["Main Features"] and song_data["Main Features"]["Tempo (BPM)"]) or 120
 
     -- Validate rhythm and melody values.
     if not rhythm or not rhythm["Beat Grid"] then
@@ -126,8 +132,8 @@ function create_rhythm_and_melody(song_data, track)
     -- Add the melody.
     for i, freq in ipairs(melody) do
         local note = math.floor(69 + 12 * math.log(freq / 440) / math.log(2) + 0.5) -- Round to the nearest note.
-        local start_pos = math.floor(i * 960) -- Convert to an integer tick position.
-        add_midi_note_to_track(track, note, start_pos)
+        local start_seconds = (i - 1) * 60.0 / tempo
+        add_midi_note_to_track(track, note, start_seconds, 0.5, tempo)
     end
 end
 
