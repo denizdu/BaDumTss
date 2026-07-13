@@ -51,52 +51,63 @@ def write_midi_notes(midi_file, positions, pitch, velocity, bpm, ppq=PPQ):
         midi_file.write(write_variable_length_quantity(480))  # Note duration
         midi_file.write(struct.pack("<BBB", 0x80, pitch, 0))
 
+
+def write_track_chunk(midi_file, track_data):
+    """Uzunluğu doğru hesaplanmış standart bir MTrk chunk'ı yazar."""
+    midi_file.write(b"MTrk")
+    midi_file.write(struct.pack(">I", len(track_data)))
+    midi_file.write(track_data)
+
+
+def build_tempo_track(bpm):
+    if bpm <= 0:
+        raise ValueError("bpm must be positive")
+    microseconds_per_beat = int(round(60_000_000 / bpm))
+    if microseconds_per_beat > 0xFFFFFF:
+        raise ValueError("bpm is outside the MIDI tempo range")
+    return (
+        b"\x00\xFF\x51\x03"
+        + microseconds_per_beat.to_bytes(3, byteorder="big")
+        + b"\x00\xFF\x2F\x00"
+    )
+
+
 def create_midi_file(output_path, drum_analysis):
-    """Creates a MIDI file in Format 1 with separate tracks for kick, snare, and hi-hat notes."""
+    """Tempo, kick, snare ve hi-hat track'leri olan Format 1 MIDI dosyası oluşturur."""
     try:
         bpm = float(drum_analysis.get("Tempo (BPM)", 120.0))
         with open(output_path, 'wb') as midi_file:
-            # Write MIDI header (Format 1, 3 tracks, 960 ticks per quarter note)
+            # Format 1: conductor/tempo + kick + snare + hi-hat = 4 track.
             midi_file.write(b"MThd")
-            midi_file.write(struct.pack(">IHHH", 6, 1, 3, PPQ))
+            midi_file.write(struct.pack(">IHHH", 6, 1, 4, PPQ))
+            write_track_chunk(midi_file, build_tempo_track(bpm))
 
             def write_track(positions, pitch, track_name):
                 """Writes a single track with given positions and pitch."""
-                if positions:
-                    midi_file.write(b"MTrk")
-                    track_start_position = midi_file.tell()
-                    midi_file.write(struct.pack(">I", 0))  # Placeholder for track length
+                track_data = bytearray()
+                # Write track name meta-event
+                track_data.extend(write_variable_length_quantity(0))
+                track_data.extend(struct.pack("<BB", 0xFF, 0x03))
+                track_data.extend(struct.pack("B", len(track_name)))
+                track_data.extend(track_name.encode('ascii'))
 
-                    # Write track name meta-event
-                    midi_file.write(write_variable_length_quantity(0))  # Delta time
-                    midi_file.write(struct.pack("<BB", 0xFF, 0x03))  # Track name event
-                    midi_file.write(struct.pack("B", len(track_name)))
-                    midi_file.write(track_name.encode('ascii'))
+                # Write notes
+                last_position = 0
+                for position in positions:
+                    start_time = seconds_to_ticks(position, bpm)
+                    delta_time = start_time - last_position
+                    last_position = start_time
 
-                    # Write notes
-                    last_position = 0
-                    for position in positions:
-                        start_time = seconds_to_ticks(position, bpm)
-                        delta_time = start_time - last_position
-                        last_position = start_time
+                    # Note on
+                    track_data.extend(write_variable_length_quantity(delta_time))
+                    track_data.extend(struct.pack("<BBB", 0x90, pitch, 100))
 
-                        # Note on
-                        midi_file.write(write_variable_length_quantity(delta_time))
-                        midi_file.write(struct.pack("<BBB", 0x90, pitch, 100))
+                    # Note off
+                    track_data.extend(write_variable_length_quantity(480))
+                    track_data.extend(struct.pack("<BBB", 0x80, pitch, 0))
 
-                        # Note off
-                        midi_file.write(write_variable_length_quantity(480))  # Note duration
-                        midi_file.write(struct.pack("<BBB", 0x80, pitch, 0))
-
-                    # Write end of track
-                    midi_file.write(write_variable_length_quantity(0))
-                    midi_file.write(struct.pack("<BBB", 0xFF, 0x2F, 0x00))  # End of track
-                    track_end_position = midi_file.tell()
-
-                    # Update track length
-                    midi_file.seek(track_start_position)
-                    midi_file.write(struct.pack(">I", track_end_position - track_start_position - 4))
-                    midi_file.seek(track_end_position)
+                track_data.extend(b"\x00\xFF\x2F\x00")
+                write_track_chunk(midi_file, track_data)
 
             # Write tracks for kick, snare, and hi-hat
             write_track(drum_analysis.get("Kick Positions", []), 36, "Kick")
