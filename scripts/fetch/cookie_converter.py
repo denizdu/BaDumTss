@@ -1,7 +1,9 @@
 import json
+from pathlib import Path
 
-json_cookies_file = "C://Users//denizdu//OneDrive//Masaüstü//BaDumTss//cookies.json"
-netscape_cookies_file = "C://Users//denizdu//OneDrive//Masaüstü//BaDumTss//cookies.txt"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+json_cookies_file = PROJECT_ROOT / "cookies.json"
+netscape_cookies_file = PROJECT_ROOT / "cookies.txt"
 
 # Read the JSON cookie file.
 with open(json_cookies_file, "r", encoding="utf-8") as f:

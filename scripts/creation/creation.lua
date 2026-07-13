@@ -3,9 +3,16 @@
 -- Load the JSON library.
 local json = require("dkjson")
 
-local kick_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Kicks/Cymatics_9God_Kick_1_C.wav"
-local snare_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Snares/Cymatics_9God_Snare_1_C.wav"
-local hihat_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Cymbals/Rides/Cymatics_9God_Ride_1.wav"
+local function get_project_root()
+    local _, script_path = reaper.get_action_context()
+    local script_dir = script_path:match("^(.*)[/\\]") or "."
+    return script_dir .. "/../.."
+end
+
+local project_root = get_project_root()
+local kick_path = project_root .. "/sample/drums/Kicks/Cymatics_9God_Kick_1_C.wav"
+local snare_path = project_root .. "/sample/drums/Snares/Cymatics_9God_Snare_1_C.wav"
+local hihat_path = project_root .. "/sample/drums/Cymbals/Rides/Cymatics_9God_Ride_1.wav"
 
 -- Read an input file.
 function read_json_file(file_path)
@@ -166,13 +173,15 @@ function process_song(song_name, song_data)
     create_rhythm_and_melody(song_data, track)
 
     local sanitized_name = sanitize_filename(song_name)
-    local save_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/creation/" .. sanitized_name .. ".rpp"
+    local output_dir = project_root .. "/output/creation"
+    reaper.RecursiveCreateDirectory(output_dir, 0)
+    local save_path = output_dir .. "/" .. sanitized_name .. ".rpp"
     reaper.Main_SaveProjectEx(0, save_path, 0)
 end
 
 -- Main script flow.
 function main()
-    local input_file = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/model/model_output.json" -- Path to the JSON file.
+    local input_file = project_root .. "/output/model/model_output.json"
     local song_data = read_json_file(input_file)
 
     for song_name, data in pairs(song_data) do

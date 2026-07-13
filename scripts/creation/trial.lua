@@ -3,8 +3,16 @@
 
 local json = require("dkjson")
 local reaper = reaper
-local midi_output_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/generated_drums.mid"
-local json_file = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/analysis/analysis_output.json"
+
+local function get_project_root()
+    local _, script_path = reaper.get_action_context()
+    local script_dir = script_path:match("^(.*)[/\\]") or "."
+    return script_dir .. "/../.."
+end
+
+local project_root = get_project_root()
+local midi_output_path = project_root .. "/output/creation/generated_drums.mid"
+local json_file = project_root .. "/output/analysis/analysis_output.json"
 
 -- Read JSON file
 local function read_file(file_path)

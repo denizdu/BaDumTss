@@ -1,9 +1,11 @@
 import json
 import struct
 import os
+from pathlib import Path
 
 PPQ = 960
 DEFAULT_NOTE_DURATION = 480
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
 def seconds_to_ticks(seconds, bpm, ppq=PPQ):
@@ -127,8 +129,8 @@ def create_midi_file(output_path, drum_analysis):
         print(f"Error: Unable to write MIDI file. {e}")
 
 def main():
-    midi_output_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/generated_drums_kk.mid"
-    json_file = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/analysis/analysis_output.json"
+    midi_output_path = PROJECT_ROOT / "output" / "creation" / "generated_drums.mid"
+    json_file = PROJECT_ROOT / "output" / "analysis" / "analysis_output.json"
 
     # Read JSON file
     json_content = read_file(json_file)

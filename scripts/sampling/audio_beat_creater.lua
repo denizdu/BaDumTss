@@ -1,5 +1,11 @@
 -- Lua script to create MIDI tracks in Reaper with a virtual instrument
 
+local function get_project_root()
+    local _, script_path = reaper.get_action_context()
+    local script_dir = script_path:match("^(.*)[/\\]") or "."
+    return script_dir .. "/../.."
+end
+
 -- Import dkjson for JSON parsing
 local json = require("dkjson")
 
@@ -79,5 +85,5 @@ function create_midi_tracks_from_json(json_path)
 end
 
 -- Run the script
-local json_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/analysis/cleaned_track_combinations.json"
+local json_path = get_project_root() .. "/output/analysis/cleaned_track_combinations.json"
 create_midi_tracks_from_json(json_path)
