@@ -92,13 +92,31 @@ function process_main_features(features)
     reaper.SetCurrentBPM(0, tempo, true) -- Set the tempo.
 end
 
--- Process frequency and spectrum features.
-function process_freq_and_spectrum(freq_spec, track)
-    local spectrum = freq_spec["Frequency Spectrum"]
-    reaper.TrackFX_AddByName(track, "ReaEQ", false, -1) -- Add EQ.
-    for i, value in ipairs(spectrum) do
-        reaper.TrackFX_SetParam(track, 0, i - 1, value / 50) -- Set the EQ band.
+-- Report interpretable spectral measurements without treating FFT magnitudes as EQ parameters.
+function report_spectral_profile(spectral_features)
+    if not spectral_features then
+        reaper.ShowConsoleMsg("Spectral features are unavailable; skipping the profile report.\n")
+        return
     end
+
+    local centroid = tonumber(spectral_features["Spectral Centroid"])
+    local rolloff = tonumber(spectral_features["Spectral Roll-off"])
+    if not centroid or not rolloff then
+        reaper.ShowConsoleMsg("Spectral centroid or roll-off is invalid; skipping the profile report.\n")
+        return
+    end
+
+    local profile = "balanced"
+    if centroid < 1500 then
+        profile = "dark"
+    elseif centroid > 3500 then
+        profile = "bright"
+    end
+
+    reaper.ShowConsoleMsg(string.format(
+        "Spectral profile: %s (centroid %.1f Hz, roll-off %.1f Hz). Automatic EQ is disabled until calibrated frequency-band data is available.\n",
+        profile, centroid, rolloff
+    ))
 end
 
 -- Create rhythm and melody parts.
@@ -144,7 +162,7 @@ function process_song(song_name, song_data)
     local track = reaper.GetTrack(0, 0)
 
     process_main_features(song_data["Main Features"])
-    process_freq_and_spectrum(song_data["Frequency and Spectrum"], track)
+    report_spectral_profile(song_data["Spectral Features"])
     create_rhythm_and_melody(song_data, track)
 
     local sanitized_name = sanitize_filename(song_name)
