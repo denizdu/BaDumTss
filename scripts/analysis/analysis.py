@@ -4,6 +4,7 @@ import logging
 import json
 import librosa
 import hashlib
+from pathlib import Path
 from multiprocessing import Pool
 from dotenv import load_dotenv
 from scripts.fetch.youtube_fetch import download_song_as_wav
@@ -15,14 +16,25 @@ from rhythm import process_rhythm
 from spectral_features import process_spectral_features
 from drum_analysis import process_drum_analysis
 
-# .env dosyasını yükle
-load_dotenv(dotenv_path="C://Users//denizdu//OneDrive//Masaüstü//BaDumTss//.env")
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+load_dotenv(PROJECT_ROOT / ".env")
+
+
+def required_project_path(variable_name):
+    value = os.getenv(variable_name)
+    if not value:
+        raise RuntimeError(f"Missing required environment variable: {variable_name}")
+    path = Path(value).expanduser()
+    return str(path if path.is_absolute() else PROJECT_ROOT / path)
 
 # Dizinler
-DIR_DOWNLOAD = os.getenv("DIR_DOWNLOAD")
-DIR_OUTPUT_FETCH = os.getenv("DIR_OUTPUT_FETCH")
+DIR_DOWNLOAD = required_project_path("DIR_DOWNLOAD")
+DIR_OUTPUT_FETCH = required_project_path("DIR_OUTPUT_FETCH")
 PLAYLIST_TOBE_ANALYZED = os.getenv("PLAYLIST_TOBE_ANALYZED")
-DIR_OUTPUT_ANALYSIS = os.getenv("DIR_OUTPUT_ANALYSIS")
+DIR_OUTPUT_ANALYSIS = required_project_path("DIR_OUTPUT_ANALYSIS")
+
+if not PLAYLIST_TOBE_ANALYZED:
+    raise RuntimeError("Missing required environment variable: PLAYLIST_TOBE_ANALYZED")
 
 # Sonuç dosyası yolu
 output_file = os.path.join(DIR_OUTPUT_ANALYSIS, "analysis_output.json")
