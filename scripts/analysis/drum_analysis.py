@@ -27,63 +27,57 @@ def _mean_band_energy(spectrum, frequencies, minimum, maximum):
 
 def process_drum_analysis(song_file, output_file, y=None, sr=None):
     """Detect transients and classify kick, snare, and hi-hat candidates."""
-    try:
-        if y is None or sr is None:
-            y, sr = librosa.load(song_file, sr=None)
+    if y is None or sr is None:
+        y, sr = librosa.load(song_file, sr=None)
 
-        percussive = librosa.effects.percussive(y)
-        onset_env = librosa.onset.onset_strength(y=percussive, sr=sr, aggregate=np.median)
-        onset_frames = librosa.onset.onset_detect(
-            onset_envelope=onset_env,
-            sr=sr,
-            units="frames",
-            backtrack=False,
+    percussive = librosa.effects.percussive(y)
+    onset_env = librosa.onset.onset_strength(y=percussive, sr=sr, aggregate=np.median)
+    onset_frames = librosa.onset.onset_detect(
+        onset_envelope=onset_env,
+        sr=sr,
+        units="frames",
+        backtrack=False,
+    )
+    tempo, beats = librosa.beat.beat_track(onset_envelope=onset_env, sr=sr)
+    beat_times = librosa.frames_to_time(beats, sr=sr)
+
+    magnitude = np.abs(librosa.stft(percussive))
+    frequencies = librosa.fft_frequencies(sr=sr)
+    positions = {"kick": [], "snare": [], "hihat": []}
+
+    for frame in onset_frames:
+        start = max(0, int(frame) - 1)
+        stop = min(magnitude.shape[1], int(frame) + 2)
+        hit_spectrum = np.mean(magnitude[:, start:stop], axis=1)
+
+        low_energy = _mean_band_energy(hit_spectrum, frequencies, 20, 180)
+        mid_energy = _mean_band_energy(hit_spectrum, frequencies, 180, 5000)
+        high_energy = _mean_band_energy(hit_spectrum, frequencies, 5000, sr / 2)
+        energy_sum = float(np.sum(hit_spectrum))
+        spectral_centroid = (
+            float(np.sum(frequencies * hit_spectrum) / energy_sum)
+            if energy_sum > np.finfo(float).eps
+            else 0.0
         )
-        tempo, beats = librosa.beat.beat_track(onset_envelope=onset_env, sr=sr)
-        beat_times = librosa.frames_to_time(beats, sr=sr)
 
-        magnitude = np.abs(librosa.stft(percussive))
-        frequencies = librosa.fft_frequencies(sr=sr)
-        positions = {"kick": [], "snare": [], "hihat": []}
+        drum_type = classify_drum_hit(
+            low_energy,
+            mid_energy,
+            high_energy,
+            spectral_centroid,
+        )
+        if drum_type:
+            position = float(librosa.frames_to_time(frame, sr=sr))
+            positions[drum_type].append(position)
 
-        for frame in onset_frames:
-            start = max(0, int(frame) - 1)
-            stop = min(magnitude.shape[1], int(frame) + 2)
-            hit_spectrum = np.mean(magnitude[:, start:stop], axis=1)
+    results = {
+        "Tempo (BPM)": float(np.asarray(tempo).reshape(-1)[0]),
+        "Beat Grid": beat_times.tolist(),
+        "Kick Positions": positions["kick"],
+        "Snare Positions": positions["snare"],
+        "HiHat Positions": positions["hihat"],
+        "Detected Onsets": int(len(onset_frames)),
+        "Detection Method": "percussive onset frequency bands v1",
+    }
 
-            low_energy = _mean_band_energy(hit_spectrum, frequencies, 20, 180)
-            mid_energy = _mean_band_energy(hit_spectrum, frequencies, 180, 5000)
-            high_energy = _mean_band_energy(hit_spectrum, frequencies, 5000, sr / 2)
-            energy_sum = float(np.sum(hit_spectrum))
-            spectral_centroid = (
-                float(np.sum(frequencies * hit_spectrum) / energy_sum)
-                if energy_sum > np.finfo(float).eps
-                else 0.0
-            )
-
-            drum_type = classify_drum_hit(
-                low_energy,
-                mid_energy,
-                high_energy,
-                spectral_centroid,
-            )
-            if drum_type:
-                position = float(librosa.frames_to_time(frame, sr=sr))
-                positions[drum_type].append(position)
-
-        results = {
-            "Tempo (BPM)": float(np.asarray(tempo).reshape(-1)[0]),
-            "Beat Grid": beat_times.tolist(),
-            "Kick Positions": positions["kick"],
-            "Snare Positions": positions["snare"],
-            "HiHat Positions": positions["hihat"],
-            "Detected Onsets": int(len(onset_frames)),
-            "Detection Method": "percussive onset frequency bands v1"
-        }
-
-        update_analysis_section(output_file, song_file, "Drum Analysis", results)
-
-        print(f"Drum analysis successfully processed for {song_file}")
-
-    except Exception as e:
-        print(f"Error processing drum analysis for {song_file}: {e}")
+    update_analysis_section(output_file, song_file, "Drum Analysis", results)

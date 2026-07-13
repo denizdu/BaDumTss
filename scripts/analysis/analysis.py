@@ -19,6 +19,10 @@ from analysis_store import merge_analysis_files, read_json
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 
+class AnalysisPipelineError(RuntimeError):
+    """Raised when a track cannot complete the analysis pipeline."""
+
+
 def required_project_path(variable_name, environment=None):
     environment = os.environ if environment is None else environment
     value = environment.get(variable_name)
@@ -77,9 +81,9 @@ def analyze_and_delete_song(song_file, song_output_file, delete_after_analysis=T
 
         print(f"Analysis completed for: {song_file}")
         return song_output_file
-    except Exception as e:
-        logging.error(f"Error during analysis of {song_file}: {e}")
-        return None
+    except Exception as error:
+        logging.exception("Analysis failed for %s", song_file)
+        raise AnalysisPipelineError(f"Analysis failed for {song_file}") from error
     finally:
         if delete_after_analysis and os.path.exists(song_file):
             os.remove(song_file)
@@ -94,9 +98,10 @@ def process_track(track, config):
         song_file = str(audio.path)
         print(f"Resolved {track.get('audio_source', 'youtube')} audio: {song_file}")
     except (ValueError, FileNotFoundError) as error:
-        print(f"Failed to resolve audio for {search_query}: {error}")
-        logging.error(f"Failed to resolve audio for {search_query}: {error}")
-        return None
+        logging.exception("Failed to resolve audio for %s", search_query)
+        raise AnalysisPipelineError(
+            f"Failed to resolve audio for {search_query}"
+        ) from error
 
     if song_file and os.path.exists(song_file):
         os.makedirs(config.partial_output_dir, exist_ok=True)
@@ -107,10 +112,7 @@ def process_track(track, config):
         return analyze_and_delete_song(
             song_file, str(song_output_file), audio.delete_after_analysis
         )
-    else:
-        print(f"Failed to process {search_query}. Skipping.")
-        logging.error(f"Failed to download or process {search_query}")
-        return None
+    raise AnalysisPipelineError(f"Resolved audio file does not exist: {song_file}")
 
 
 def run_pipeline(config, worker_count=4):
@@ -127,8 +129,7 @@ def run_pipeline(config, worker_count=4):
         # Validate the playlist file.
         playlist_file = config.fetch_output_dir / f"{playlist_name}_tracks.json"
         if not os.path.exists(playlist_file):
-            print(f"Playlist file {playlist_file} does not exist. Skipping.")
-            continue
+            raise FileNotFoundError(f"Playlist file does not exist: {playlist_file}")
 
         tracks = read_json(playlist_file, expected_type=list)
 

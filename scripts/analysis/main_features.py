@@ -37,37 +37,31 @@ def process_main_features(song_file, output_file, y=None, sr=None):
     - Loudness (dB)
     - Dynamics
     """
-    try:
-        if y is None or sr is None:
-            y, sr = librosa.load(song_file, sr=None)
-        
-        # Tempo (BPM)
-        tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
-        
-        # Use the harmonic component to reduce percussion interference in key estimation.
-        harmonic = librosa.effects.harmonic(y)
-        chroma = librosa.feature.chroma_cqt(y=harmonic, sr=sr)
-        key, key_confidence = estimate_key_from_chroma(chroma)
+    if y is None or sr is None:
+        y, sr = librosa.load(song_file, sr=None)
 
-        # Loudness (dB)
-        rms = librosa.feature.rms(y=y)
-        loudness = 20 * np.log10(np.mean(rms))
+    # Tempo (BPM)
+    tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
 
-        # Dynamics
-        dynamics = float(np.max(rms) - np.min(rms))  # float32 -> float
+    # Use the harmonic component to reduce percussion interference in key estimation.
+    harmonic = librosa.effects.harmonic(y)
+    chroma = librosa.feature.chroma_cqt(y=harmonic, sr=sr)
+    key, key_confidence = estimate_key_from_chroma(chroma)
 
-        # Build the analysis result.
-        results = {
-            "Tempo (BPM)": float(tempo),  # float32 -> float
-            "Key (Tonalite)": key,
-            "Key Confidence": key_confidence,
-            "Loudness (dB)": float(loudness),  # float32 -> float
-            "Dynamics": dynamics
-        }
+    # Loudness (dB)
+    rms = librosa.feature.rms(y=y)
+    loudness = 20 * np.log10(np.mean(rms))
 
-        update_analysis_section(output_file, song_file, "Main Features", results)
+    # Dynamics
+    dynamics = float(np.max(rms) - np.min(rms))  # float32 -> float
 
-        print(f"Main features successfully processed for {song_file}")
+    # Build the analysis result.
+    results = {
+        "Tempo (BPM)": float(tempo),  # float32 -> float
+        "Key (Tonalite)": key,
+        "Key Confidence": key_confidence,
+        "Loudness (dB)": float(loudness),  # float32 -> float
+        "Dynamics": dynamics,
+    }
 
-    except Exception as e:
-        print(f"Error processing main features for {song_file}: {e}")
+    update_analysis_section(output_file, song_file, "Main Features", results)
