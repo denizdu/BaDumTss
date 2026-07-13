@@ -8,6 +8,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 sys.path.insert(0, str(PROJECT_ROOT / "scripts" / "analysis"))
 sys.path.insert(0, str(PROJECT_ROOT / "scripts" / "creation"))
+sys.path.insert(0, str(PROJECT_ROOT / "scripts" / "model"))
 
 TEST_OUTPUT = Path(tempfile.gettempdir()) / "badumtss-tests"
 os.environ.setdefault("DIR_DOWNLOAD", str(TEST_OUTPUT / "downloads"))
