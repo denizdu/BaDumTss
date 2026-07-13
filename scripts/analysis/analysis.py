@@ -1,9 +1,9 @@
-import sys
 import os
 import logging
 import json
 import librosa
 import hashlib
+from dataclasses import dataclass
 from pathlib import Path
 from multiprocessing import Pool
 from dotenv import load_dotenv
@@ -17,37 +17,50 @@ from spectral_features import process_spectral_features
 from drum_analysis import process_drum_analysis
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-load_dotenv(PROJECT_ROOT / ".env")
 
 
-def required_project_path(variable_name):
-    value = os.getenv(variable_name)
+def required_project_path(variable_name, environment=None):
+    environment = os.environ if environment is None else environment
+    value = environment.get(variable_name)
     if not value:
         raise RuntimeError(f"Missing required environment variable: {variable_name}")
     path = Path(value).expanduser()
-    return str(path if path.is_absolute() else PROJECT_ROOT / path)
+    return path if path.is_absolute() else PROJECT_ROOT / path
 
-# Directories.
-DIR_DOWNLOAD = required_project_path("DIR_DOWNLOAD")
-DIR_OUTPUT_FETCH = required_project_path("DIR_OUTPUT_FETCH")
-PLAYLIST_TOBE_ANALYZED = os.getenv("PLAYLIST_TOBE_ANALYZED")
-DIR_OUTPUT_ANALYSIS = required_project_path("DIR_OUTPUT_ANALYSIS")
 
-if not PLAYLIST_TOBE_ANALYZED:
-    raise RuntimeError("Missing required environment variable: PLAYLIST_TOBE_ANALYZED")
+@dataclass(frozen=True)
+class AnalysisConfig:
+    download_dir: Path
+    fetch_output_dir: Path
+    analysis_output_dir: Path
+    playlists: tuple[str, ...]
 
-# Result file path
-output_file = os.path.join(DIR_OUTPUT_ANALYSIS, "analysis_output.json")
-partial_output_dir = os.path.join(DIR_OUTPUT_ANALYSIS, ".partial")
+    @property
+    def output_file(self):
+        return self.analysis_output_dir / "analysis_output.json"
 
-# Create the log file
-logging.basicConfig(filename="errors.log", level=logging.ERROR, format='%(asctime)s - %(message)s')
+    @property
+    def partial_output_dir(self):
+        return self.analysis_output_dir / ".partial"
 
-# Create the analysis output directory
-os.makedirs(DIR_OUTPUT_ANALYSIS, exist_ok=True)
 
-# Parse playlist names
-playlists_to_analyze = [p.strip() for p in PLAYLIST_TOBE_ANALYZED.split(",")]
+def load_analysis_config(environment=None):
+    """Build validated configuration without mutating the filesystem."""
+    environment = os.environ if environment is None else environment
+    playlist_setting = environment.get("PLAYLIST_TOBE_ANALYZED")
+    if not playlist_setting:
+        raise RuntimeError(
+            "Missing required environment variable: PLAYLIST_TOBE_ANALYZED"
+        )
+    playlists = tuple(name.strip() for name in playlist_setting.split(",") if name.strip())
+    if not playlists:
+        raise RuntimeError("PLAYLIST_TOBE_ANALYZED must contain at least one playlist")
+    return AnalysisConfig(
+        download_dir=required_project_path("DIR_DOWNLOAD", environment),
+        fetch_output_dir=required_project_path("DIR_OUTPUT_FETCH", environment),
+        analysis_output_dir=required_project_path("DIR_OUTPUT_ANALYSIS", environment),
+        playlists=playlists,
+    )
 
 # Analyze a song and remove the downloaded file afterward
 def analyze_and_delete_song(song_file, song_output_file, delete_after_analysis=True):
@@ -72,12 +85,12 @@ def analyze_and_delete_song(song_file, song_output_file, delete_after_analysis=T
             os.remove(song_file)
             print(f"Deleted: {song_file}")
 
-def process_track(track):
+def process_track(track, config):
     search_query = f"{track['name']} {track['artist']}"
     print(f"Processing song: {track['name']} by {track['artist']}")
 
     try:
-        audio = resolve_audio_source(track, DIR_DOWNLOAD)
+        audio = resolve_audio_source(track, config.download_dir)
         song_file = str(audio.path)
         print(f"Resolved {track.get('audio_source', 'youtube')} audio: {song_file}")
     except (ValueError, FileNotFoundError) as error:
@@ -86,13 +99,13 @@ def process_track(track):
         return None
 
     if song_file and os.path.exists(song_file):
-        os.makedirs(partial_output_dir, exist_ok=True)
+        os.makedirs(config.partial_output_dir, exist_ok=True)
         track_key = hashlib.sha256(search_query.encode("utf-8")).hexdigest()[:16]
-        song_output_file = os.path.join(partial_output_dir, f"{track_key}.json")
+        song_output_file = config.partial_output_dir / f"{track_key}.json"
         if os.path.exists(song_output_file):
             os.remove(song_output_file)
         return analyze_and_delete_song(
-            song_file, song_output_file, audio.delete_after_analysis
+            song_file, str(song_output_file), audio.delete_after_analysis
         )
     else:
         print(f"Failed to process {search_query}. Skipping.")
@@ -123,13 +136,19 @@ def merge_analysis_files(partial_files, destination):
     for partial_file in completed_files:
         os.remove(partial_file)
 
-if __name__ == "__main__":
-    os.makedirs(DIR_DOWNLOAD, exist_ok=True)  # Create the download directory.
-    for playlist_name in playlists_to_analyze:
+def run_pipeline(config, worker_count=4):
+    config.download_dir.mkdir(parents=True, exist_ok=True)
+    config.analysis_output_dir.mkdir(parents=True, exist_ok=True)
+    logging.basicConfig(
+        filename=config.analysis_output_dir / "errors.log",
+        level=logging.ERROR,
+        format="%(asctime)s - %(message)s",
+    )
+    for playlist_name in config.playlists:
         print(f"Starting analysis for playlist: {playlist_name}")
 
         # Validate the playlist file.
-        playlist_file = os.path.join(DIR_OUTPUT_FETCH, f"{playlist_name}_tracks.json")
+        playlist_file = config.fetch_output_dir / f"{playlist_name}_tracks.json"
         if not os.path.exists(playlist_file):
             print(f"Playlist file {playlist_file} does not exist. Skipping.")
             continue
@@ -138,10 +157,21 @@ if __name__ == "__main__":
             tracks = json.load(f)
 
         # Process songs in parallel.
-        with Pool(processes=4) as pool:
-            partial_files = pool.map(process_track, tracks)
+        with Pool(processes=worker_count) as pool:
+            partial_files = pool.starmap(
+                process_track, ((track, config) for track in tracks)
+            )
 
         # Only the parent process merges results; workers never write the same file.
-        merge_analysis_files(partial_files, output_file)
+        merge_analysis_files(partial_files, str(config.output_file))
 
         print(f"Analysis for playlist '{playlist_name}' completed.")
+
+
+def main():
+    load_dotenv(PROJECT_ROOT / ".env")
+    run_pipeline(load_analysis_config())
+
+
+if __name__ == "__main__":
+    main()

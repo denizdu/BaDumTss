@@ -5,13 +5,8 @@ import os
 import re
 from dotenv import load_dotenv
 
-# Load environment variables.
-load_dotenv()
-
 SPOTIFY_SCOPE = "playlist-read-private user-library-read"
-
-# Directories.
-DIR_OUTPUT_FETCH = os.getenv("DIR_OUTPUT_FETCH")
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 
 def create_spotify_client(client_id=None, client_secret=None, redirect_uri=None):
@@ -100,17 +95,19 @@ def save_to_json(data, file_path):
     print(f"Data saved to {file_path}")
 
 if __name__ == "__main__":
-    if not DIR_OUTPUT_FETCH:
+    load_dotenv(os.path.join(PROJECT_ROOT, ".env"))
+    output_directory = os.getenv("DIR_OUTPUT_FETCH")
+    if not output_directory:
         raise RuntimeError("DIR_OUTPUT_FETCH must be configured")
 
     spotify_client = create_spotify_client()
 
     # Fetch and save playlists.
     playlists = get_playlists(spotify_client)
-    save_to_json(playlists, os.path.join(DIR_OUTPUT_FETCH, "playlists.json"))
+    save_to_json(playlists, os.path.join(output_directory, "playlists.json"))
 
     # Save each playlist's tracks to a separate file.
     for playlist in playlists:
         playlist_name = playlist["sanitized_name"]
         tracks = get_tracks_from_playlist(spotify_client, playlist["id"])
-        save_to_json(tracks, os.path.join(DIR_OUTPUT_FETCH, f"{playlist_name}_tracks.json"))
+        save_to_json(tracks, os.path.join(output_directory, f"{playlist_name}_tracks.json"))

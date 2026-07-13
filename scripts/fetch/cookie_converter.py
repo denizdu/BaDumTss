@@ -2,24 +2,35 @@ import json
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-json_cookies_file = PROJECT_ROOT / "cookies.json"
-netscape_cookies_file = PROJECT_ROOT / "cookies.txt"
 
-# Read the JSON cookie file.
-with open(json_cookies_file, "r", encoding="utf-8") as f:
-    cookies = json.load(f)
 
-# Convert cookies to Netscape format.
-with open(netscape_cookies_file, "w", encoding="utf-8") as f:
-    f.write("# Netscape HTTP Cookie File\n")
-    for cookie in cookies:
-        domain = cookie["domain"]
-        flag = "TRUE" if cookie["domain"].startswith(".") else "FALSE"
-        path = cookie["path"]
-        secure = "TRUE" if cookie["secure"] else "FALSE"
-        expiration = str(int(cookie["expirationDate"])) if "expirationDate" in cookie else "0"
-        name = cookie["name"]
-        value = cookie["value"]
-        f.write(f"{domain}\t{flag}\t{path}\t{secure}\t{expiration}\t{name}\t{value}\n")
+def convert_cookies(json_cookies_file, netscape_cookies_file):
+    """Convert an explicit JSON cookie export to Netscape format."""
+    with Path(json_cookies_file).open(encoding="utf-8") as file:
+        cookies = json.load(file)
 
-print(f"Cookies converted to Netscape format: {netscape_cookies_file}")
+    with Path(netscape_cookies_file).open("w", encoding="utf-8") as file:
+        file.write("# Netscape HTTP Cookie File\n")
+        for cookie in cookies:
+            domain = cookie["domain"]
+            flag = "TRUE" if domain.startswith(".") else "FALSE"
+            path = cookie["path"]
+            secure = "TRUE" if cookie["secure"] else "FALSE"
+            expiration = str(int(cookie.get("expirationDate", 0)))
+            name = cookie["name"]
+            value = cookie["value"]
+            file.write(
+                f"{domain}\t{flag}\t{path}\t{secure}\t{expiration}\t{name}\t{value}\n"
+            )
+    return Path(netscape_cookies_file)
+
+
+def main():
+    output_file = convert_cookies(
+        PROJECT_ROOT / "cookies.json", PROJECT_ROOT / "cookies.txt"
+    )
+    print(f"Cookies converted to Netscape format: {output_file}")
+
+
+if __name__ == "__main__":
+    main()

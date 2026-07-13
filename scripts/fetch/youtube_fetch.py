@@ -1,14 +1,17 @@
 import os
 import subprocess
 from pathlib import Path
-from dotenv import load_dotenv
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-load_dotenv(PROJECT_ROOT / ".env")
+COOKIES_FILE = None
 
-cookie_setting = os.getenv("YOUTUBE_COOKIES_FILE", "cookies.txt")
-cookie_path = Path(cookie_setting).expanduser()
-COOKIES_FILE = cookie_path if cookie_path.is_absolute() else PROJECT_ROOT / cookie_path
+
+def configured_cookie_file(environment=None):
+    if COOKIES_FILE is not None:
+        return Path(COOKIES_FILE)
+    environment = os.environ if environment is None else environment
+    cookie_setting = environment.get("YOUTUBE_COOKIES_FILE", "cookies.txt")
+    cookie_path = Path(cookie_setting).expanduser()
+    return cookie_path if cookie_path.is_absolute() else PROJECT_ROOT / cookie_path
 
 def download_song_as_wav(search_query, output_dir):
     output_dir = Path(output_dir)
@@ -27,9 +30,10 @@ def download_song_as_wav(search_query, output_dir):
         ]
 
         # Cookies are optional and only used for content the user is authorized to access.
-        if COOKIES_FILE.exists():
-            print(f"Using cookies from: {COOKIES_FILE}")
-            command.extend(["--cookies", str(COOKIES_FILE)])
+        cookie_file = configured_cookie_file()
+        if cookie_file.exists():
+            print(f"Using cookies from: {cookie_file}")
+            command.extend(["--cookies", str(cookie_file)])
         else:
             print("No cookies file configured; continuing without cookies.")
 

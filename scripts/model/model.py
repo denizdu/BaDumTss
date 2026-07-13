@@ -1,32 +1,16 @@
 import os
 import json
+from pathlib import Path
 from dotenv import load_dotenv
 import pandas as pd
+import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
 from label_validation import validate_training_labels
 
-# Load environment variables.
-load_dotenv()
-
-# Directories.
-DIR_OUTPUT_ANALYSIS = os.getenv("DIR_OUTPUT_ANALYSIS")
-DIR_OUTPUT_MODEL = os.getenv("DIR_OUTPUT_MODEL")
-
-input_data_file = os.path.join(DIR_OUTPUT_ANALYSIS, "analysis_output.json")
-input_labels_file = os.path.join(DIR_OUTPUT_ANALYSIS, "drum_kit_labels.json")
-output_file = os.path.join(DIR_OUTPUT_MODEL, "drum_kit_recommendation_model.pkl")
-
-# Create the analysis directory.
-os.makedirs(DIR_OUTPUT_ANALYSIS, exist_ok=True)
-
-# Load data.
-with open(input_data_file, 'r') as file:
-    data = json.load(file)
-with open(input_labels_file, 'r') as file:
-    verified_labels = json.load(file)
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 # Prepare the data.
 def prepare_data(data, verified_labels):
@@ -54,29 +38,61 @@ def prepare_data(data, verified_labels):
 
     return pd.DataFrame(features, columns=["Tempo", "Loudness", "Dynamics", "Spectrum Mean"]), labels
 
-# Process the data.
-X, y = prepare_data(data, verified_labels)
-validate_training_labels(y)
+def load_training_inputs(analysis_dir):
+    analysis_dir = Path(analysis_dir)
+    with (analysis_dir / "analysis_output.json").open(encoding="utf-8") as file:
+        data = json.load(file)
+    with (analysis_dir / "drum_kit_labels.json").open(encoding="utf-8") as file:
+        verified_labels = json.load(file)
+    return data, verified_labels
 
-# Split the dataset into training and test sets.
-test_size = max(len(set(y)), round(len(y) * 0.2))
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=test_size, random_state=42, stratify=y
-)
 
-# Train the model.
-model = RandomForestClassifier(random_state=42)
-model.fit(X_train, y_train)
+def train_model(data, verified_labels):
+    features, labels = prepare_data(data, verified_labels)
+    validate_training_labels(labels)
+    test_size = max(len(set(labels)), round(len(labels) * 0.2))
+    training_features, test_features, training_labels, test_labels = train_test_split(
+        features,
+        labels,
+        test_size=test_size,
+        random_state=42,
+        stratify=labels,
+    )
+    model = RandomForestClassifier(random_state=42)
+    model.fit(training_features, training_labels)
+    predictions = model.predict(test_features)
+    report = classification_report(test_labels, predictions, zero_division=0)
+    return model, report
 
-# Evaluate the model.
-y_pred = model.predict(X_test)
 
-# Print the results.
-print("Classification Report:")
-print(classification_report(y_test, y_pred))
+def run_training(analysis_dir, model_dir):
+    data, verified_labels = load_training_inputs(analysis_dir)
+    model, report = train_model(data, verified_labels)
+    model_dir = Path(model_dir)
+    model_dir.mkdir(parents=True, exist_ok=True)
+    output_file = model_dir / "drum_kit_recommendation_model.pkl"
+    joblib.dump(model, output_file)
+    print("Classification Report:")
+    print(report)
+    print("Model trained and saved successfully.")
+    return output_file
 
-# Save the model.
-import joblib
-joblib.dump(model, output_file)
 
-print("Model trained and saved successfully.")
+def required_environment_path(variable_name):
+    value = os.getenv(variable_name)
+    if not value:
+        raise RuntimeError(f"Missing required environment variable: {variable_name}")
+    path = Path(value).expanduser()
+    return path if path.is_absolute() else PROJECT_ROOT / path
+
+
+def main():
+    load_dotenv(PROJECT_ROOT / ".env")
+    run_training(
+        required_environment_path("DIR_OUTPUT_ANALYSIS"),
+        required_environment_path("DIR_OUTPUT_MODEL"),
+    )
+
+
+if __name__ == "__main__":
+    main()
