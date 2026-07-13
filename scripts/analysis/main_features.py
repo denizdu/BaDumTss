@@ -1,7 +1,7 @@
 import librosa
-import json
-import os
 import numpy as np
+
+from analysis_store import update_analysis_section
 
 KEY_NAMES = ("C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B")
 MAJOR_PROFILE = np.array([6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88])
@@ -65,18 +65,7 @@ def process_main_features(song_file, output_file, y=None, sr=None):
             "Dynamics": dynamics
         }
 
-        # Append the results to the JSON file.
-        if os.path.exists(output_file):
-            with open(output_file, "r+", encoding="utf-8") as f:
-                data = json.load(f)
-                if song_file not in data:
-                    data[song_file] = {}
-                data[song_file]["Main Features"] = results
-                f.seek(0)
-                json.dump(data, f, indent=4)
-        else:
-            with open(output_file, "w", encoding="utf-8") as f:
-                json.dump({song_file: {"Main Features": results}}, f, indent=4)
+        update_analysis_section(output_file, song_file, "Main Features", results)
 
         print(f"Main features successfully processed for {song_file}")
 

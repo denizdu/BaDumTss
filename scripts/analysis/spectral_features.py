@@ -1,7 +1,7 @@
 import librosa
-import json
-import os
 import numpy as np
+
+from analysis_store import update_analysis_section
 
 def process_spectral_features(song_file, output_file, y=None, sr=None):
     """
@@ -27,18 +27,7 @@ def process_spectral_features(song_file, output_file, y=None, sr=None):
             "Spectral Roll-off": spectral_rolloff_mean
         }
 
-        # Append the results to the JSON file.
-        if os.path.exists(output_file):
-            with open(output_file, "r+", encoding="utf-8") as f:
-                data = json.load(f)
-                if song_file not in data:
-                    data[song_file] = {}
-                data[song_file]["Spectral Features"] = results
-                f.seek(0)
-                json.dump(data, f, indent=4)
-        else:
-            with open(output_file, "w", encoding="utf-8") as f:
-                json.dump({song_file: {"Spectral Features": results}}, f, indent=4)
+        update_analysis_section(output_file, song_file, "Spectral Features", results)
 
         print(f"Spectral features successfully processed for {song_file}")
 

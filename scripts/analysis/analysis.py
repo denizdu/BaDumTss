@@ -1,6 +1,5 @@
 import os
 import logging
-import json
 import librosa
 import hashlib
 from dataclasses import dataclass
@@ -15,6 +14,7 @@ from main_features import process_main_features
 from rhythm import process_rhythm
 from spectral_features import process_spectral_features
 from drum_analysis import process_drum_analysis
+from analysis_store import merge_analysis_files, read_json
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -113,29 +113,6 @@ def process_track(track, config):
         return None
 
 
-def merge_analysis_files(partial_files, destination):
-    """Merge worker outputs into one JSON file atomically in the parent process."""
-    merged_data = {}
-
-    if os.path.exists(destination):
-        with open(destination, "r", encoding="utf-8") as f:
-            merged_data = json.load(f)
-
-    completed_files = [path for path in partial_files if path and os.path.exists(path)]
-    for partial_file in completed_files:
-        with open(partial_file, "r", encoding="utf-8") as f:
-            merged_data.update(json.load(f))
-
-    temporary_file = f"{destination}.tmp"
-    with open(temporary_file, "w", encoding="utf-8") as f:
-        json.dump(merged_data, f, ensure_ascii=False, indent=4)
-        f.flush()
-        os.fsync(f.fileno())
-    os.replace(temporary_file, destination)
-
-    for partial_file in completed_files:
-        os.remove(partial_file)
-
 def run_pipeline(config, worker_count=4):
     config.download_dir.mkdir(parents=True, exist_ok=True)
     config.analysis_output_dir.mkdir(parents=True, exist_ok=True)
@@ -153,8 +130,7 @@ def run_pipeline(config, worker_count=4):
             print(f"Playlist file {playlist_file} does not exist. Skipping.")
             continue
 
-        with open(playlist_file, "r", encoding="utf-8") as f:
-            tracks = json.load(f)
+        tracks = read_json(playlist_file, expected_type=list)
 
         # Process songs in parallel.
         with Pool(processes=worker_count) as pool:
