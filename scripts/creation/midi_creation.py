@@ -2,6 +2,21 @@ import json
 import struct
 import os
 
+PPQ = 960
+
+
+def seconds_to_ticks(seconds, bpm, ppq=PPQ):
+    """Saniye konumunu tempo üzerinden MIDI PPQ tick konumuna dönüştürür."""
+    if seconds < 0:
+        raise ValueError("seconds must be non-negative")
+    if bpm <= 0:
+        raise ValueError("bpm must be positive")
+    if ppq <= 0:
+        raise ValueError("ppq must be positive")
+    beats = seconds * bpm / 60.0
+    return int(round(beats * ppq))
+
+
 def read_file(file_path):
     """Reads the content of a file."""
     try:
@@ -20,11 +35,11 @@ def write_variable_length_quantity(value):
         vlq.insert(0, (value & 0x7F) | 0x80)
     return vlq
 
-def write_midi_notes(midi_file, positions, pitch, velocity):
+def write_midi_notes(midi_file, positions, pitch, velocity, bpm, ppq=PPQ):
     """Writes MIDI notes to the file."""
     last_position = 0
     for position in positions:
-        start_time = int(position * 960)  # MIDI ticks (assuming 960 PPQ)
+        start_time = seconds_to_ticks(position, bpm, ppq)
         delta_time = start_time - last_position  # Calculate delta time
         last_position = start_time
 
@@ -39,10 +54,11 @@ def write_midi_notes(midi_file, positions, pitch, velocity):
 def create_midi_file(output_path, drum_analysis):
     """Creates a MIDI file in Format 1 with separate tracks for kick, snare, and hi-hat notes."""
     try:
+        bpm = float(drum_analysis.get("Tempo (BPM)", 120.0))
         with open(output_path, 'wb') as midi_file:
             # Write MIDI header (Format 1, 3 tracks, 960 ticks per quarter note)
             midi_file.write(b"MThd")
-            midi_file.write(struct.pack(">IHHH", 6, 1, 3, 960))
+            midi_file.write(struct.pack(">IHHH", 6, 1, 3, PPQ))
 
             def write_track(positions, pitch, track_name):
                 """Writes a single track with given positions and pitch."""
@@ -60,7 +76,7 @@ def create_midi_file(output_path, drum_analysis):
                     # Write notes
                     last_position = 0
                     for position in positions:
-                        start_time = int(position * 960)
+                        start_time = seconds_to_ticks(position, bpm)
                         delta_time = start_time - last_position
                         last_position = start_time
 
