@@ -5,25 +5,25 @@ import os
 import re
 from dotenv import load_dotenv
 
-# .env dosyasını yükle
+# Load environment variables.
 load_dotenv()
 
-# Spotify API bilgileri
+# Spotify API credentials.
 client_id = os.getenv("SPOTIFY_CLIENT_ID")
 client_secret = os.getenv("SPOTIFY_CLIENT_SECRET")
 redirect_uri = os.getenv("REDIRECT_URI")
 scope = "playlist-read-private user-library-read"
 
-# Dizinler
+# Directories.
 DIR_OUTPUT_FETCH = os.getenv("DIR_OUTPUT_FETCH")
 
-# Spotify istemcisi
+# Spotify client.
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,
                                                client_secret=client_secret,
                                                redirect_uri=redirect_uri,
                                                scope=scope))
 
-# Dosya adlarını sanitize eden fonksiyon
+# Sanitize file names.
 def sanitize_filename(name):
     translation_table = str.maketrans({
         ' ': '_',
@@ -45,11 +45,11 @@ def sanitize_filename(name):
         "'": ''
     })
     sanitized = name.translate(translation_table)
-    sanitized = re.sub(r'_+', '_', sanitized)  # Birden fazla alt çizgiyi tek bir alt çizgiye indir
-    sanitized = sanitized.strip('_')  # Baştaki ve sondaki alt çizgileri kaldır
+    sanitized = re.sub(r'_+', '_', sanitized)  # Collapse consecutive underscores.
+    sanitized = sanitized.strip('_')  # Remove leading and trailing underscores.
     return sanitized
 
-# Çalma listesi adlarını ve ID'lerini çek
+# Fetch playlist names and IDs.
 def get_playlists():
     playlists = sp.current_user_playlists(limit=50)["items"]
     playlist_data = []
@@ -63,7 +63,7 @@ def get_playlists():
         })
     return playlist_data
 
-# Belirli bir çalma listesindeki şarkıları çek
+# Fetch tracks from a specific playlist.
 def get_tracks_from_playlist(playlist_id):
     results = sp.playlist_tracks(playlist_id)["items"]
     tracks = []
@@ -76,7 +76,7 @@ def get_tracks_from_playlist(playlist_id):
             })
     return tracks
 
-# Veriyi JSON olarak kaydet
+# Save data as JSON.
 def save_to_json(data, file_path):
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, "w", encoding="utf-8") as f:
@@ -84,11 +84,11 @@ def save_to_json(data, file_path):
     print(f"Data saved to {file_path}")
 
 if __name__ == "__main__":
-    # Çalma listelerini çek ve kaydet
+    # Fetch and save playlists.
     playlists = get_playlists()
     save_to_json(playlists, os.path.join(DIR_OUTPUT_FETCH, "playlists.json"))
 
-    # Her çalma listesi için şarkıları ayrı dosyalara kaydet
+    # Save each playlist's tracks to a separate file.
     for playlist in playlists:
         playlist_name = playlist["sanitized_name"]
         tracks = get_tracks_from_playlist(playlist["id"])

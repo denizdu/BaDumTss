@@ -27,7 +27,7 @@ def required_project_path(variable_name):
     path = Path(value).expanduser()
     return str(path if path.is_absolute() else PROJECT_ROOT / path)
 
-# Dizinler
+# Directories.
 DIR_DOWNLOAD = required_project_path("DIR_DOWNLOAD")
 DIR_OUTPUT_FETCH = required_project_path("DIR_OUTPUT_FETCH")
 PLAYLIST_TOBE_ANALYZED = os.getenv("PLAYLIST_TOBE_ANALYZED")
@@ -36,24 +36,24 @@ DIR_OUTPUT_ANALYSIS = required_project_path("DIR_OUTPUT_ANALYSIS")
 if not PLAYLIST_TOBE_ANALYZED:
     raise RuntimeError("Missing required environment variable: PLAYLIST_TOBE_ANALYZED")
 
-# Sonuç dosyası yolu
+# Result file path
 output_file = os.path.join(DIR_OUTPUT_ANALYSIS, "analysis_output.json")
 partial_output_dir = os.path.join(DIR_OUTPUT_ANALYSIS, ".partial")
 
-# Log dosyası oluştur
+# Create the log file
 logging.basicConfig(filename="errors.log", level=logging.ERROR, format='%(asctime)s - %(message)s')
 
-# Analiz dosyasının bulunduğu dizini oluştur
+# Create the analysis output directory
 os.makedirs(DIR_OUTPUT_ANALYSIS, exist_ok=True)
 
-# Playlist adlarını parse et
+# Parse playlist names
 playlists_to_analyze = [p.strip() for p in PLAYLIST_TOBE_ANALYZED.split(",")]
 
-# Şarkı analiz et ve ardından sil
+# Analyze a song and remove the downloaded file afterward
 def analyze_and_delete_song(song_file, song_output_file):
     try:
         print(f"Analyzing: {song_file}")
-        # Ses dosyasını yalnızca bir kez yükle ve tüm analizlerde paylaş.
+        # Load the audio only once and share it across all analysis modules.
         y, sr = librosa.load(song_file, sr=None)
         process_main_features(song_file, song_output_file, y=y, sr=sr)
         process_freq_and_spectrum(song_file, song_output_file, y=y, sr=sr)
@@ -76,12 +76,12 @@ def process_track(track):
     search_query = f"{track['name']} {track['artist']}"
     print(f"Processing song: {track['name']} by {track['artist']}")
 
-    # Şarkıyı indirirken YouTube çerezlerini kullan
+    # Use YouTube cookies only when they were explicitly configured.
     print(f"Attempting to download: {search_query}")
     song_file = download_song_as_wav(search_query, DIR_DOWNLOAD)
     print(f"Download result: {song_file}")
 
-    # Şarkı indirildiyse analiz et ve sil
+    # Analyze and remove the song when the download succeeds.
     if song_file and os.path.exists(song_file):
         os.makedirs(partial_output_dir, exist_ok=True)
         track_key = hashlib.sha256(search_query.encode("utf-8")).hexdigest()[:16]
@@ -96,7 +96,7 @@ def process_track(track):
 
 
 def merge_analysis_files(partial_files, destination):
-    """Worker çıktılarını ana süreçte tek ve atomik bir JSON dosyasında birleştirir."""
+    """Merge worker outputs into one JSON file atomically in the parent process."""
     merged_data = {}
 
     if os.path.exists(destination):
@@ -119,11 +119,11 @@ def merge_analysis_files(partial_files, destination):
         os.remove(partial_file)
 
 if __name__ == "__main__":
-    os.makedirs(DIR_DOWNLOAD, exist_ok=True)  # İndirme dizinini oluştur
+    os.makedirs(DIR_DOWNLOAD, exist_ok=True)  # Create the download directory.
     for playlist_name in playlists_to_analyze:
         print(f"Starting analysis for playlist: {playlist_name}")
 
-        # Playlist dosyasını kontrol et
+        # Validate the playlist file.
         playlist_file = os.path.join(DIR_OUTPUT_FETCH, f"{playlist_name}_tracks.json")
         if not os.path.exists(playlist_file):
             print(f"Playlist file {playlist_file} does not exist. Skipping.")
@@ -132,11 +132,11 @@ if __name__ == "__main__":
         with open(playlist_file, "r", encoding="utf-8") as f:
             tracks = json.load(f)
 
-        # Paralel işlemle şarkıları işleme
+        # Process songs in parallel.
         with Pool(processes=4) as pool:
             partial_files = pool.map(process_track, tracks)
 
-        # Birleştirme yalnızca ana süreçte yapılır; worker'lar aynı dosyaya yazmaz.
+        # Only the parent process merges results; workers never write the same file.
         merge_analysis_files(partial_files, output_file)
 
         print(f"Analysis for playlist '{playlist_name}' completed.")

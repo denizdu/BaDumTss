@@ -1,22 +1,22 @@
 -- creation.lua script
 
--- JSON kütüphanesini yükler
+-- Load the JSON library.
 local json = require("dkjson")
 
 local kick_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Kicks/Cymatics_9God_Kick_1_C.wav"
 local snare_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Snares/Cymatics_9God_Snare_1_C.wav"
 local hihat_path = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/sample/drums/Cymbals/Rides/Cymatics_9God_Ride_1.wav"
 
--- Input dosyasını okur
+-- Read an input file.
 function read_json_file(file_path)
     local file = io.open(file_path, "r")
-    if not file then error("Dosya açılamadı: " .. file_path) end
+    if not file then error("Could not open file: " .. file_path) end
     local content = file:read("*a")
     file:close()
     return json.decode(content)
 end
 
--- Dosya adlarını sanitize eden fonksiyon
+-- Sanitize file names.
 function sanitize_filename(name)
     local translation_table = {
         [" "] = "_",
@@ -36,7 +36,7 @@ function sanitize_filename(name)
         [","] = "",
         ["."] = "",
         ["'"] = "",
-        ["/"] = "", -- Yol karakterlerini temizle
+        ["/"] = "", -- Remove path separator characters.
         ["\\"] = "",
         [":"] = "",
         ["*"] = "",
@@ -46,22 +46,22 @@ function sanitize_filename(name)
         [">"] = ""
     }
     name = name:gsub(".", translation_table)
-    name = name:gsub("_+", "_") -- Birden fazla alt çizgiyi tek bir alt çizgiye indir
-    name = name:gsub("^_+", ""):gsub("_+$", "") -- Baştaki ve sondaki alt çizgileri kaldır
+    name = name:gsub("_+", "_") -- Collapse consecutive underscores.
+    name = name:gsub("^_+", ""):gsub("_+$", "") -- Remove leading and trailing underscores.
     return name
 end
 
--- Reaper'da yeni proje oluşturur
+-- Create a new REAPER project.
 function create_new_project()
-    reaper.Main_openProject("") -- Boş bir proje açar
+    reaper.Main_openProject("") -- Open an empty project.
 end
 
--- Track ekler
+-- Add a track.
 function add_track()
-    reaper.InsertTrackAtIndex(0, true) -- İlk sırada yeni bir track ekler
+    reaper.InsertTrackAtIndex(0, true) -- Insert a new first track.
 end
 
--- Örnek ses dosyasını track'e ekler
+-- Add an audio sample to a track.
 function add_sample_to_track(track, sample_path, start_position)
     local retval = reaper.InsertMedia(sample_path, 0)
     if retval then
@@ -72,66 +72,66 @@ function add_sample_to_track(track, sample_path, start_position)
     end
 end
 
--- MIDI notası ekler
+-- Add a MIDI note.
 function add_midi_note_to_track(track, note, start_position)
-    local item = reaper.CreateNewMIDIItemInProj(track, math.floor(start_position), math.floor(start_position + 960), false) -- MIDI PPQ: 960 = çeyrek nota
+    local item = reaper.CreateNewMIDIItemInProj(track, math.floor(start_position), math.floor(start_position + 960), false) -- MIDI PPQ: 960 = quarter note.
     local take = reaper.GetMediaItemTake(item, 0)
     if take then
         reaper.MIDI_InsertNote(take, false, false, math.floor(start_position), math.floor(start_position + 480), 0, math.floor(note), 100, false)
     end
 end
 
--- Ana özellikleri işler
+-- Process core features.
 function process_main_features(features)
     local tempo = features["Tempo (BPM)"]
-    reaper.SetCurrentBPM(0, tempo, true) -- Tempo ayarla
+    reaper.SetCurrentBPM(0, tempo, true) -- Set the tempo.
 end
 
--- Frekans ve spektrum özelliklerini işler
+-- Process frequency and spectrum features.
 function process_freq_and_spectrum(freq_spec, track)
     local spectrum = freq_spec["Frequency Spectrum"]
-    reaper.TrackFX_AddByName(track, "ReaEQ", false, -1) -- EQ ekle
+    reaper.TrackFX_AddByName(track, "ReaEQ", false, -1) -- Add EQ.
     for i, value in ipairs(spectrum) do
-        reaper.TrackFX_SetParam(track, 0, i - 1, value / 50) -- EQ bandını ayarla
+        reaper.TrackFX_SetParam(track, 0, i - 1, value / 50) -- Set the EQ band.
     end
 end
 
--- Ritim ve melodi oluşturur
+-- Create rhythm and melody parts.
 function create_rhythm_and_melody(song_data, track)
     local rhythm = song_data["Rhythm"]
     local melody = song_data["Frequency and Spectrum"] and song_data["Frequency and Spectrum"]["Melody Contour"]
 
-    -- Ritim ve melodi değerlerini kontrol et
+    -- Validate rhythm and melody values.
     if not rhythm or not rhythm["Beat Grid"] then
-        reaper.ShowConsoleMsg("Ritim bilgileri eksik veya hatalı.\n")
+        reaper.ShowConsoleMsg("Rhythm data is missing or invalid.\n")
         return
     end
 
     if not melody then
-        reaper.ShowConsoleMsg("Melody Contour eksik veya hatalı.\n")
+        reaper.ShowConsoleMsg("Melody Contour data is missing or invalid.\n")
         return
     end
 
-    -- Ritim için Kick, Snare ve HiHat ekle
+    -- Add kick, snare, and hi-hat notes for the rhythm.
     for i, beat in ipairs(rhythm["Beat Grid"]) do
-        if i % 4 == 1 then -- Her 4 beat'in birincisine kick ekle
+        if i % 4 == 1 then -- Add kick on the first beat of each four-beat group.
             add_sample_to_track(track, kick_path, beat)
-        elseif i % 4 == 2 or i % 4 == 4 then -- İkinci ve dördüncü vuruşlara snare ekle
+        elseif i % 4 == 2 or i % 4 == 4 then -- Add snare on the second and fourth beats.
             add_sample_to_track(track, snare_path, beat)
-        else -- Diğer tüm vuruşlara hihat ekle
+        else -- Add hi-hat on all remaining beats.
             add_sample_to_track(track, hihat_path, beat)
         end
     end
 
-    -- Melodi ekle
+    -- Add the melody.
     for i, freq in ipairs(melody) do
-        local note = math.floor(69 + 12 * math.log(freq / 440) / math.log(2) + 0.5) -- Yuvarlama eklendi
-        local start_pos = math.floor(i * 960) -- Tam sayıya çevir
+        local note = math.floor(69 + 12 * math.log(freq / 440) / math.log(2) + 0.5) -- Round to the nearest note.
+        local start_pos = math.floor(i * 960) -- Convert to an integer tick position.
         add_midi_note_to_track(track, note, start_pos)
     end
 end
 
--- Şarkıyı işler ve proje kaydeder
+-- Process a song and save the project.
 function process_song(song_name, song_data)
     create_new_project()
     add_track()
@@ -146,9 +146,9 @@ function process_song(song_name, song_data)
     reaper.Main_SaveProjectEx(0, save_path, 0)
 end
 
--- Ana script akışı
+-- Main script flow.
 function main()
-    local input_file = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/model/model_output.json" -- JSON dosyasının yolu
+    local input_file = "C:/Users/denizdu/OneDrive/Masaüstü/BaDumTss/output/model/model_output.json" -- Path to the JSON file.
     local song_data = read_json_file(input_file)
 
     for song_name, data in pairs(song_data) do

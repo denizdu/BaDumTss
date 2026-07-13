@@ -6,7 +6,7 @@ PPQ = 960
 
 
 def seconds_to_ticks(seconds, bpm, ppq=PPQ):
-    """Saniye konumunu tempo üzerinden MIDI PPQ tick konumuna dönüştürür."""
+    """Convert a position in seconds to MIDI PPQ ticks at the given tempo."""
     if seconds < 0:
         raise ValueError("seconds must be non-negative")
     if bpm <= 0:
@@ -53,7 +53,7 @@ def write_midi_notes(midi_file, positions, pitch, velocity, bpm, ppq=PPQ):
 
 
 def write_track_chunk(midi_file, track_data):
-    """Uzunluğu doğru hesaplanmış standart bir MTrk chunk'ı yazar."""
+    """Write a standard MTrk chunk with an accurate payload length."""
     midi_file.write(b"MTrk")
     midi_file.write(struct.pack(">I", len(track_data)))
     midi_file.write(track_data)
@@ -73,11 +73,11 @@ def build_tempo_track(bpm):
 
 
 def create_midi_file(output_path, drum_analysis):
-    """Tempo, kick, snare ve hi-hat track'leri olan Format 1 MIDI dosyası oluşturur."""
+    """Create a Format 1 MIDI file with tempo, kick, snare, and hi-hat tracks."""
     try:
         bpm = float(drum_analysis.get("Tempo (BPM)", 120.0))
         with open(output_path, 'wb') as midi_file:
-            # Format 1: conductor/tempo + kick + snare + hi-hat = 4 track.
+            # Format 1: conductor/tempo + kick + snare + hi-hat = 4 tracks.
             midi_file.write(b"MThd")
             midi_file.write(struct.pack(">IHHH", 6, 1, 4, PPQ))
             write_track_chunk(midi_file, build_tempo_track(bpm))

@@ -1,12 +1,8 @@
-Projenin Modüler Hale Getirilmesi:
+# Application Roadmap
 
-Şu anki kodu daha genişletilebilir hale getirmek için modüler yapı kazandırabiliriz.
-Spotify Entegrasyonu:
+1. Stabilize the command-line pipeline and configuration.
+2. Expose playlist analysis through a small service API.
+3. Replace placeholder recommendations with a validated model.
+4. Add a web interface only after the analysis and creation contracts are stable.
 
-API ile temel playlist analizi yaparak ilk öneri sistemini deneyebiliriz.
-Öneri Modeli Eklemek:
-
-AI modelini projenin kalbine yerleştirir ve kullanıcıların playlistlerinden midi önerisi yapmaya başlarız.
-Web/Mobil Arayüz:
-
-Basit bir kullanıcı paneli tasarımıyla projeyi bir uygulama olarak sunmanın temellerini atabiliriz.
+Each layer should depend on explicit input and output schemas so the user interface does not become coupled to individual scripts.

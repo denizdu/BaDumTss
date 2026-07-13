@@ -5,7 +5,7 @@ import numpy as np
 
 def process_spectral_features(song_file, output_file, y=None, sr=None):
     """
-    Spektral özelliklerin analizi:
+    Analyze spectral features:
     - Spectral Centroid
     - Spectral Roll-off
     """
@@ -21,13 +21,13 @@ def process_spectral_features(song_file, output_file, y=None, sr=None):
         spectral_rolloff = librosa.feature.spectral_rolloff(y=y, sr=sr, roll_percent=0.85)
         spectral_rolloff_mean = float(np.mean(spectral_rolloff))
 
-        # Analiz sonuçlarını yaz
+        # Build the analysis result.
         results = {
             "Spectral Centroid": spectral_centroid_mean,
             "Spectral Roll-off": spectral_rolloff_mean
         }
 
-        # Sonuçları JSON dosyasına ekle
+        # Append the results to the JSON file.
         if os.path.exists(output_file):
             with open(output_file, "r+", encoding="utf-8") as f:
                 data = json.load(f)

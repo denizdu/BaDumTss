@@ -5,7 +5,7 @@ import numpy as np
 
 
 def classify_drum_hit(low_energy, mid_energy, high_energy, spectral_centroid):
-    """Bir transient'i frekans enerjisi ve spektral merkezine göre sınıflandırır."""
+    """Classify a transient by frequency-band energy and spectral centroid."""
     total_energy = low_energy + mid_energy + high_energy
     if total_energy <= np.finfo(float).eps:
         return None
@@ -26,7 +26,7 @@ def _mean_band_energy(spectrum, frequencies, minimum, maximum):
 
 
 def process_drum_analysis(song_file, output_file, y=None, sr=None):
-    """Transient'leri bulur ve kick/snare/hi-hat adaylarına ayırır."""
+    """Detect transients and classify kick, snare, and hi-hat candidates."""
     try:
         if y is None or sr is None:
             y, sr = librosa.load(song_file, sr=None)
@@ -81,7 +81,7 @@ def process_drum_analysis(song_file, output_file, y=None, sr=None):
             "Detection Method": "percussive onset frequency bands v1"
         }
 
-        # Sonuçları JSON dosyasına ekle
+        # Append the results to the JSON file.
         if os.path.exists(output_file):
             with open(output_file, "r+", encoding="utf-8") as f:
                 data = json.load(f)

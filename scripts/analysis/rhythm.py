@@ -5,7 +5,7 @@ import numpy as np
 
 def process_rhythm(song_file, output_file, y=None, sr=None):
     """
-    Ritim analizi:
+    Analyze rhythm features:
     - Beat Grid
     - Swing
     """
@@ -17,17 +17,17 @@ def process_rhythm(song_file, output_file, y=None, sr=None):
         tempo, beat_frames = librosa.beat.beat_track(y=y, sr=sr)
         beat_times = librosa.frames_to_time(beat_frames, sr=sr).tolist()
 
-        # Swing (Ritmik varyasyon)
+        # Swing (rhythmic variation).
         onset_env = librosa.onset.onset_strength(y=y, sr=sr)
-        swing_variation = float(np.std(onset_env))  # Standart sapma ile ritmik varyasyon hesaplama
+        swing_variation = float(np.std(onset_env))  # Use standard deviation as rhythmic variation.
 
-        # Analiz sonuçlarını yaz
+        # Build the analysis result.
         results = {
-            "Beat Grid": beat_times[:10],  # İlk 10 vuruşun zamanları (örnek)
+            "Beat Grid": beat_times[:10],  # Example: timestamps of the first 10 beats.
             "Swing": swing_variation
         }
 
-        # Sonuçları JSON dosyasına ekle
+        # Append the results to the JSON file.
         if os.path.exists(output_file):
             with open(output_file, "r+", encoding="utf-8") as f:
                 data = json.load(f)

@@ -1,16 +1,13 @@
-Elimizde iki farklı şarkıya ait detaylı analiz verileri var. Bu verileri kullanarak sayısal verilere dayalı yeni bir şarkı yaratabiliriz. İlk adım olarak şu parametreleri oluşturmayı öneriyorum:
+# Creating a New Arrangement from Analysis Data
 
-### **1. Temel Yapı:**
-- **Tempo (BPM):** 133.93 (verilerden alınan tempo).
-- **Key (Tonalite):** "A♯-1" veya "A-1" (şarkılardaki anahtar tonaliteye uygun olarak seçilebilir).
-- **Loudness (dB):** Ortalama bir değer (-15 dB gibi).
-- **Dinamikler:** 0.52-0.53 aralığında bir varyasyon yaratılabilir.
+Analysis data can guide a new arrangement, but it cannot reproduce a recording exactly. Use tempo and beat positions for timing, estimated key and chroma for harmony, melody contour for register movement, and loudness or spectral features for dynamics and sound selection.
 
-### **2. Frekans ve Spektrum:**
-- **Melodi:** Melody Contour verilerine uygun bir lead oluşturabiliriz.
-- **Harmonik İçerik:** Harmonic Content'e göre, seslerin doluluk oranını belirleyebiliriz.
-- **Frekans Dağılımı:** Spektral Roll-off ve Centroid'e göre hangi frekansların baskın olacağını ayarlayabiliriz.
+A practical first version should:
 
-### **3. Ritim:**
-- **Beat Grid:** Ritim düzeni Beat Grid verilerine göre oluşturulabilir.
-- **Swing:** Swing oranına göre ritim hafifçe kaydırılabilir.
+1. Build a tempo map.
+2. Convert drum events to correctly ordered MIDI events.
+3. Create separate kick, snare, and hi-hat tracks.
+4. Add a simple chord progression compatible with the estimated key.
+5. Import the result into REAPER for human review.
+
+Keep generated musical choices separate from measured source features, and attach confidence values to uncertain analysis results.

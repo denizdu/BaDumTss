@@ -9,7 +9,7 @@ MINOR_PROFILE = np.array([6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 
 
 
 def estimate_key_from_chroma(chroma):
-    """12 sınıflı chroma verisinden majör/minör tonalite ve güven puanı üretir."""
+    """Estimate a major or minor key and confidence from 12-bin chroma data."""
     if chroma.ndim != 2 or chroma.shape[0] != 12:
         raise ValueError("Chroma data must have shape (12, frames)")
 
@@ -31,9 +31,9 @@ def estimate_key_from_chroma(chroma):
 
 def process_main_features(song_file, output_file, y=None, sr=None):
     """
-    Temel özelliklerin analizi:
+    Analyze core audio features:
     - Tempo (BPM)
-    - Key (Tonalite)
+    - Key (Tonality)
     - Loudness (dB)
     - Dynamics
     """
@@ -44,7 +44,7 @@ def process_main_features(song_file, output_file, y=None, sr=None):
         # Tempo (BPM)
         tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
         
-        # Perküsyonun tonalite tahminini bozmasını azaltmak için harmonik bileşeni kullan.
+        # Use the harmonic component to reduce percussion interference in key estimation.
         harmonic = librosa.effects.harmonic(y)
         chroma = librosa.feature.chroma_cqt(y=harmonic, sr=sr)
         key, key_confidence = estimate_key_from_chroma(chroma)
@@ -56,7 +56,7 @@ def process_main_features(song_file, output_file, y=None, sr=None):
         # Dynamics
         dynamics = float(np.max(rms) - np.min(rms))  # float32 -> float
 
-        # Analiz sonuçlarını yaz
+        # Build the analysis result.
         results = {
             "Tempo (BPM)": float(tempo),  # float32 -> float
             "Key (Tonalite)": key,
@@ -65,7 +65,7 @@ def process_main_features(song_file, output_file, y=None, sr=None):
             "Dynamics": dynamics
         }
 
-        # Sonuçları JSON dosyasına ekle
+        # Append the results to the JSON file.
         if os.path.exists(output_file):
             with open(output_file, "r+", encoding="utf-8") as f:
                 data = json.load(f)

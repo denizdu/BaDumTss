@@ -5,7 +5,7 @@ import numpy as np
 
 def process_extra_features(song_file, output_file, y=None, sr=None):
     """
-    Daha karmaşık özelliklerin analizi:
+    Analyze higher-level audio features:
     - MFCCs (Mel-Frequency Cepstral Coefficients)
     - Zero-Crossing Rate
     """
@@ -14,20 +14,20 @@ def process_extra_features(song_file, output_file, y=None, sr=None):
             y, sr = librosa.load(song_file, sr=None)
 
         # MFCCs (Mel-Frequency Cepstral Coefficients)
-        mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)  # İlk 13 MFCC katsayısını hesaplar
+        mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)  # Calculate the first 13 MFCC coefficients.
         mfccs_mean = np.mean(mfccs, axis=1).tolist()
 
         # Zero-Crossing Rate
         zcr = librosa.feature.zero_crossing_rate(y)
         zcr_mean = float(np.mean(zcr))
 
-        # Analiz sonuçlarını yaz
+        # Build the analysis result.
         results = {
             "MFCCs": mfccs_mean,
             "Zero-Crossing Rate": zcr_mean
         }
 
-        # Sonuçları JSON dosyasına ekle
+        # Append the results to the JSON file.
         if os.path.exists(output_file):
             with open(output_file, "r+", encoding="utf-8") as f:
                 data = json.load(f)

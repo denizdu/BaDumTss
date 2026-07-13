@@ -17,7 +17,7 @@ def download_song_as_wav(search_query, output_dir):
     try:
         print(f"Downloading {search_query}...")
 
-        # İndirme komutu
+        # Download command.
         command = [
             "yt-dlp",
             "-x", "--audio-format", "wav",
@@ -26,14 +26,14 @@ def download_song_as_wav(search_query, output_dir):
             f"ytsearch1:{search_query}"
         ]
 
-        # Cookie isteğe bağlıdır; yalnızca kullanıcının yetkili içeriğinde gerekirse kullanılır.
+        # Cookies are optional and only used for content the user is authorized to access.
         if COOKIES_FILE.exists():
             print(f"Using cookies from: {COOKIES_FILE}")
             command.extend(["--cookies", str(COOKIES_FILE)])
         else:
             print("No cookies file configured; continuing without cookies.")
 
-        # Komutu çalıştır
+        # Run the command.
         result = subprocess.run(
             command,
             stdout=subprocess.PIPE,
@@ -43,7 +43,7 @@ def download_song_as_wav(search_query, output_dir):
             errors="replace",
         )
 
-        # Başarılı indirme
+        # Successful download.
         if result.returncode == 0:
             print(f"Successfully downloaded: {search_query}")
 
