@@ -13,13 +13,28 @@ BaDumTss is an experimental music-analysis and beat-reconstruction pipeline. It 
 
 ## Setup
 
-Create and activate a virtual environment, then install the dependencies:
+BaDumTss supports Python 3.9 through 3.12. Create and activate a virtual
+environment, then install the dependencies:
 
 ```bash
 python -m venv .venv
 source .venv/Scripts/activate
 python -m pip install -r requirements.txt
 ```
+
+For development and tests, install the separate development requirements:
+
+```bash
+python -m pip install -r requirements-dev.txt
+```
+
+`requirements.txt` contains direct runtime dependencies only. Packages brought
+in transitively by those dependencies are intentionally not copied from
+`pip freeze`.
+
+Audio extraction through `yt-dlp` also requires FFmpeg to be installed and
+available on `PATH`. REAPER is optional and is needed only for project creation
+and Lua integration.
 
 Create a local `.env` file. Never commit credentials or browser cookies.
 
