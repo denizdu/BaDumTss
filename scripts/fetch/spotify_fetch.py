@@ -82,9 +82,13 @@ def get_tracks_from_playlist(spotify_client, playlist_id):
     for item in results:
         track = item["track"]
         if track:
+            artist = track["artists"][0]["name"]
             tracks.append({
                 "name": track["name"],
-                "artist": track["artists"][0]["name"]
+                "artist": artist,
+                "metadata_source": "spotify",
+                "audio_source": "youtube",
+                "audio_reference": f"{track['name']} {artist}",
             })
     return tracks
 

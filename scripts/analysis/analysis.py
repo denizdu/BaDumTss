@@ -7,7 +7,7 @@ import hashlib
 from pathlib import Path
 from multiprocessing import Pool
 from dotenv import load_dotenv
-from scripts.fetch.youtube_fetch import download_song_as_wav
+from scripts.fetch.audio_sources import resolve_audio_source
 from derived_features import process_derived_features
 from extra_features import process_extra_features
 from freq_and_spectrum import process_freq_and_spectrum
@@ -50,7 +50,7 @@ os.makedirs(DIR_OUTPUT_ANALYSIS, exist_ok=True)
 playlists_to_analyze = [p.strip() for p in PLAYLIST_TOBE_ANALYZED.split(",")]
 
 # Analyze a song and remove the downloaded file afterward
-def analyze_and_delete_song(song_file, song_output_file):
+def analyze_and_delete_song(song_file, song_output_file, delete_after_analysis=True):
     try:
         print(f"Analyzing: {song_file}")
         # Load the audio only once and share it across all analysis modules.
@@ -68,7 +68,7 @@ def analyze_and_delete_song(song_file, song_output_file):
         logging.error(f"Error during analysis of {song_file}: {e}")
         return None
     finally:
-        if os.path.exists(song_file):
+        if delete_after_analysis and os.path.exists(song_file):
             os.remove(song_file)
             print(f"Deleted: {song_file}")
 
@@ -76,19 +76,24 @@ def process_track(track):
     search_query = f"{track['name']} {track['artist']}"
     print(f"Processing song: {track['name']} by {track['artist']}")
 
-    # Use YouTube cookies only when they were explicitly configured.
-    print(f"Attempting to download: {search_query}")
-    song_file = download_song_as_wav(search_query, DIR_DOWNLOAD)
-    print(f"Download result: {song_file}")
+    try:
+        audio = resolve_audio_source(track, DIR_DOWNLOAD)
+        song_file = str(audio.path)
+        print(f"Resolved {track.get('audio_source', 'youtube')} audio: {song_file}")
+    except (ValueError, FileNotFoundError) as error:
+        print(f"Failed to resolve audio for {search_query}: {error}")
+        logging.error(f"Failed to resolve audio for {search_query}: {error}")
+        return None
 
-    # Analyze and remove the song when the download succeeds.
     if song_file and os.path.exists(song_file):
         os.makedirs(partial_output_dir, exist_ok=True)
         track_key = hashlib.sha256(search_query.encode("utf-8")).hexdigest()[:16]
         song_output_file = os.path.join(partial_output_dir, f"{track_key}.json")
         if os.path.exists(song_output_file):
             os.remove(song_output_file)
-        return analyze_and_delete_song(song_file, song_output_file)
+        return analyze_and_delete_song(
+            song_file, song_output_file, audio.delete_after_analysis
+        )
     else:
         print(f"Failed to process {search_query}. Skipping.")
         logging.error(f"Failed to download or process {search_query}")

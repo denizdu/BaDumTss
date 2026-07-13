@@ -68,4 +68,12 @@ def test_playlist_functions_use_the_explicit_client():
     assert playlists == [
         {"original_name": "My Playlist", "sanitized_name": "My_Playlist", "id": "playlist-id"}
     ]
-    assert tracks == [{"name": "Track Name", "artist": "Artist Name"}]
+    assert tracks == [
+        {
+            "name": "Track Name",
+            "artist": "Artist Name",
+            "metadata_source": "spotify",
+            "audio_source": "youtube",
+            "audio_reference": "Track Name Artist Name",
+        }
+    ]
