@@ -3,6 +3,7 @@ import struct
 import os
 
 PPQ = 960
+DEFAULT_NOTE_DURATION = 480
 
 
 def seconds_to_ticks(seconds, bpm, ppq=PPQ):
@@ -36,20 +37,39 @@ def write_variable_length_quantity(value):
     return vlq
 
 def write_midi_notes(midi_file, positions, pitch, velocity, bpm, ppq=PPQ):
-    """Writes MIDI notes to the file."""
-    last_position = 0
+    """Write chronologically ordered MIDI note events to a binary stream."""
+    midi_file.write(build_note_events(positions, pitch, velocity, bpm, ppq))
+
+
+def build_note_events(
+    positions,
+    pitch,
+    velocity,
+    bpm,
+    ppq=PPQ,
+    note_duration=DEFAULT_NOTE_DURATION,
+):
+    """Encode note events using deltas calculated from sorted absolute ticks."""
+    if not 0 <= pitch <= 127:
+        raise ValueError("pitch must be between 0 and 127")
+    if not 0 <= velocity <= 127:
+        raise ValueError("velocity must be between 0 and 127")
+    if note_duration <= 0:
+        raise ValueError("note_duration must be positive")
+
+    events = []
     for position in positions:
-        start_time = seconds_to_ticks(position, bpm, ppq)
-        delta_time = start_time - last_position  # Calculate delta time
-        last_position = start_time
+        start_tick = seconds_to_ticks(position, bpm, ppq)
+        events.append((start_tick, 1, 0x90, pitch, velocity))
+        events.append((start_tick + note_duration, 0, 0x80, pitch, 0))
 
-        # Write MIDI note on
-        midi_file.write(write_variable_length_quantity(delta_time))
-        midi_file.write(struct.pack("<BBB", 0x90, pitch, velocity))
-
-        # Write MIDI note off
-        midi_file.write(write_variable_length_quantity(480))  # Note duration
-        midi_file.write(struct.pack("<BBB", 0x80, pitch, 0))
+    encoded = bytearray()
+    previous_tick = 0
+    for absolute_tick, _, status, event_pitch, event_velocity in sorted(events):
+        encoded.extend(write_variable_length_quantity(absolute_tick - previous_tick))
+        encoded.extend(struct.pack("BBB", status, event_pitch, event_velocity))
+        previous_tick = absolute_tick
+    return encoded
 
 
 def write_track_chunk(midi_file, track_data):
@@ -91,20 +111,8 @@ def create_midi_file(output_path, drum_analysis):
                 track_data.extend(struct.pack("B", len(track_name)))
                 track_data.extend(track_name.encode('ascii'))
 
-                # Write notes
-                last_position = 0
-                for position in positions:
-                    start_time = seconds_to_ticks(position, bpm)
-                    delta_time = start_time - last_position
-                    last_position = start_time
-
-                    # Note on
-                    track_data.extend(write_variable_length_quantity(delta_time))
-                    track_data.extend(struct.pack("<BBB", 0x90, pitch, 100))
-
-                    # Note off
-                    track_data.extend(write_variable_length_quantity(480))
-                    track_data.extend(struct.pack("<BBB", 0x80, pitch, 0))
+                # Calculate deltas only after all absolute note events are sorted.
+                track_data.extend(build_note_events(positions, pitch, 100, bpm))
 
                 track_data.extend(b"\x00\xFF\x2F\x00")
                 write_track_chunk(midi_file, track_data)
