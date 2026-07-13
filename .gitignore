@@ -38,3 +38,4 @@ cookies.json
 #downloads/*
 # "!downloads/important_file.txt"
 
+sample/raw/
