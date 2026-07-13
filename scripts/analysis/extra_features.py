@@ -3,15 +3,15 @@ import json
 import os
 import numpy as np
 
-def process_extra_features(song_file, output_file):
+def process_extra_features(song_file, output_file, y=None, sr=None):
     """
     Daha karmaşık özelliklerin analizi:
     - MFCCs (Mel-Frequency Cepstral Coefficients)
     - Zero-Crossing Rate
     """
     try:
-        # Şarkıyı yükle
-        y, sr = librosa.load(song_file, sr=None)
+        if y is None or sr is None:
+            y, sr = librosa.load(song_file, sr=None)
 
         # MFCCs (Mel-Frequency Cepstral Coefficients)
         mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)  # İlk 13 MFCC katsayısını hesaplar

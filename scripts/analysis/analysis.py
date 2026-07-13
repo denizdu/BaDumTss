@@ -2,6 +2,7 @@ import sys
 import os
 import logging
 import json
+import librosa
 from multiprocessing import Pool
 from dotenv import load_dotenv
 from scripts.fetch.youtube_fetch import download_song_as_wav
@@ -38,12 +39,14 @@ playlists_to_analyze = [p.strip() for p in PLAYLIST_TOBE_ANALYZED.split(",")]
 def analyze_and_delete_song(song_file):
     try:
         print(f"Analyzing: {song_file}")
-        process_main_features(song_file, output_file)
-        process_freq_and_spectrum(song_file, output_file)
-        process_rhythm(song_file, output_file)
-        process_spectral_features(song_file, output_file)
-        process_extra_features(song_file, output_file)
-        process_drum_analysis(song_file, output_file)
+        # Ses dosyasını yalnızca bir kez yükle ve tüm analizlerde paylaş.
+        y, sr = librosa.load(song_file, sr=None)
+        process_main_features(song_file, output_file, y=y, sr=sr)
+        process_freq_and_spectrum(song_file, output_file, y=y, sr=sr)
+        process_rhythm(song_file, output_file, y=y, sr=sr)
+        process_spectral_features(song_file, output_file, y=y, sr=sr)
+        process_extra_features(song_file, output_file, y=y, sr=sr)
+        process_drum_analysis(song_file, output_file, y=y, sr=sr)
 
         print(f"Analysis completed for: {song_file}")
     except Exception as e:

@@ -3,15 +3,15 @@ import json
 import os
 import numpy as np
 
-def process_spectral_features(song_file, output_file):
+def process_spectral_features(song_file, output_file, y=None, sr=None):
     """
     Spektral özelliklerin analizi:
     - Spectral Centroid
     - Spectral Roll-off
     """
     try:
-        # Şarkıyı yükle
-        y, sr = librosa.load(song_file, sr=None)
+        if y is None or sr is None:
+            y, sr = librosa.load(song_file, sr=None)
 
         # Spectral Centroid
         spectral_centroids = librosa.feature.spectral_centroid(y=y, sr=sr)

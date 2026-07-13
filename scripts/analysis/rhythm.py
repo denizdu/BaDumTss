@@ -3,15 +3,15 @@ import json
 import os
 import numpy as np
 
-def process_rhythm(song_file, output_file):
+def process_rhythm(song_file, output_file, y=None, sr=None):
     """
     Ritim analizi:
     - Beat Grid
     - Swing
     """
     try:
-        # Şarkıyı yükle
-        y, sr = librosa.load(song_file, sr=None)
+        if y is None or sr is None:
+            y, sr = librosa.load(song_file, sr=None)
         
         # Beat Grid
         tempo, beat_frames = librosa.beat.beat_track(y=y, sr=sr)

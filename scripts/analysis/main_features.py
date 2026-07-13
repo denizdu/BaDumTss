@@ -3,7 +3,7 @@ import json
 import os
 import numpy as np
 
-def process_main_features(song_file, output_file):
+def process_main_features(song_file, output_file, y=None, sr=None):
     """
     Temel özelliklerin analizi:
     - Tempo (BPM)
@@ -12,8 +12,8 @@ def process_main_features(song_file, output_file):
     - Dynamics
     """
     try:
-        # Şarkıyı yükle
-        y, sr = librosa.load(song_file, sr=None)
+        if y is None or sr is None:
+            y, sr = librosa.load(song_file, sr=None)
         
         # Tempo (BPM)
         tempo, _ = librosa.beat.beat_track(y=y, sr=sr)

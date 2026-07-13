@@ -3,7 +3,7 @@ import json
 import os
 import numpy as np
 
-def process_freq_and_spectrum(song_file, output_file):
+def process_freq_and_spectrum(song_file, output_file, y=None, sr=None):
     """
     Frekans ve spektrum analizi:
     - Frekans Spektrumu
@@ -11,8 +11,8 @@ def process_freq_and_spectrum(song_file, output_file):
     - Harmonic Content
     """
     try:
-        # Şarkıyı yükle
-        y, sr = librosa.load(song_file, sr=None)
+        if y is None or sr is None:
+            y, sr = librosa.load(song_file, sr=None)
         
         # Frekans Spektrumu (Power Spectrum)
         spectrum = np.abs(librosa.stft(y))

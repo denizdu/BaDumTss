@@ -3,11 +3,11 @@ import json
 import os
 import numpy as np
 
-def process_drum_analysis(song_file, output_file):
+def process_drum_analysis(song_file, output_file, y=None, sr=None):
     """ bla bla """
     try:
-        # Şarkıyı yükle
-        y, sr = librosa.load(song_file, sr=None)
+        if y is None or sr is None:
+            y, sr = librosa.load(song_file, sr=None)
 
         # onset_strength argümanlarını doğru şekilde düzenliyoruz
         onset_env = librosa.onset.onset_strength(y=y, sr=sr, aggregate=np.median)
