@@ -33,6 +33,19 @@ DIR_OUTPUT_MODEL=output/model
 DIR_OUTPUT_CREATION=output/creation
 ```
 
+Audio assets are deliberately excluded from Git. Configure local drum samples
+for REAPER with absolute paths in your shell environment:
+
+```dotenv
+BADUMTSS_KICK_SAMPLE=D:/audio-assets/kick.wav
+BADUMTSS_SNARE_SAMPLE=D:/audio-assets/snare.wav
+BADUMTSS_HIHAT_SAMPLE=D:/audio-assets/hihat.wav
+```
+
+See [`sample/README.md`](sample/README.md) for the asset policy and manifest
+format. Reference songs and third-party sample packs must remain outside the
+repository.
+
 Run the test suite:
 
 ```bash
@@ -47,7 +60,10 @@ python scripts/analysis/analysis.py
 
 ## Input and output
 
-Playlist JSON files contain track and artist metadata. Audio and generated output directories are intentionally ignored by Git. Analysis workers write isolated partial JSON files, and the parent process merges them atomically into the final analysis output.
+Playlist JSON files contain track and artist metadata. Audio, downloads, and
+generated `output/` and `export/` directories are intentionally ignored by Git.
+Analysis workers write isolated partial JSON files, and the parent process
+merges them atomically into the final analysis output.
 
 ## Current status
 

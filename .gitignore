@@ -24,18 +24,27 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Output directories
+# Generated and downloaded data
 output/
+export/
 downloads/
 
 # IDE settings
 .idea/
 .vscode/
 
-# Tüm downloads klasörünü yok say, ancak important_file.txt'yi takip et
+# Local credentials and browser data
 cookies.txt
 cookies.json
-#downloads/*
-# "!downloads/important_file.txt"
 
+# Audio assets are local or externally managed. Keep documentation and
+# manifests in Git, but never commit reference songs or sample packs.
 sample/raw/
+samples/raw/
+sample/drums/
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+*.aac

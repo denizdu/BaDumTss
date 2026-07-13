@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "local-reference-track",
+      "role": "reference_track",
+      "environment_variable": "BADUMTSS_REFERENCE_AUDIO",
+      "source": "user_provided",
+      "license": "user_must_verify",
+      "sha256": "replace-with-local-file-sha256"
+    },
+    {
+      "id": "local-kick",
+      "role": "kick_sample",
+      "environment_variable": "BADUMTSS_KICK_SAMPLE",
+      "source": "user_provided",
+      "license": "user_must_verify",
+      "sha256": "replace-with-local-file-sha256"
+    },
+    {
+      "id": "local-snare",
+      "role": "snare_sample",
+      "environment_variable": "BADUMTSS_SNARE_SAMPLE",
+      "source": "user_provided",
+      "license": "user_must_verify",
+      "sha256": "replace-with-local-file-sha256"
+    },
+    {
+      "id": "local-hihat",
+      "role": "hihat_sample",
+      "environment_variable": "BADUMTSS_HIHAT_SAMPLE",
+      "source": "user_provided",
+      "license": "user_must_verify",
+      "sha256": "replace-with-local-file-sha256"
+    }
+  ]
+}

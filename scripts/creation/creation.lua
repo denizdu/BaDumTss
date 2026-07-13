@@ -10,9 +10,18 @@ local function get_project_root()
 end
 
 local project_root = get_project_root()
-local kick_path = project_root .. "/sample/drums/Kicks/Cymatics_9God_Kick_1_C.wav"
-local snare_path = project_root .. "/sample/drums/Snares/Cymatics_9God_Snare_1_C.wav"
-local hihat_path = project_root .. "/sample/drums/Cymbals/Rides/Cymatics_9God_Ride_1.wav"
+
+local function get_sample_path(environment_variable)
+    local value = os.getenv(environment_variable)
+    if not value or value == "" then
+        return nil
+    end
+    return value
+end
+
+local kick_path = get_sample_path("BADUMTSS_KICK_SAMPLE")
+local snare_path = get_sample_path("BADUMTSS_SNARE_SAMPLE")
+local hihat_path = get_sample_path("BADUMTSS_HIHAT_SAMPLE")
 
 -- Read an input file.
 function read_json_file(file_path)
@@ -70,6 +79,22 @@ end
 
 -- Add an audio sample to a track.
 function add_sample_to_track(track, sample_path, start_position)
+    if not sample_path then
+        reaper.ShowConsoleMsg(
+            "A drum sample path is not configured; skipping the audio event. " ..
+            "Set the BADUMTSS_KICK_SAMPLE, BADUMTSS_SNARE_SAMPLE, and " ..
+            "BADUMTSS_HIHAT_SAMPLE environment variables.\n"
+        )
+        return false
+    end
+
+    local file = io.open(sample_path, "rb")
+    if not file then
+        reaper.ShowConsoleMsg("Drum sample does not exist: " .. sample_path .. "\n")
+        return false
+    end
+    file:close()
+
     local retval = reaper.InsertMedia(sample_path, 0)
     if retval then
         local item = reaper.GetTrackMediaItem(track, reaper.CountTrackMediaItems(track) - 1)
@@ -77,6 +102,7 @@ function add_sample_to_track(track, sample_path, start_position)
             reaper.SetMediaItemInfo_Value(item, "D_POSITION", start_position)
         end
     end
+    return retval == true
 end
 
 -- Add a MIDI note using project seconds for the item and PPQ positions for note events.
