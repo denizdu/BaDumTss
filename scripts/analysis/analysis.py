@@ -3,6 +3,7 @@ import os
 import logging
 import json
 import librosa
+import hashlib
 from multiprocessing import Pool
 from dotenv import load_dotenv
 from scripts.fetch.youtube_fetch import download_song_as_wav
@@ -25,6 +26,7 @@ DIR_OUTPUT_ANALYSIS = os.getenv("DIR_OUTPUT_ANALYSIS")
 
 # Sonuç dosyası yolu
 output_file = os.path.join(DIR_OUTPUT_ANALYSIS, "analysis_output.json")
+partial_output_dir = os.path.join(DIR_OUTPUT_ANALYSIS, ".partial")
 
 # Log dosyası oluştur
 logging.basicConfig(filename="errors.log", level=logging.ERROR, format='%(asctime)s - %(message)s')
@@ -36,21 +38,23 @@ os.makedirs(DIR_OUTPUT_ANALYSIS, exist_ok=True)
 playlists_to_analyze = [p.strip() for p in PLAYLIST_TOBE_ANALYZED.split(",")]
 
 # Şarkı analiz et ve ardından sil
-def analyze_and_delete_song(song_file):
+def analyze_and_delete_song(song_file, song_output_file):
     try:
         print(f"Analyzing: {song_file}")
         # Ses dosyasını yalnızca bir kez yükle ve tüm analizlerde paylaş.
         y, sr = librosa.load(song_file, sr=None)
-        process_main_features(song_file, output_file, y=y, sr=sr)
-        process_freq_and_spectrum(song_file, output_file, y=y, sr=sr)
-        process_rhythm(song_file, output_file, y=y, sr=sr)
-        process_spectral_features(song_file, output_file, y=y, sr=sr)
-        process_extra_features(song_file, output_file, y=y, sr=sr)
-        process_drum_analysis(song_file, output_file, y=y, sr=sr)
+        process_main_features(song_file, song_output_file, y=y, sr=sr)
+        process_freq_and_spectrum(song_file, song_output_file, y=y, sr=sr)
+        process_rhythm(song_file, song_output_file, y=y, sr=sr)
+        process_spectral_features(song_file, song_output_file, y=y, sr=sr)
+        process_extra_features(song_file, song_output_file, y=y, sr=sr)
+        process_drum_analysis(song_file, song_output_file, y=y, sr=sr)
 
         print(f"Analysis completed for: {song_file}")
+        return song_output_file
     except Exception as e:
         logging.error(f"Error during analysis of {song_file}: {e}")
+        return None
     finally:
         if os.path.exists(song_file):
             os.remove(song_file)
@@ -67,10 +71,40 @@ def process_track(track):
 
     # Şarkı indirildiyse analiz et ve sil
     if song_file and os.path.exists(song_file):
-        analyze_and_delete_song(song_file)
+        os.makedirs(partial_output_dir, exist_ok=True)
+        track_key = hashlib.sha256(search_query.encode("utf-8")).hexdigest()[:16]
+        song_output_file = os.path.join(partial_output_dir, f"{track_key}.json")
+        if os.path.exists(song_output_file):
+            os.remove(song_output_file)
+        return analyze_and_delete_song(song_file, song_output_file)
     else:
         print(f"Failed to process {search_query}. Skipping.")
         logging.error(f"Failed to download or process {search_query}")
+        return None
+
+
+def merge_analysis_files(partial_files, destination):
+    """Worker çıktılarını ana süreçte tek ve atomik bir JSON dosyasında birleştirir."""
+    merged_data = {}
+
+    if os.path.exists(destination):
+        with open(destination, "r", encoding="utf-8") as f:
+            merged_data = json.load(f)
+
+    completed_files = [path for path in partial_files if path and os.path.exists(path)]
+    for partial_file in completed_files:
+        with open(partial_file, "r", encoding="utf-8") as f:
+            merged_data.update(json.load(f))
+
+    temporary_file = f"{destination}.tmp"
+    with open(temporary_file, "w", encoding="utf-8") as f:
+        json.dump(merged_data, f, ensure_ascii=False, indent=4)
+        f.flush()
+        os.fsync(f.fileno())
+    os.replace(temporary_file, destination)
+
+    for partial_file in completed_files:
+        os.remove(partial_file)
 
 if __name__ == "__main__":
     os.makedirs(DIR_DOWNLOAD, exist_ok=True)  # İndirme dizinini oluştur
@@ -88,6 +122,9 @@ if __name__ == "__main__":
 
         # Paralel işlemle şarkıları işleme
         with Pool(processes=4) as pool:
-            pool.map(process_track, tracks)
+            partial_files = pool.map(process_track, tracks)
+
+        # Birleştirme yalnızca ana süreçte yapılır; worker'lar aynı dosyaya yazmaz.
+        merge_analysis_files(partial_files, output_file)
 
         print(f"Analysis for playlist '{playlist_name}' completed.")
