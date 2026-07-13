@@ -8,20 +8,32 @@ from dotenv import load_dotenv
 # Load environment variables.
 load_dotenv()
 
-# Spotify API credentials.
-client_id = os.getenv("SPOTIFY_CLIENT_ID")
-client_secret = os.getenv("SPOTIFY_CLIENT_SECRET")
-redirect_uri = os.getenv("REDIRECT_URI")
-scope = "playlist-read-private user-library-read"
+SPOTIFY_SCOPE = "playlist-read-private user-library-read"
 
 # Directories.
 DIR_OUTPUT_FETCH = os.getenv("DIR_OUTPUT_FETCH")
 
-# Spotify client.
-sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,
-                                               client_secret=client_secret,
-                                               redirect_uri=redirect_uri,
-                                               scope=scope))
+
+def create_spotify_client(client_id=None, client_secret=None, redirect_uri=None):
+    """Create a Spotify client only when an authenticated operation is requested."""
+    credentials = {
+        "SPOTIFY_CLIENT_ID": client_id or os.getenv("SPOTIFY_CLIENT_ID"),
+        "SPOTIFY_CLIENT_SECRET": client_secret or os.getenv("SPOTIFY_CLIENT_SECRET"),
+        "REDIRECT_URI": redirect_uri or os.getenv("REDIRECT_URI"),
+    }
+    missing = [name for name, value in credentials.items() if not value]
+    if missing:
+        raise RuntimeError(
+            "Missing Spotify configuration: " + ", ".join(sorted(missing))
+        )
+
+    auth_manager = SpotifyOAuth(
+        client_id=credentials["SPOTIFY_CLIENT_ID"],
+        client_secret=credentials["SPOTIFY_CLIENT_SECRET"],
+        redirect_uri=credentials["REDIRECT_URI"],
+        scope=SPOTIFY_SCOPE,
+    )
+    return spotipy.Spotify(auth_manager=auth_manager)
 
 # Sanitize file names.
 def sanitize_filename(name):
@@ -50,8 +62,8 @@ def sanitize_filename(name):
     return sanitized
 
 # Fetch playlist names and IDs.
-def get_playlists():
-    playlists = sp.current_user_playlists(limit=50)["items"]
+def get_playlists(spotify_client):
+    playlists = spotify_client.current_user_playlists(limit=50)["items"]
     playlist_data = []
     for playlist in playlists:
         original_name = playlist["name"]
@@ -64,8 +76,8 @@ def get_playlists():
     return playlist_data
 
 # Fetch tracks from a specific playlist.
-def get_tracks_from_playlist(playlist_id):
-    results = sp.playlist_tracks(playlist_id)["items"]
+def get_tracks_from_playlist(spotify_client, playlist_id):
+    results = spotify_client.playlist_tracks(playlist_id)["items"]
     tracks = []
     for item in results:
         track = item["track"]
@@ -84,12 +96,17 @@ def save_to_json(data, file_path):
     print(f"Data saved to {file_path}")
 
 if __name__ == "__main__":
+    if not DIR_OUTPUT_FETCH:
+        raise RuntimeError("DIR_OUTPUT_FETCH must be configured")
+
+    spotify_client = create_spotify_client()
+
     # Fetch and save playlists.
-    playlists = get_playlists()
+    playlists = get_playlists(spotify_client)
     save_to_json(playlists, os.path.join(DIR_OUTPUT_FETCH, "playlists.json"))
 
     # Save each playlist's tracks to a separate file.
     for playlist in playlists:
         playlist_name = playlist["sanitized_name"]
-        tracks = get_tracks_from_playlist(playlist["id"])
+        tracks = get_tracks_from_playlist(spotify_client, playlist["id"])
         save_to_json(tracks, os.path.join(DIR_OUTPUT_FETCH, f"{playlist_name}_tracks.json"))
