@@ -3,6 +3,32 @@ import json
 import os
 import numpy as np
 
+KEY_NAMES = ("C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B")
+MAJOR_PROFILE = np.array([6.35, 2.23, 3.48, 2.33, 4.38, 4.09, 2.52, 5.19, 2.39, 3.66, 2.29, 2.88])
+MINOR_PROFILE = np.array([6.33, 2.68, 3.52, 5.38, 2.60, 3.53, 2.54, 4.75, 3.98, 2.69, 3.34, 3.17])
+
+
+def estimate_key_from_chroma(chroma):
+    """12 sınıflı chroma verisinden majör/minör tonalite ve güven puanı üretir."""
+    if chroma.ndim != 2 or chroma.shape[0] != 12:
+        raise ValueError("Chroma data must have shape (12, frames)")
+
+    chroma_profile = np.mean(chroma, axis=1)
+    if not np.all(np.isfinite(chroma_profile)) or np.allclose(chroma_profile, chroma_profile[0]):
+        return "Unknown", 0.0
+
+    candidates = []
+    for root, key_name in enumerate(KEY_NAMES):
+        major_score = np.corrcoef(chroma_profile, np.roll(MAJOR_PROFILE, root))[0, 1]
+        minor_score = np.corrcoef(chroma_profile, np.roll(MINOR_PROFILE, root))[0, 1]
+        candidates.append((float(major_score), f"{key_name} major"))
+        candidates.append((float(minor_score), f"{key_name} minor"))
+
+    score, key = max(candidates, key=lambda candidate: candidate[0])
+    confidence = float(np.clip((score + 1.0) / 2.0, 0.0, 1.0))
+    return key, confidence
+
+
 def process_main_features(song_file, output_file, y=None, sr=None):
     """
     Temel özelliklerin analizi:
@@ -18,9 +44,10 @@ def process_main_features(song_file, output_file, y=None, sr=None):
         # Tempo (BPM)
         tempo, _ = librosa.beat.beat_track(y=y, sr=sr)
         
-        # Key (Tonalite) - Chroma features ile belirleme
-        chroma = librosa.feature.chroma_cqt(y=y, sr=sr)
-        key = librosa.hz_to_note(chroma.argmax(axis=0).mean())
+        # Perküsyonun tonalite tahminini bozmasını azaltmak için harmonik bileşeni kullan.
+        harmonic = librosa.effects.harmonic(y)
+        chroma = librosa.feature.chroma_cqt(y=harmonic, sr=sr)
+        key, key_confidence = estimate_key_from_chroma(chroma)
 
         # Loudness (dB)
         rms = librosa.feature.rms(y=y)
@@ -33,6 +60,7 @@ def process_main_features(song_file, output_file, y=None, sr=None):
         results = {
             "Tempo (BPM)": float(tempo),  # float32 -> float
             "Key (Tonalite)": key,
+            "Key Confidence": key_confidence,
             "Loudness (dB)": float(loudness),  # float32 -> float
             "Dynamics": dynamics
         }
